@@ -1,80 +1,94 @@
 <template>
-  <section class="hero">
-    <div
-      v-for="(slide, index) in heroSlides"
-      :key="slide.title"
-      class="hero-slide"
-      :class="{ active: index === activeSlide }"
-      :style="{ backgroundImage: `url(${slide.image})` }"
-    ></div>
-    <div class="hero-overlay"></div>
-
-    <div class="site-shell hero-content">
-      <div class="hero-copy">
-        <p class="eyebrow eyebrow-light">{{ heroSlides[activeSlide].eyebrow }}</p>
-        <h1>{{ heroSlides[activeSlide].title }}</h1>
-        <p class="hero-text">{{ heroSlides[activeSlide].text }}</p>
-        <div class="hero-actions">
-          <a href="#booking" class="button button-gold">Book your stay</a>
-          <RouterLink to="/gallery" class="text-link text-link-light">Explore the gallery <ArrowUpRight :size="18" /></RouterLink>
-        </div>
-      </div>
-
-      <div class="hero-pagination" aria-label="Hero slides">
-        <button
-          v-for="(_, index) in heroSlides"
-          :key="index"
-          :class="{ active: activeSlide === index }"
-          :aria-label="`Go to slide ${index + 1}`"
-          @click="activeSlide = index"
-        ></button>
-      </div>
+  <section
+    id="hero"
+    class="hero hero-editorial"
+    aria-roledescription="carousel"
+    aria-label="Mistara Ella gallery"
+    @mouseenter="pauseAutoplay"
+    @mouseleave="resumeAutoplay"
+  >
+    <!-- Premium green panel -->
+    <div class="hero-rail" aria-hidden="true">
+      <div class="hero-rail-grain"></div>
     </div>
 
-    <div id="booking" class="site-shell booking-wrap">
-      <form class="booking-bar" @submit.prevent>
-        <div class="booking-field">
-          <span>Check in</span>
-          <input v-model="checkIn" type="date" aria-label="Check in" />
-        </div>
-        <div class="booking-field">
-          <span>Check out</span>
-          <input v-model="checkOut" type="date" aria-label="Check out" />
-        </div>
-        <div class="booking-field">
-          <span>Guests</span>
-          <select aria-label="Guests">
-            <option>2 Adults</option>
-            <option>1 Adult</option>
-            <option>3 Adults</option>
-            <option>4 Adults</option>
-          </select>
-        </div>
-        <button class="booking-search" type="submit">Check availability <ArrowRight :size="18" /></button>
-      </form>
+    <!-- Automatic image carousel -->
+    <div class="hero-media">
+      <div
+        v-for="(slide, index) in heroSlides"
+        :key="slide.image"
+        class="hero-slide"
+        :class="{ active: index === activeSlide }"
+        :style="{
+          backgroundImage: `url(${slide.image})`,
+          backgroundPosition: slide.position || 'center center',
+        }"
+        role="group"
+        :aria-hidden="index !== activeSlide"
+        :aria-label="`${index + 1} of ${heroSlides.length}: ${slide.label}`"
+      ></div>
+
+      <div class="hero-media-shade"></div>
+    </div>
+
+    <!-- Clean hero typography -->
+    <div class="hero-identity">
+      <div class="hero-stay" aria-hidden="true">
+        <span>Stay</span>
+      </div>
+
+      <h1 class="hero-name" aria-label="Mistara Ella">
+        <span class="hero-name-line">
+          <span class="hero-name-text hero-name-text--mistara">
+            Mistara
+          </span>
+        </span>
+
+        <span class="hero-name-line">
+          <span class="hero-name-text hero-name-text--ella">
+            Ella
+          </span>
+        </span>
+      </h1>
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { ArrowRight, ArrowUpRight } from 'lucide-vue-next'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { heroSlides } from '../../data/site'
 
 const activeSlide = ref(0)
-const toISODate = (date) => date.toISOString().slice(0, 10)
-const today = new Date()
-const tomorrow = new Date(today)
-tomorrow.setDate(tomorrow.getDate() + 1)
-const checkIn = ref(toISODate(today))
-const checkOut = ref(toISODate(tomorrow))
-let intervalId
+let intervalId = null
+
+const nextSlide = () => {
+  activeSlide.value = (activeSlide.value + 1) % heroSlides.length
+}
+
+const startAutoplay = () => {
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches
+
+  if (prefersReducedMotion) return
+
+  window.clearInterval(intervalId)
+  intervalId = window.setInterval(nextSlide, 6200)
+}
+
+const pauseAutoplay = () => {
+  window.clearInterval(intervalId)
+}
+
+const resumeAutoplay = () => {
+  startAutoplay()
+}
 
 onMounted(() => {
-  intervalId = window.setInterval(() => {
-    activeSlide.value = (activeSlide.value + 1) % heroSlides.length
-  }, 6500)
+  startAutoplay()
 })
 
-onBeforeUnmount(() => window.clearInterval(intervalId))
+onBeforeUnmount(() => {
+  window.clearInterval(intervalId)
+})
 </script>

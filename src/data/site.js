@@ -10,21 +10,38 @@ export const navItems = [
 export const heroSlides = [
   {
     image: './Images/Home/hero1.jpg',
-    eyebrow: 'Luxury stay in Ella',
-    title: 'Experience the mist',
-    text: 'Quiet mornings, mountain views and contemporary comfort in the heart of Ella.',
+    position: 'center 55%',
+    eyebrow: 'A boutique mountain stay',
+    label: 'Mistara Ella among the mountains',
+    text: 'A quiet hideaway shaped by mist, mountain light and the slower rhythm of Ella.',
   },
   {
     image: './Images/Home/hero2.jpeg',
-    eyebrow: 'Slow down above the clouds',
-    title: 'A serene mountain escape',
-    text: 'Unwind in a peaceful boutique setting surrounded by the green hills of Sri Lanka.',
+    position: 'center 48%',
+    eyebrow: 'Breakfast above the hills',
+    label: 'Open-air dining with mountain views',
+    text: 'Wake gently, linger over breakfast and watch the green hills change with the morning light.',
+  },
+  {
+    image: './Images/Home/outside1.jpeg',
+    position: 'center 46%',
+    eyebrow: 'Designed into the landscape',
+    label: 'Mistara Ella exterior',
+    text: 'Contemporary architecture, warm Sri Lankan character and an intimate connection to the landscape.',
+  },
+  {
+    image: './Images/Home/outside2.jpeg',
+    position: 'center 52%',
+    eyebrow: 'Your own view of Ella',
+    label: 'Private balcony in Ella',
+    text: 'Step outside, breathe in the mountain air and let the valley become part of your stay.',
   },
   {
     image: './Images/Home/hero3.jpeg',
-    eyebrow: 'Wake up differently',
-    title: 'Nature at its best',
-    text: 'Stay close to Ella’s iconic landscapes while enjoying thoughtful modern hospitality.',
+    position: 'center 52%',
+    eyebrow: 'Warm, understated comfort',
+    label: 'Mistara Ella lounge',
+    text: 'Natural textures, quiet corners and thoughtful spaces made for unhurried evenings.',
   },
 ]
 
