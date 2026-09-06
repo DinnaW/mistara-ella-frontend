@@ -79,30 +79,36 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
+/*
+ * public/ assets need the Vite base URL so they work both locally and when
+ * GitHub Pages serves the site from /mistara-ella-frontend/.
+ */
+const baseUrl = import.meta.env.BASE_URL
+
 const showcaseRooms = [
   {
     name: 'Premium Mountain Room',
-    image: '/Images/Home/bed2.jpeg',
+    image: `${baseUrl}Images/Home/bed2.jpeg`,
     alt: 'Premium Mistara Ella room with a timber bed, soft curtains and warm lighting',
   },
   {
     name: 'Family Mountain Room',
-    image: '/Images/Home/bed3.jpeg',
+    image: `${baseUrl}Images/Home/bed3.jpeg`,
     alt: 'Spacious twin room at Mistara Ella with warm timber details',
   },
   {
     name: 'Deluxe Mountain Room',
-    image: '/Images/Home/bed1.jpeg',
+    image: `${baseUrl}Images/Home/bed1.jpeg`,
     alt: 'Deluxe room at Mistara Ella with a king bed and handcrafted green artwork',
   },
   {
     name: 'Balcony Night Room',
-    image: '/Images/Facility/room2.jpeg',
+    image: `${baseUrl}Images/Facility/room2.jpeg`,
     alt: 'Mistara Ella room opening toward a private balcony and the evening hills',
   },
   {
     name: 'Quiet Garden Room',
-    image: '/Images/Facility/room1.jpeg',
+    image: `${baseUrl}Images/Facility/room1.jpeg`,
     alt: 'Quiet Mistara Ella room with a timber bed and floor-to-ceiling curtains',
   },
 ]

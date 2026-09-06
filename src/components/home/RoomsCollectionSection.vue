@@ -3,7 +3,7 @@
     <div class="rooms-collection__intro">
       <figure class="rooms-collection__feature-media">
         <img
-          src="/Images/Facility/room2.jpeg"
+          :src="`${baseUrl}Images/Facility/room2.jpeg`"
           alt="Mistara Ella room opening toward a private balcony and the surrounding hills"
           loading="lazy"
         />
@@ -61,20 +61,26 @@
 </template>
 
 <script setup>
+/*
+ * Use Vite's base URL for files inside public/. This keeps the paths correct
+ * when the app is deployed under /mistara-ella-frontend/ on GitHub Pages.
+ */
+const baseUrl = import.meta.env.BASE_URL
+
 const roomGallery = [
   {
     name: 'Deluxe Mountain Room',
-    image: '/Images/Home/bed1.jpeg',
+    image: `${baseUrl}Images/Home/bed1.jpeg`,
     alt: 'Deluxe Mistara Ella room with a timber bed and handcrafted green artwork',
   },
   {
     name: 'Private Bath',
-    image: '/Images/Facility/washroom.png',
+    image: `${baseUrl}Images/Facility/washroom.png`,
     alt: 'Private bathroom at Mistara Ella with warm timber details and a soaking tub',
   },
   {
     name: 'Family Mountain Room',
-    image: '/Images/Home/bed3.jpeg',
+    image: `${baseUrl}Images/Home/bed3.jpeg`,
     alt: 'Family room at Mistara Ella with twin beds and warm wooden details',
   },
 ]
