@@ -8,7 +8,7 @@
       <InnerPageHero
         title="Facilities"
         text="Everything you need for a comfortable and memorable stay at Mistara Ella."
-        :image="ellaMountainImage"
+        image="/Images/Image_Gallery/happy-family.jpg"
       />
 
       <!-- =====================================================
@@ -19,9 +19,9 @@
         <div class="container">
           <div class="section-heading reveal">
             <div>
-              <span class="eyebrow"> EXPLORE OUR FACILITIES </span>
-
               <h2>
+                Explore our facilities
+                <br />
                 Everything
                 <br />
                 <em>within reach.</em>
@@ -35,23 +35,31 @@
               </p>
 
               <div class="arrows">
-                <button>←</button>
-                <button>→</button>
+                <button
+                  type="button"
+                  aria-label="Previous facilities"
+                  @click="scrollFacilities(-1)"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next facilities"
+                  @click="scrollFacilities(1)"
+                >
+                  →
+                </button>
               </div>
             </div>
           </div>
 
-          <div class="facility-grid">
+          <div ref="facilityTrack" class="facility-grid">
             <article
               v-for="(facility, index) in facilities"
               :key="facility.title"
               class="facility-card reveal"
             >
               <div class="facility-top">
-                <div class="facility-icon">
-                  {{ facility.icon }}
-                </div>
-
                 <span>
                   {{ String(index + 1).padStart(2, "0") }}
                 </span>
@@ -146,10 +154,7 @@
               Mistara.
             </p>
 
-            <a href="#amenities">
-              DISCOVER DINING
-              <span>→</span>
-            </a>
+            <a href="#amenities"> DISCOVER DINING </a>
           </div>
 
           <!-- RESTAURANT -->
@@ -185,10 +190,7 @@
               Thoughtful amenities for a relaxing and comfortable experience.
             </p>
 
-            <a href="/rooms">
-              EXPLORE ROOMS
-              <span>→</span>
-            </a>
+            <a href="/rooms"> EXPLORE ROOMS </a>
           </div>
         </div>
       </section>
@@ -203,9 +205,9 @@
           <!-- CENTERED INTRO -->
 
           <div class="amenities-intro reveal">
-            <span class="eyebrow"> PREMIUM AMENITIES </span>
-
             <h2>
+              Premium amenities
+              <br />
               Spaces designed
               <br />
               <em>for a better stay.</em>
@@ -248,77 +250,6 @@
       </section>
 
       <!-- =====================================================
-           ELLA EXPERIENCE
-      ====================================================== -->
-
-      <section class="ella-section">
-        <div class="container">
-          <div class="ella-header reveal">
-            <div>
-              <span class="eyebrow"> BEYOND THE STAY </span>
-
-              <h2>
-                Explore
-                <br />
-                <em>Ella.</em>
-              </h2>
-            </div>
-
-            <div class="ella-copy">
-              <p>
-                Experience the nature, culture and adventure that make Ella so
-                special. From waterfalls and tea plantations to scenic
-                viewpoints, there is always something to discover.
-              </p>
-
-              <a href="#">
-                DISCOVER ELLA
-                <span>→</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="ella-gallery">
-            <div class="ella-image ella-one reveal">
-              <img
-                src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1000&q=85"
-                alt="Ella mountains"
-              />
-
-              <span> Ravana Falls </span>
-            </div>
-
-            <div class="ella-image ella-two reveal">
-              <img
-                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=85"
-                alt="Tea plantation"
-              />
-
-              <span> Tea Plantations </span>
-            </div>
-
-            <div class="ella-image ella-three reveal">
-              <img
-                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"
-                alt="Mountain landscape"
-              />
-
-              <span> Mountain Views </span>
-            </div>
-
-            <div class="ella-image ella-four reveal">
-              <img
-                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=85"
-                alt="Mountain landscape"
-              />
-
-              <span> Little Adam's Peak </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
            THINGS TO DO
       ====================================================== -->
 
@@ -326,9 +257,9 @@
         <div class="container">
           <div class="section-heading reveal">
             <div>
-              <span class="eyebrow"> THINGS TO DO </span>
-
               <h2>
+                Things to do
+                <br />
                 Let's go on
                 <br />
                 <em>a journey.</em>
@@ -380,9 +311,9 @@
         <div class="container">
           <div class="stories-top reveal">
             <div class="stories-title">
-              <span class="stories-label"> TRAVEL STORIES </span>
-
               <h2>
+                Travel stories
+                <br />
                 Stories
                 <br />
                 <em>from Ella.</em>
@@ -485,9 +416,9 @@
         <div class="booking-overlay"></div>
 
         <div class="booking-content container reveal">
-          <span class="eyebrow"> YOUR NEXT GETAWAY </span>
-
           <h2>
+            Your next getaway
+            <br />
             Your stay
             <br />
             starts <em>here.</em>
@@ -659,6 +590,15 @@ const facilities = [
     ],
   },
 ];
+
+const facilityTrack = ref(null);
+
+const scrollFacilities = (direction) => {
+  facilityTrack.value?.scrollBy({
+    left: direction * facilityTrack.value.clientWidth,
+    behavior: "smooth",
+  });
+};
 
 /* =====================================================
    PREMIUM AMENITIES
@@ -1224,11 +1164,13 @@ h3 em {
 }
 
 .arrows button {
-  width: 32px;
+  width: 44px;
 
-  height: 32px;
+  height: 44px;
 
   border: 1px solid #d9d3ca;
+
+  border-radius: 50%;
 
   background: white;
 
@@ -1263,6 +1205,84 @@ h3 em {
   transform: translateY(-5px);
 
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+}
+
+.facility-card:nth-child(2),
+.facility-card:nth-child(4),
+.facility-card:nth-child(5),
+.facility-card:nth-child(7) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.facility-card:nth-child(2) {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(8, 28, 22, 0.16) 0%,
+      rgba(8, 28, 22, 0.82) 100%
+    ),
+    url("/Images/Facility/food1.jpeg");
+}
+
+.facility-card:nth-child(4) {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(8, 28, 22, 0.16) 0%,
+      rgba(8, 28, 22, 0.82) 100%
+    ),
+    url("/Images/Facility/land.png");
+}
+
+.facility-card:nth-child(5) {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(8, 28, 22, 0.16) 0%,
+      rgba(8, 28, 22, 0.82) 100%
+    ),
+    url("/Images/Facility/room1.jpeg");
+}
+
+.facility-card:nth-child(7) {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(8, 28, 22, 0.16) 0%,
+      rgba(8, 28, 22, 0.82) 100%
+    ),
+    url("/Images/Facility/wellness1.jpg");
+}
+
+.facility-card:nth-child(2),
+.facility-card:nth-child(4),
+.facility-card:nth-child(5),
+.facility-card:nth-child(7) {
+  color: #ffffff;
+}
+
+.facility-card:nth-child(2) .facility-top > span,
+.facility-card:nth-child(4) .facility-top > span,
+.facility-card:nth-child(5) .facility-top > span,
+.facility-card:nth-child(7) .facility-top > span,
+.facility-card:nth-child(2) h3,
+.facility-card:nth-child(4) h3,
+.facility-card:nth-child(5) h3,
+.facility-card:nth-child(7) h3,
+.facility-card:nth-child(2) li,
+.facility-card:nth-child(4) li,
+.facility-card:nth-child(5) li,
+.facility-card:nth-child(7) li {
+  color: #ffffff;
+}
+
+.facility-card:nth-child(2) .facility-top > span,
+.facility-card:nth-child(4) .facility-top > span,
+.facility-card:nth-child(5) .facility-top > span,
+.facility-card:nth-child(7) .facility-top > span {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .facility-top {
@@ -1414,9 +1434,9 @@ h3 em {
 }
 
 .mosaic-arrows button {
-  width: 32px;
+  width: 44px;
 
-  height: 32px;
+  height: 44px;
 
   border: 1px solid rgba(255, 255, 255, 0.6);
 
@@ -1438,9 +1458,9 @@ h3 em {
 }
 
 .mosaic-panel.brown {
-  background: var(--brown-dark);
+  background: #f4e8c9;
 
-  color: white;
+  color: var(--black);
 }
 
 .mosaic-panel.light {
@@ -1477,6 +1497,18 @@ h3 em {
   line-height: 1.7;
 
   opacity: 0.7;
+}
+
+.mosaic-panel.brown p {
+  color: var(--gray);
+}
+
+.mosaic-panel.brown .panel-number {
+  color: var(--brown);
+}
+
+.mosaic-panel.brown a {
+  color: var(--black);
 }
 
 .mosaic-panel a {
@@ -1632,7 +1664,6 @@ h3 em {
 
 .mosaic-slide-counter {
   position: absolute;
-
   top: 25px;
 
   right: 28px;
@@ -1675,7 +1706,9 @@ h3 em {
 .amenities-section {
   padding: 125px 0 135px;
 
-  background: #ffffff;
+  background: #f4e8c9;
+
+  color: var(--black);
 }
 
 /* -----------------------------------------------------
@@ -1933,9 +1966,9 @@ h3 em {
 .ella-section {
   padding: 120px 0;
 
-  background: var(--green);
+  background: #f4e8c9;
 
-  color: white;
+  color: var(--black);
 }
 
 .ella-header {
@@ -1951,7 +1984,7 @@ h3 em {
 }
 
 .ella-header .eyebrow {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--brown);
 }
 
 .ella-header h2 {
@@ -1963,7 +1996,7 @@ h3 em {
 }
 
 .ella-header h2 em {
-  color: #d6cbbd;
+  color: var(--brown);
 }
 
 .ella-copy {
@@ -1977,7 +2010,7 @@ h3 em {
 
   line-height: 1.9;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--gray);
 }
 
 .ella-copy a {
@@ -1991,7 +2024,7 @@ h3 em {
 
   padding-bottom: 7px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(23, 33, 27, 0.35);
 
   font-size: 7px;
 
@@ -2513,11 +2546,13 @@ h3 em {
 }
 
 .stories-arrows button {
-  width: 34px;
+  width: 44px;
 
-  height: 34px;
+  height: 44px;
 
   border: 1px solid #d4cec5;
+
+  border-radius: 50%;
 
   background: transparent;
 
@@ -2541,6 +2576,28 @@ h3 em {
   background: var(--brown-dark);
 
   color: white;
+}
+
+.mosaic-panel a > span,
+.view-link > span,
+.story-meta a > span {
+  display: inline-flex;
+
+  width: 36px;
+
+  height: 36px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+}
+
+.story-meta a > span {
+  border-color: rgba(255, 255, 255, 0.72);
 }
 
 /* =====================================================
@@ -3110,5 +3167,342 @@ h3 em {
 
     gap: 25px;
   }
+}
+
+/* =====================================================
+   FACILITIES TYPOGRAPHY
+   Matches the main site's reference sizing and colors
+===================================================== */
+
+.facilities-page h1,
+.facilities-page h2,
+.facilities-page h3,
+.facilities-page h4,
+.facilities-page h5,
+.facilities-page h6 {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 51px !important;
+  line-height: 56px !important;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #25281f;
+}
+
+.facilities-page p {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px !important;
+  line-height: 27px !important;
+  font-weight: 300;
+  color: #31423a;
+}
+
+.facilities-page .facility-card h3 {
+  font-size: 28px !important;
+  line-height: 1.1 !important;
+}
+
+.facilities-page .thing-content h3 {
+  font-size: 24px !important;
+  line-height: 1.1 !important;
+}
+
+.facilities-page h1 em,
+.facilities-page h2 em,
+.facilities-page h3 em {
+  font-family: "Marcellus", Georgia, serif;
+  font-style: italic;
+}
+
+.facilities-page .mosaic-large-content h2,
+.facilities-page .mosaic-large-content h2 em,
+.facilities-page .story-slide-content h3,
+.facilities-page .amenity-title h3,
+.facilities-page .booking-content h2,
+.facilities-page .booking-content h2 em {
+  color: #ffffff;
+}
+
+.facilities-page .mosaic-panel.brown p,
+.facilities-page .mosaic-panel.light p,
+.facilities-page .story-slide-content p,
+.facilities-page .booking-bottom p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.facilities-page .mosaic-panel.brown,
+.facilities-page .mosaic-panel.light {
+  background: #f4e8c9;
+  color: #000000;
+}
+
+.facilities-page .mosaic-panel.brown h3,
+.facilities-page .mosaic-panel.brown h3 em,
+.facilities-page .mosaic-panel.brown p,
+.facilities-page .mosaic-panel.brown .panel-number,
+.facilities-page .mosaic-panel.brown a,
+.facilities-page .mosaic-panel.light h3,
+.facilities-page .mosaic-panel.light h3 em,
+.facilities-page .mosaic-panel.light p,
+.facilities-page .mosaic-panel.light .panel-number,
+.facilities-page .mosaic-panel.light a {
+  color: #000000;
+}
+/* =====================================================
+   FACILITIES EDITORIAL GRID
+   Alternating image and soft-color panels inspired by the reference
+===================================================== */
+
+.facilities-page .facility-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.facilities-page .facility-card {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  background: #f4e8c9;
+  color: #25281f;
+}
+
+.facilities-page .facility-card:nth-child(4n + 2),
+.facilities-page .facility-card:nth-child(4n + 4) {
+  background: #efe8da;
+}
+
+.facilities-page .facility-card:nth-child(odd) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  isolation: isolate;
+}
+
+.facilities-page .facility-card:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 28, 22, 0.04) 20%,
+    rgba(8, 28, 22, 0.82) 100%
+  );
+}
+
+.facilities-page .facility-card:nth-child(1) {
+  background-image: url("/Images/Facility/roomview.png");
+}
+.facilities-page .facility-card:nth-child(3) {
+  background-image: url("/Images/Facility/land.png");
+}
+.facilities-page .facility-card:nth-child(6) {
+  background-image: url("/Images/Facility/washroom.png");
+}
+.facilities-page .facility-card:nth-child(8) {
+  background-image: url("/Images/Facility/family.png");
+}
+
+.facilities-page .facility-card:nth-child(5) {
+  background: #efe8da;
+}
+
+.facilities-page .facility-card:nth-child(4) {
+  background: #f4e8c9;
+}
+
+.facilities-page .facility-card:nth-child(4)::before,
+.facilities-page .facility-card:nth-child(5)::before,
+.facilities-page .facility-card:nth-child(7)::before {
+  display: none;
+}
+
+.facilities-page .facility-card:nth-child(4),
+.facilities-page .facility-card:nth-child(5),
+.facilities-page .facility-card:nth-child(7) {
+  color: #25281f;
+}
+
+.facilities-page .facility-card:nth-child(6),
+.facilities-page .facility-card:nth-child(8) {
+  color: #ffffff;
+  isolation: isolate;
+}
+
+.facilities-page .facility-card:nth-child(6)::before,
+.facilities-page .facility-card:nth-child(8)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 28, 22, 0.04) 20%,
+    rgba(8, 28, 22, 0.82) 100%
+  );
+}
+
+.facilities-page .facility-card .facility-top,
+.facilities-page .facility-card > h3,
+.facilities-page .facility-card > ul {
+  position: relative;
+  z-index: 1;
+}
+
+.facilities-page .facility-card .facility-top {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  left: 26px;
+  justify-content: flex-end;
+}
+
+.facilities-page .facility-card .facility-top > span {
+  color: #5a655f;
+  font-size: 10px !important;
+  letter-spacing: 0.12em;
+}
+
+.facilities-page .facility-card:nth-child(odd) .facility-top > span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.facilities-page .facility-card:nth-child(6) .facility-top > span,
+.facilities-page .facility-card:nth-child(8) .facility-top > span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.facilities-page .facility-card:nth-child(4) .facility-top > span,
+.facilities-page .facility-card:nth-child(5) .facility-top > span {
+  color: #5a655f;
+}
+
+.facilities-page .facility-card > h3 {
+  max-width: 13ch;
+  margin: 0 0 16px;
+  color: #25281f !important;
+  font-size: 30px !important;
+  line-height: 1.08 !important;
+}
+
+.facilities-page .facility-card:nth-child(odd) > h3 {
+  color: #ffffff !important;
+}
+
+.facilities-page .facility-card:nth-child(6) > h3,
+.facilities-page .facility-card:nth-child(8) > h3 {
+  color: #ffffff !important;
+}
+
+.facilities-page .facility-card:nth-child(4) > h3,
+.facilities-page .facility-card:nth-child(5) > h3,
+.facilities-page .facility-card:nth-child(7) > h3 {
+  color: #25281f !important;
+}
+
+.facilities-page .facility-card > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.facilities-page .facility-card > ul li,
+.facilities-page .facility-card > ul li span {
+  margin-bottom: 7px;
+  color: #31423a !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+.facilities-page .facility-card:nth-child(odd) > ul li,
+.facilities-page .facility-card:nth-child(odd) > ul li span {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.facilities-page .facility-card:nth-child(6) > ul li,
+.facilities-page .facility-card:nth-child(6) > ul li span,
+.facilities-page .facility-card:nth-child(8) > ul li,
+.facilities-page .facility-card:nth-child(8) > ul li span {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.facilities-page .facility-card:nth-child(4) > ul li,
+.facilities-page .facility-card:nth-child(4) > ul li span,
+.facilities-page .facility-card:nth-child(5) > ul li,
+.facilities-page .facility-card:nth-child(5) > ul li span,
+.facilities-page .facility-card:nth-child(7) > ul li,
+.facilities-page .facility-card:nth-child(7) > ul li span {
+  color: #31423a !important;
+}
+
+@media (max-width: 1050px) {
+  .facilities-page .facility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .facilities-page .facility-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .facilities-page .facility-card {
+    min-height: 360px;
+    border-radius: 16px;
+  }
+}
+
+.facilities-page .facilities-section .facility-card {
+  border-radius: 0 !important;
+}
+
+.facilities-page .facilities-section .facility-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 0 14px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.facilities-page .facilities-section .facility-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.facilities-page .facilities-section .facility-card {
+  flex: 0 0 calc((100% - 36px) / 4);
+  min-height: 430px;
+}
+
+@media (max-width: 1050px) {
+  .facilities-page .facilities-section .facility-card {
+    flex-basis: calc((100% - 12px) / 2);
+  }
+}
+
+@media (max-width: 650px) {
+  .facilities-page .facilities-section .facility-card {
+    flex-basis: 82vw;
+    min-height: 400px;
+  }
+}
+
+.facilities-section,
+.experience-mosaic,
+.amenities-section,
+.things-section,
+.stories-section,
+.booking-section {
+  padding: 5% 2% 5% 2%;
 }
 </style>
