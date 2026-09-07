@@ -8,6 +8,7 @@
     <RoomsEditorialSection />
     <RoomsShowcaseSection />
     <RoomsCollectionSection />
+    <FacilitiesShowcaseSection />
   </MainLayout>
 </template>
 
@@ -17,5 +18,5 @@ import HeroSection from '../components/home/HeroSection.vue'
 import IntroRevealSection from '../components/home/IntroRevealSection.vue'
 import RoomsEditorialSection from '../components/home/RoomsEditorialSection.vue'
 import RoomsShowcaseSection from '../components/home/RoomsShowcaseSection.vue'
-import RoomsCollectionSection from '../components/home/RoomsCollectionSection.vue'
+import FacilitiesShowcaseSection from '../components/home/FacilitiesShowcaseSection.vue'
 </script>

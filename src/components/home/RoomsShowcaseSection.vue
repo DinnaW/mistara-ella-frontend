@@ -32,7 +32,11 @@
         aria-label="Previous room"
         @click="previousSlide"
       >
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
           <path d="M15 6L9 12L15 18" />
         </svg>
       </button>
@@ -44,10 +48,10 @@
           type="button"
           class="rooms-showcase__card"
           :class="positionClass(index)"
-          :aria-label="`${room.name}${index === activeIndex ? ', currently selected' : ''}`"
+          :aria-label="`${room.name}${index === activeIndex ? ', open rooms page' : ', select room'}`"
           :aria-current="index === activeIndex ? 'true' : undefined"
           :tabindex="isInteractive(index) ? 0 : -1"
-          @click="selectRoom(index)"
+          @click="handleRoomClick(index)"
         >
           <img
             :src="room.image"
@@ -55,6 +59,32 @@
             :loading="index === activeIndex ? 'eager' : 'lazy'"
             draggable="false"
           />
+
+          <span
+            class="rooms-showcase__card-shade"
+            aria-hidden="true"
+          ></span>
+
+          <span class="rooms-showcase__card-content">
+            <span class="rooms-showcase__room-name">
+              {{ room.name }}
+            </span>
+
+            <span
+              v-if="index === activeIndex"
+              class="rooms-showcase__room-link"
+            >
+              View room
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M5 15L15 5" />
+                <path d="M8 5H15V12" />
+              </svg>
+            </span>
+          </span>
         </button>
       </div>
 
@@ -64,26 +94,40 @@
         aria-label="Next room"
         @click="nextSlide"
       >
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
           <path d="M9 6L15 12L9 18" />
         </svg>
       </button>
     </div>
 
-    <p class="rooms-showcase__sr-status" aria-live="polite">
+    <p
+      class="rooms-showcase__sr-status"
+      aria-live="polite"
+    >
       {{ showcaseRooms[activeIndex].name }}
     </p>
   </section>
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import {
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from 'vue'
 
-/*
- * public/ assets need the Vite base URL so they work both locally and when
- * GitHub Pages serves the site from /mistara-ella-frontend/.
+import { useRouter } from 'vue-router'
+
+/**
+ * public/ assets use Vite's base URL so they work locally and
+ * when GitHub Pages serves the site from /mistara-ella-frontend/.
  */
 const baseUrl = import.meta.env.BASE_URL
+const router = useRouter()
 
 const showcaseRooms = [
   {
@@ -124,6 +168,7 @@ const wrapIndex = (index) =>
 
 const relativeOffset = (index) => {
   const total = showcaseRooms.length
+
   let offset = index - activeIndex.value
 
   if (offset > total / 2) offset -= total
@@ -143,22 +188,42 @@ const positionClass = (index) => {
   return 'is-hidden-right'
 }
 
-const isInteractive = (index) => Math.abs(relativeOffset(index)) <= 1
+const isInteractive = (index) =>
+  Math.abs(relativeOffset(index)) <= 1
 
 const selectRoom = (index) => {
   if (index === activeIndex.value) return
 
   activeIndex.value = wrapIndex(index)
+
   restartAutoplay()
 }
 
+/**
+ * Side cards still behave like carousel selectors.
+ * Clicking the already-active room opens the Rooms page.
+ */
+const handleRoomClick = (index) => {
+  if (index === activeIndex.value) {
+    pauseAutoplay()
+    router.push('/rooms')
+    return
+  }
+
+  selectRoom(index)
+}
+
 const nextSlide = () => {
-  activeIndex.value = wrapIndex(activeIndex.value + 1)
+  activeIndex.value =
+    wrapIndex(activeIndex.value + 1)
+
   restartAutoplay()
 }
 
 const previousSlide = () => {
-  activeIndex.value = wrapIndex(activeIndex.value - 1)
+  activeIndex.value =
+    wrapIndex(activeIndex.value - 1)
+
   restartAutoplay()
 }
 
@@ -168,7 +233,8 @@ const startAutoplay = () => {
   if (reducedMotionQuery?.matches) return
 
   autoplayId = window.setInterval(() => {
-    activeIndex.value = wrapIndex(activeIndex.value + 1)
+    activeIndex.value =
+      wrapIndex(activeIndex.value + 1)
   }, 4200)
 }
 
@@ -192,13 +258,18 @@ const onPointerDown = (event) => {
 const onPointerUp = (event) => {
   if (pointerStartX === null) return
 
-  const distance = event.clientX - pointerStartX
+  const distance =
+    event.clientX - pointerStartX
+
   pointerStartX = null
 
   if (Math.abs(distance) < 45) return
 
-  if (distance < 0) nextSlide()
-  else previousSlide()
+  if (distance < 0) {
+    nextSlide()
+  } else {
+    previousSlide()
+  }
 }
 
 const resetPointer = () => {
@@ -206,13 +277,25 @@ const resetPointer = () => {
 }
 
 onMounted(() => {
-  reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotionQuery =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    )
+
   startAutoplay()
-  reducedMotionQuery.addEventListener?.('change', startAutoplay)
+
+  reducedMotionQuery.addEventListener?.(
+    'change',
+    startAutoplay,
+  )
 })
 
 onBeforeUnmount(() => {
   window.clearInterval(autoplayId)
-  reducedMotionQuery?.removeEventListener?.('change', startAutoplay)
+
+  reducedMotionQuery?.removeEventListener?.(
+    'change',
+    startAutoplay,
+  )
 })
 </script>
