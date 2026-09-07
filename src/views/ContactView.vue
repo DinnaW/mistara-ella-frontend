@@ -404,14 +404,15 @@ const form = reactive({
 .contact-quote blockquote {
   max-width: 720px;
   margin: 22px auto 18px;
-  color: var(--contact-ink);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(30px, 4vw, 49px);
-  font-weight: 600;
-  line-height: 1.02;
+  color: #25281f;
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(35px, 4vw, 51px);
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .contact-quote blockquote em {
+  color: #25281f;
   font-style: italic;
 }
 
