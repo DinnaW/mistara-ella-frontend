@@ -8,7 +8,7 @@
       <InnerPageHero
         title="Facilities"
         text="Everything you need for a comfortable and memorable stay at Mistara Ella."
-        image="./Images/Image_Gallery/happy-family.jpg"
+        image="/Images/Image_Gallery/happy-family.jpg"
       />
 
       <!-- =====================================================
@@ -1179,6 +1179,14 @@ h3 em {
   color: #625c55;
 }
 
+.arrows button:hover {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+}
+
 .facility-grid {
   display: grid;
 
@@ -1655,9 +1663,9 @@ h3 em {
 }
 
 .mosaic-arrows button:hover {
-  border-color: white;
+  border-color: #123c32;
 
-  background: rgba(255, 255, 255, 0.18);
+  background: #123c32;
 
   transform: translateY(-2px);
 }
@@ -2571,9 +2579,9 @@ h3 em {
 }
 
 .stories-arrows button:hover {
-  border-color: var(--brown-dark);
+  border-color: #123c32;
 
-  background: var(--brown-dark);
+  background: #123c32;
 
   color: white;
 }
