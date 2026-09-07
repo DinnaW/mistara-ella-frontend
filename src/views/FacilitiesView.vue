@@ -1277,7 +1277,7 @@ h3 em {
 }
 
 .mosaic-large-content h2 em {
-  color: white;
+  color: inherit;
 }
 
 .mosaic-arrows {
@@ -1855,7 +1855,7 @@ h3 em {
 }
 
 .ella-header h2 em {
-  color: var(--brown);
+  color: inherit;
 }
 
 .ella-copy {
@@ -2524,7 +2524,7 @@ h3 em {
 }
 
 .booking-content h2 em {
-  color: #dfd3c5;
+  color: inherit;
 }
 
 .booking-divider {
