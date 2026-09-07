@@ -720,8 +720,6 @@ h3 {
 h2 em,
 h3 em {
   font-style: italic;
-
-  color: var(--brown);
 }
 
 /* =====================================================
@@ -983,9 +981,15 @@ h3 em {
 .section-heading h2 {
   margin: 0;
 
-  font-size: clamp(53px, 6vw, 84px);
+  color: #25281f;
 
-  line-height: 0.92;
+  font-family: "Marcellus", Georgia, serif;
+
+  font-size: clamp(42px, 5vw, 51px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
 }
 
 .heading-right {
@@ -1599,7 +1603,7 @@ h3 em {
 }
 
 .amenities-intro h2 em {
-  color: var(--brown);
+  color: inherit;
 
   font-style: italic;
 }
@@ -2068,17 +2072,17 @@ h3 em {
 
   font-family: "Marcellus", Georgia, serif;
 
-  font-size: clamp(58px, 6.5vw, 90px);
+  font-size: clamp(42px, 5vw, 51px);
 
   font-weight: 400;
 
-  line-height: 0.88;
+  line-height: 1.1;
 
-  color: var(--black);
+  color: #25281f;
 }
 
 .stories-title h2 em {
-  color: var(--brown);
+  color: inherit;
 
   font-style: italic;
 }
@@ -2771,7 +2775,7 @@ h3 em {
   }
 
   .section-heading h2 {
-    font-size: 52px;
+    font-size: clamp(38px, 13vw, 51px);
   }
 
   .heading-right {
@@ -2931,7 +2935,7 @@ h3 em {
   }
 
   .stories-title h2 {
-    font-size: clamp(48px, 14vw, 68px);
+    font-size: clamp(38px, 13vw, 51px);
   }
 
   .stories-slider {
