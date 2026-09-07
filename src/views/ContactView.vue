@@ -5,7 +5,7 @@
         eyebrow="Talk to us"
         title="Contact"
         text="We would love to help you plan a memorable stay in Ella."
-        image="/Images/Banner/contact.png"
+        image="/Images/Image_Gallery/girl-waterfall.jpg"
       />
 
       <section class="contact-details-section">
@@ -88,8 +88,11 @@
       <section class="contact-quote">
         <div class="quote-mark">&ldquo;</div>
         <blockquote>
-          Come for the mountains,<br />
-          stay for the <em>feeling.</em>
+          In Ella, slow down and savour the moments that matter <br />— misty
+          mornings,
+          <br />
+          mountain views, and the quiet comfort of a
+          <em>stay made to be remembered.</em>
         </blockquote>
         <p class="quote-author">Mistara Ella</p>
       </section>
@@ -101,29 +104,24 @@
               src="/Images/Gallery/sidepool.png"
               alt="Poolside at Mistara Ella"
             />
-            <figcaption>Poolside</figcaption>
           </figure>
           <figure class="gallery-frame gallery-frame--low">
             <img
               src="/Images/Gallery/bench.png"
               alt="Breakfast beside the pool"
             />
-            <figcaption>Morning table</figcaption>
           </figure>
           <figure class="gallery-frame">
             <img
               src="/Images/Gallery/hotelpool.png"
               alt="Mistara Ella pool at night"
             />
-            <figcaption>After dusk</figcaption>
           </figure>
           <figure class="gallery-frame gallery-frame--low">
             <img src="/Images/Gallery/food.png" alt="Freshly prepared dining" />
-            <figcaption>Local flavours</figcaption>
           </figure>
           <figure class="gallery-frame gallery-frame--short">
             <img src="/Images/Gallery/table.png" alt="Dinner by the sea" />
-            <figcaption>Evening table</figcaption>
           </figure>
         </div>
       </section>
@@ -385,7 +383,7 @@ const form = reactive({
 
 .quote-mark {
   height: 38px;
-  color: var(--contact-gold);
+  color: var(--contact-ink);
   font-family: Georgia, serif;
   font-size: 58px;
   line-height: 0.8;
@@ -394,7 +392,7 @@ const form = reactive({
 .contact-quote blockquote {
   max-width: 720px;
   margin: 22px auto 18px;
-  color: var(--contact-gold);
+  color: var(--contact-ink);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(30px, 4vw, 49px);
   font-weight: 600;
@@ -407,7 +405,7 @@ const form = reactive({
 
 .quote-author {
   margin: 0;
-  color: var(--contact-soft);
+  color: var(--contact-ink);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -428,7 +426,7 @@ const form = reactive({
 }
 
 .gallery-frame {
-  flex: 0 1 230px;
+  flex: 0 1 280px;
   min-width: 0;
   margin: 0;
 }
@@ -446,14 +444,6 @@ const form = reactive({
   width: 100%;
   aspect-ratio: 0.63;
   object-fit: cover;
-}
-
-.gallery-frame figcaption {
-  margin-top: 9px;
-  color: var(--contact-soft);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .contact-newsletter {
@@ -574,7 +564,7 @@ const form = reactive({
   }
 
   .gallery-frame {
-    flex-basis: 145px;
+    flex-basis: 170px;
   }
 
   .gallery-frame--short {
