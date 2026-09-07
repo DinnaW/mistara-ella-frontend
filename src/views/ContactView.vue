@@ -94,6 +94,40 @@
         <p class="quote-author">Mistara Ella</p>
       </section>
 
+      <section class="contact-gallery" aria-label="Moments at Mistara Ella">
+        <div class="contact-gallery-track">
+          <figure class="gallery-frame gallery-frame--short">
+            <img
+              src="/Images/Gallery/sidepool.png"
+              alt="Poolside at Mistara Ella"
+            />
+            <figcaption>Poolside</figcaption>
+          </figure>
+          <figure class="gallery-frame gallery-frame--low">
+            <img
+              src="/Images/Gallery/bench.png"
+              alt="Breakfast beside the pool"
+            />
+            <figcaption>Morning table</figcaption>
+          </figure>
+          <figure class="gallery-frame">
+            <img
+              src="/Images/Gallery/hotelpool.png"
+              alt="Mistara Ella pool at night"
+            />
+            <figcaption>After dusk</figcaption>
+          </figure>
+          <figure class="gallery-frame gallery-frame--low">
+            <img src="/Images/Gallery/food.png" alt="Freshly prepared dining" />
+            <figcaption>Local flavours</figcaption>
+          </figure>
+          <figure class="gallery-frame gallery-frame--short">
+            <img src="/Images/Gallery/table.png" alt="Dinner by the sea" />
+            <figcaption>Evening table</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="contact-newsletter">
         <p class="contact-eyebrow">Stay connected</p>
         <h2>Get the latest from Ella.</h2>
@@ -379,6 +413,49 @@ const form = reactive({
   text-transform: uppercase;
 }
 
+.contact-gallery {
+  overflow: hidden;
+  padding: 24px 24px 96px;
+}
+
+.contact-gallery-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 30px);
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.gallery-frame {
+  flex: 0 1 230px;
+  min-width: 0;
+  margin: 0;
+}
+
+.gallery-frame--short {
+  margin-top: 28px;
+}
+
+.gallery-frame--low {
+  margin-top: 62px;
+}
+
+.gallery-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.63;
+  object-fit: cover;
+}
+
+.gallery-frame figcaption {
+  margin-top: 9px;
+  color: var(--contact-soft);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .contact-newsletter {
   padding: 72px 24px 86px;
   background: #fbfaf7;
@@ -454,6 +531,10 @@ const form = reactive({
     max-width: 620px;
     margin: 0;
   }
+
+  .contact-gallery-track {
+    gap: 16px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -479,6 +560,29 @@ const form = reactive({
 
   .contact-quote {
     padding: 70px 18px 80px;
+  }
+
+  .contact-gallery {
+    padding: 42px 0 48px 16px;
+  }
+
+  .contact-gallery-track {
+    justify-content: flex-start;
+    width: max-content;
+    gap: 12px;
+    padding-right: 16px;
+  }
+
+  .gallery-frame {
+    flex-basis: 145px;
+  }
+
+  .gallery-frame--short {
+    margin-top: 18px;
+  }
+
+  .gallery-frame--low {
+    margin-top: 38px;
   }
 }
 </style>
