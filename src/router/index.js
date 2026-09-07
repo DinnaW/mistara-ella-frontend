@@ -10,7 +10,7 @@ const router = createRouter({
   // Hash history avoids 404 errors when the static build is hosted on GitHub Pages.
   history: createWebHashHistory(),
   scrollBehavior() {
-    return { top: 0, behavior: 'auto' }
+    return { top: 0, behavior: 'smooth' }
   },
   routes: [
     { path: '/', name: 'home', component: HomeView },
@@ -20,13 +20,6 @@ const router = createRouter({
     { path: '/packages', name: 'packages', component: PackagesView },
     { path: '/contact', name: 'contact', component: ContactView },
   ],
-})
-
-router.afterEach(() => {
-  requestAnimationFrame(() => {
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-  })
 })
 
 export default router
