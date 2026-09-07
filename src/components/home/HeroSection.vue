@@ -1,80 +1,164 @@
 <template>
-  <section class="hero">
-    <div
-      v-for="(slide, index) in heroSlides"
-      :key="slide.title"
-      class="hero-slide"
-      :class="{ active: index === activeSlide }"
-      :style="{ backgroundImage: `url(${slide.image})` }"
-    ></div>
-    <div class="hero-overlay"></div>
-
-    <div class="site-shell hero-content">
-      <div class="hero-copy">
-        <p class="eyebrow eyebrow-light">{{ heroSlides[activeSlide].eyebrow }}</p>
-        <h1>{{ heroSlides[activeSlide].title }}</h1>
-        <p class="hero-text">{{ heroSlides[activeSlide].text }}</p>
-        <div class="hero-actions">
-          <a href="#booking" class="button button-gold">Book your stay</a>
-          <RouterLink to="/gallery" class="text-link text-link-light">Explore the gallery <ArrowUpRight :size="18" /></RouterLink>
-        </div>
-      </div>
-
-      <div class="hero-pagination" aria-label="Hero slides">
-        <button
-          v-for="(_, index) in heroSlides"
-          :key="index"
-          :class="{ active: activeSlide === index }"
-          :aria-label="`Go to slide ${index + 1}`"
-          @click="activeSlide = index"
-        ></button>
-      </div>
+  <section
+    id="hero"
+    class="hero hero-editorial"
+    aria-roledescription="carousel"
+    aria-label="Mistara Ella gallery"
+    @mouseenter="pauseAutoplay"
+    @mouseleave="resumeAutoplay"
+  >
+    <!-- Premium green panel -->
+    <div class="hero-rail" aria-hidden="true">
+      <div class="hero-rail-grain"></div>
     </div>
 
-    <div id="booking" class="site-shell booking-wrap">
-      <form class="booking-bar" @submit.prevent>
-        <div class="booking-field">
-          <span>Check in</span>
-          <input v-model="checkIn" type="date" aria-label="Check in" />
-        </div>
-        <div class="booking-field">
-          <span>Check out</span>
-          <input v-model="checkOut" type="date" aria-label="Check out" />
-        </div>
-        <div class="booking-field">
-          <span>Guests</span>
-          <select aria-label="Guests">
-            <option>2 Adults</option>
-            <option>1 Adult</option>
-            <option>3 Adults</option>
-            <option>4 Adults</option>
-          </select>
-        </div>
-        <button class="booking-search" type="submit">Check availability <ArrowRight :size="18" /></button>
-      </form>
+    <!-- Automatic image carousel -->
+    <div class="hero-media">
+      <div
+        v-for="(slide, index) in heroSlides"
+        :key="slide.image"
+        class="hero-slide"
+        :class="{ active: index === activeSlide }"
+        :style="{
+          backgroundImage: `url(${slide.image})`,
+          backgroundPosition: slide.position || 'center center',
+        }"
+        role="group"
+        :aria-hidden="index !== activeSlide"
+        :aria-label="`${index + 1} of ${heroSlides.length}: ${slide.label}`"
+      ></div>
+
+      <div class="hero-media-shade"></div>
     </div>
+
+    <!-- Clean hero typography -->
+    <div class="hero-identity">
+      <div class="hero-stay" aria-hidden="true">
+        <span>Stay</span>
+      </div>
+
+      <h1 class="hero-name" aria-label="Mistara Ella">
+        <span class="hero-name-line">
+          <span class="hero-name-text hero-name-text--mistara">
+            Mistara
+          </span>
+        </span>
+
+        <span class="hero-name-line">
+          <span class="hero-name-text hero-name-text--ella">
+            Ella
+          </span>
+        </span>
+      </h1>
+    </div>
+
+    <!-- Google Reviews badge -->
+    <a
+      class="hero-reviews"
+      href="https://maps.app.goo.gl/o7RNPo53WvddZDjG6"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Read Mistara Ella reviews on Google"
+    >
+      <span class="hero-reviews__google" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img">
+          <path
+            fill="#4285F4"
+            d="M21.35 11.1H12v3.8h5.35c-.23 1.22-.92 2.25-1.96 2.94v2.45h3.17c1.86-1.71 2.94-4.23 2.94-7.19 0-.69-.06-1.35-.15-2z"
+          />
+          <path
+            fill="#34A853"
+            d="M12 22c2.7 0 4.96-.89 6.61-2.41l-3.17-2.45c-.88.59-2 .94-3.44.94-2.61 0-4.82-1.76-5.61-4.13H3.12v2.54A10 10 0 0 0 12 22z"
+          />
+          <path
+            fill="#FBBC05"
+            d="M6.39 13.95A5.99 5.99 0 0 1 6.08 12c0-.68.12-1.34.31-1.95V7.51H3.12A10 10 0 0 0 2 12c0 1.61.39 3.14 1.12 4.49l3.27-2.54z"
+          />
+          <path
+            fill="#EA4335"
+            d="M12 5.92c1.47 0 2.79.51 3.83 1.5l2.87-2.87C16.96 2.93 14.7 2 12 2a10 10 0 0 0-8.88 5.51l3.27 2.54c.79-2.37 3-4.13 5.61-4.13z"
+          />
+        </svg>
+      </span>
+
+      <span class="hero-reviews__content">
+        <span class="hero-reviews__topline">
+          <span class="hero-reviews__title">Google Reviews</span>
+          <span class="hero-reviews__score">4.9 out of 5</span>
+        </span>
+
+        <span
+          class="hero-reviews__stars"
+          aria-label="4.5 out of 5 stars"
+        >
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+
+          <span
+            class="hero-reviews__star-half"
+            aria-hidden="true"
+          >
+            ★
+          </span>
+        </span>
+      </span>
+
+      <svg
+        class="hero-reviews__arrow"
+        viewBox="0 0 20 20"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M5 15L15 5" />
+        <path d="M8 5H15V12" />
+      </svg>
+    </a>
   </section>
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { ArrowRight, ArrowUpRight } from 'lucide-vue-next'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { heroSlides } from '../../data/site'
 
 const activeSlide = ref(0)
-const toISODate = (date) => date.toISOString().slice(0, 10)
-const today = new Date()
-const tomorrow = new Date(today)
-tomorrow.setDate(tomorrow.getDate() + 1)
-const checkIn = ref(toISODate(today))
-const checkOut = ref(toISODate(tomorrow))
-let intervalId
+
+let intervalId = null
+
+const nextSlide = () => {
+  activeSlide.value =
+    (activeSlide.value + 1) % heroSlides.length
+}
+
+const startAutoplay = () => {
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches
+
+  if (prefersReducedMotion) return
+
+  window.clearInterval(intervalId)
+
+  intervalId = window.setInterval(
+    nextSlide,
+    6200,
+  )
+}
+
+const pauseAutoplay = () => {
+  window.clearInterval(intervalId)
+}
+
+const resumeAutoplay = () => {
+  startAutoplay()
+}
 
 onMounted(() => {
-  intervalId = window.setInterval(() => {
-    activeSlide.value = (activeSlide.value + 1) % heroSlides.length
-  }, 6500)
+  startAutoplay()
 })
 
-onBeforeUnmount(() => window.clearInterval(intervalId))
+onBeforeUnmount(() => {
+  window.clearInterval(intervalId)
+})
 </script>
