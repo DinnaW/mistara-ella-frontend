@@ -360,12 +360,24 @@ const form = reactive({
 }
 
 .contact-submit:hover {
-  color: var(--contact-gold);
-  border-color: var(--contact-gold);
+  color: #123c32;
+  border-color: #123c32;
+}
+
+.contact-submit:hover span {
+  background: #123c32;
+  color: white;
 }
 
 .contact-submit span {
-  font-size: 18px;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 16px;
   letter-spacing: 0;
 }
 
