@@ -8,7 +8,7 @@
       <InnerPageHero
         title="Facilities"
         text="Everything you need for a comfortable and memorable stay at Mistara Ella."
-        :image="ellaMountainImage"
+        image="/Images/Image_Gallery/happy-family.jpg"
       />
 
       <!-- =====================================================
@@ -154,10 +154,7 @@
               Mistara.
             </p>
 
-            <a href="#amenities">
-              DISCOVER DINING
-              <span>→</span>
-            </a>
+            <a href="#amenities"> DISCOVER DINING </a>
           </div>
 
           <!-- RESTAURANT -->
@@ -193,10 +190,7 @@
               Thoughtful amenities for a relaxing and comfortable experience.
             </p>
 
-            <a href="/rooms">
-              EXPLORE ROOMS
-              <span>→</span>
-            </a>
+            <a href="/rooms"> EXPLORE ROOMS </a>
           </div>
         </div>
       </section>
@@ -1170,11 +1164,13 @@ h3 em {
 }
 
 .arrows button {
-  width: 32px;
+  width: 44px;
 
-  height: 32px;
+  height: 44px;
 
   border: 1px solid #d9d3ca;
+
+  border-radius: 50%;
 
   background: white;
 
@@ -1438,9 +1434,9 @@ h3 em {
 }
 
 .mosaic-arrows button {
-  width: 32px;
+  width: 44px;
 
-  height: 32px;
+  height: 44px;
 
   border: 1px solid rgba(255, 255, 255, 0.6);
 
@@ -2550,11 +2546,13 @@ h3 em {
 }
 
 .stories-arrows button {
-  width: 34px;
+  width: 44px;
 
-  height: 34px;
+  height: 44px;
 
   border: 1px solid #d4cec5;
+
+  border-radius: 50%;
 
   background: transparent;
 
@@ -2578,6 +2576,28 @@ h3 em {
   background: var(--brown-dark);
 
   color: white;
+}
+
+.mosaic-panel a > span,
+.view-link > span,
+.story-meta a > span {
+  display: inline-flex;
+
+  width: 36px;
+
+  height: 36px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+}
+
+.story-meta a > span {
+  border-color: rgba(255, 255, 255, 0.72);
 }
 
 /* =====================================================
@@ -3475,5 +3495,14 @@ h3 em {
     flex-basis: 82vw;
     min-height: 400px;
   }
+}
+
+.facilities-section,
+.experience-mosaic,
+.amenities-section,
+.things-section,
+.stories-section,
+.booking-section {
+  padding: 5% 2% 5% 2%;
 }
 </style>
