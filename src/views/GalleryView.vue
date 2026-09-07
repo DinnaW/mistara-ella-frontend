@@ -1,14 +1,21 @@
 <template>
 
  <MainLayout>
+    <!-- HERO -->
+    <section class="gallery-full-hero">
+      <div
+        class="gallery-full-hero__image"
+        :style="{ backgroundImage: `url(${galleryHeroImage})` }"
+      >
+        <div class="gallery-full-hero__overlay"></div>
 
-   <!-- HERO -->
+        <div class="gallery-full-hero__content">
+          <p class="gallery-full-hero__eyebrow">Discover Mistara Ella</p>
+          <h1 class="gallery-full-hero__title">See Our Gallery</h1>
+        </div>
+      </div>
+    </section>
 
-   <InnerPageHero
-     title="Gallery"
-     text="Explore the rooms, mountain views, dining and quiet moments that make every stay at Mistara Ella memorable."
-     image="https://images.unsplash.com/photo-1738762478614-6b6ef2d09355?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0"
-   />
 
    <!-- BOOKING CTA -->
 
@@ -383,7 +390,11 @@ import { computed, ref } from 'vue'
 import { ArrowRight, ArrowUpRight } from 'lucide-vue-next'
 
 import MainLayout from '../components/layout/MainLayout.vue'
-import InnerPageHero from '../components/layout/InnerPageHero.vue'
+
+const galleryHeroImage =
+  'https://images.unsplash.com/photo-1738762478614-6b6ef2d09355?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0'
+
+
 
 const featureImage =
 
@@ -1269,7 +1280,7 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 
   Exact visual treatment copied from the current RoomsView.
 
-\\\\\\\\\\\\\\\\========================================================= */
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\========================================================= */
 
 .gallery-room-eyebrow {
 
@@ -1902,342 +1913,649 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 }
 
 
+
 /* =========================================================
+
    CONSISTENT RESPONSIVE SYSTEM
+
    Keeps the same visual hierarchy across desktop, tablet and mobile.
-========================================================= */
+
+\========================================================= */
+
 .gallery-booking-section,
+
 .gallery-highlight-section,
+
 .mistara-gallery-section,
+
 .mistara-timeless-section {
+
   padding-top: clamp(42px, 5vh, 72px);
+
   padding-bottom: clamp(42px, 5vh, 72px);
+
 }
 
 .gallery-booking-card {
+
   min-height: clamp(20rem, 38svh, 28rem);
+
   padding: 0 3vw;
+
 }
 
 .gallery-booking-title,
+
 .gallery-highlight__title,
+
 .mistara-gallery-heading h2,
+
 .mistara-timeless__title {
+
   font-size: clamp(34px, 3vw, 52px);
+
 }
 
 .gallery-room-eyebrow {
+
   gap: clamp(14px, 1.5vw, 20px);
+
   margin-bottom: clamp(24px, 2.4vw, 38px);
+
   font-size: clamp(11px, .82vw, 13px);
+
 }
 
 .gallery-room-eyebrow-line {
+
   width: clamp(46px, 5vw, 82px);
+
 }
 
 .gallery-room-button {
+
   gap: clamp(16px, 1.6vw, 22px);
+
   margin-top: clamp(28px, 3vw, 46px);
+
   font-size: clamp(17px, 1.4vw, 22px);
+
 }
 
 .gallery-room-button-icon {
+
   width: clamp(46px, 3.5vw, 58px);
+
   height: clamp(46px, 3.5vw, 58px);
+
 }
 
 /* Highlight keeps the desktop composition for laptop/tablet widths. */
+
 .gallery-highlight {
+
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+
   gap: clamp(28px, 5vw, 84px);
+
 }
 
 .gallery-highlight__visual {
+
   min-height: clamp(30rem, 52vw, 46rem);
+
 }
 
 .gallery-highlight__card {
+
   left: clamp(14px, 4%, 32px);
+
   right: clamp(14px, 4%, 32px);
+
   bottom: clamp(14px, 4%, 32px);
+
   padding: clamp(1.25rem, 2vw, 2rem);
+
 }
 
 .gallery-highlight__card-title {
+
   font-size: clamp(28px, 2vw, 42px);
+
 }
 
 .gallery-highlight__link {
+
   margin-top: clamp(2rem, 4vw, 4rem);
+
 }
 
 /* Gallery collage uses one consistent desktop/tablet pattern. */
+
 .mistara-gallery-grid {
+
   grid-template-columns: repeat(5, minmax(0, 1fr));
+
   grid-template-rows: repeat(5, clamp(82px, 8.2vw, 145px));
+
   gap: clamp(7px, .75vw, 14px);
+
 }
 
 .mistara-gallery-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 4; }
+
 .mistara-gallery-item:nth-child(2) { grid-column: 2 / 4; grid-row: 1 / 3; }
+
 .mistara-gallery-item:nth-child(3) { grid-column: 4 / 5; grid-row: 1 / 3; }
+
 .mistara-gallery-item:nth-child(4) { grid-column: 5 / 6; grid-row: 1 / 6; }
+
 .mistara-gallery-item:nth-child(5) { grid-column: 2 / 3; grid-row: 3 / 6; }
+
 .mistara-gallery-item:nth-child(6) { grid-column: 3 / 5; grid-row: 3 / 6; }
+
 .mistara-gallery-item:nth-child(7) { grid-column: 1 / 2; grid-row: 4 / 6; }
 
 .mistara-gallery-heading {
+
   margin-bottom: clamp(28px, 3.5vw, 52px);
+
 }
 
 .mistara-gallery-tabs {
+
   margin-bottom: clamp(28px, 3vw, 46px);
+
 }
 
 .mistara-gallery-tab {
+
   min-width: clamp(106px, 8vw, 140px);
+
   min-height: clamp(44px, 3.5vw, 52px);
+
 }
 
 /* Timeless section stays as three editorial columns on larger screens. */
+
 .mistara-timeless__intro {
+
   margin-bottom: clamp(48px, 5vw, 84px);
+
 }
 
 .mistara-timeless__grid {
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: clamp(16px, 2.4vw, 38px);
+
 }
 
 .mistara-timeless__item--center {
+
   transform: translateY(clamp(-26px, -1.8vw, -16px));
+
 }
 
 /* Tablet */
+
 @media (max-width: 900px) {
+
 .gallery-highlight {
+
     grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+
     gap: 3vw;
+
   }
 
   .gallery-highlight__visual {
+
     min-height: clamp(28rem, 60vw, 38rem);
+
   }
 
   .gallery-highlight__title {
+
     font-size: clamp(32px, 4.4vw, 46px);
+
   }
 
   .mistara-gallery-grid {
+
     grid-template-rows: repeat(5, clamp(72px, 9.5vw, 110px));
+
   }
 
   .mistara-timeless__grid {
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 2vw;
+
   }
+
 }
 
 /* Mobile: same typography, spacing and visual language, adapted to available width. */
+
 @media (max-width: 700px) {
+
 .gallery-page-hero__image {
+
     min-height: 72svh;
+
     border-radius: 14px;
+
   }
+
 .gallery-booking-section,
+
   .gallery-highlight-section,
+
   .mistara-gallery-section,
+
   .mistara-timeless-section {
+
     padding: 42px 5vw;
+
   }
 
   .gallery-booking-card {
+
     min-height: 22rem;
+
     padding: 0;
+
   }
 
   .gallery-booking-title,
+
   .gallery-highlight__title,
+
   .mistara-gallery-heading h2,
+
   .mistara-timeless__title {
+
     font-size: clamp(34px, 9vw, 42px);
+
     line-height: 1.08;
+
   }
 
   .gallery-highlight {
+
     grid-template-columns: 1fr;
+
     gap: 32px;
+
   }
 
   .gallery-highlight__visual {
+
     min-height: clamp(30rem, 120vw, 38rem);
+
   }
 
   .gallery-highlight__card {
+
     left: 14px;
+
     right: 14px;
+
     bottom: 14px;
+
   }
 
   .gallery-highlight__card-title {
+
     font-size: clamp(27px, 7vw, 34px);
+
   }
 
   .mistara-gallery-tabs {
+
     justify-content: flex-start;
+
     flex-wrap: nowrap;
+
     overflow-x: auto;
+
     gap: 8px;
+
     padding-bottom: 4px;
+
     scrollbar-width: none;
+
   }
 
   .mistara-gallery-tabs::-webkit-scrollbar {
+
     display: none;
+
   }
 
   .mistara-gallery-tab {
+
     flex: 0 0 auto;
+
     min-width: 112px;
+
     min-height: 44px;
+
   }
 
   .mistara-gallery-grid {
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     grid-template-rows: repeat(10, clamp(88px, 24vw, 120px));
+
     gap: 7px;
+
   }
 
   .mistara-gallery-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 4; }
+
   .mistara-gallery-item:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 3; }
+
   .mistara-gallery-item:nth-child(3) { grid-column: 2 / 3; grid-row: 3 / 5; }
+
   .mistara-gallery-item:nth-child(4) { grid-column: 1 / 2; grid-row: 4 / 8; }
+
   .mistara-gallery-item:nth-child(5) { grid-column: 2 / 3; grid-row: 5 / 8; }
+
   .mistara-gallery-item:nth-child(6) { grid-column: 1 / 3; grid-row: 8 / 10; }
+
   .mistara-gallery-item:nth-child(7) { grid-column: 1 / 3; grid-row: 10 / 11; }
 
   .mistara-gallery-item__overlay {
+
     display: block;
+
   }
 
   .mistara-timeless__intro {
+
     margin-bottom: 38px;
+
   }
 
   .mistara-timeless__grid {
+
     grid-template-columns: 1fr;
+
     gap: 32px;
+
   }
 
   .mistara-timeless__item--center {
+
     transform: none;
+
   }
 
   .mistara-timeless__item--left .mistara-timeless__media,
+
   .mistara-timeless__item--center .mistara-timeless__media,
+
   .mistara-timeless__item--right .mistara-timeless__media {
+
     aspect-ratio: 1.08 / 1;
+
   }
 
   .gallery-room-eyebrow {
+
     margin-bottom: 24px;
+
   }
 
   .gallery-room-button {
+
     margin-top: 28px;
+
   }
+
 }
 
 /* Small phones */
+
 @media (max-width: 420px) {
+
 .gallery-highlight__visual {
+
     min-height: 30rem;
+
   }
 
   .gallery-highlight__card {
+
     padding: 18px;
+
   }
 
   .gallery-highlight__card-text {
+
     padding-bottom: 16px;
+
   }
 
   .mistara-gallery-item__overlay {
+
     padding: 12px;
+
   }
 
   .mistara-gallery-item__overlay h3 {
+
     font-size: 16px;
+
   }
+
+}
+
+
+
+/* =========================================================
+
+   GLOBAL SECTION SPACING
+
+   Same on every screen:
+
+   5% top/bottom + 3% left/right
+
+\========================================================= */
+
+.gallery-booking-section,
+
+.gallery-highlight-section,
+
+.mistara-gallery-section,
+
+.mistara-timeless-section,
+
+.gallery-story-section {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 5% 3% !important;
+
+}
+
+/* Booking section: keep full width without viewport offset tricks */
+
+.gallery-booking-section {
+
+  left: auto !important;
+
+  margin-left: 0 !important;
+
+}
+
+/* Inner section containers remain full width */
+
+.gallery-booking-card,
+
+.gallery-highlight-shell,
+
+.mistara-gallery-shell,
+
+.mistara-timeless,
+
+.gallery-story {
+
+  width: 100%;
+
+  max-width: none;
+
+  box-sizing: border-box;
+
+}
+
+/* Hero image fills the available section width */
+
+/* Prevent breakpoint rules from changing section padding */
+
+@media (max-width: 1024px) {
+
+  .gallery-page-hero,
+
+  .gallery-booking-section,
+
+  .gallery-highlight-section,
+
+  .mistara-gallery-section,
+
+  .mistara-timeless-section,
+
+  .gallery-story-section {
+
+    padding: 5% 3% !important;
+
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .gallery-page-hero,
+
+  .gallery-booking-section,
+
+  .gallery-highlight-section,
+
+  .mistara-gallery-section,
+
+  .mistara-timeless-section,
+
+  .gallery-story-section {
+
+    padding: 5% 3% !important;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .gallery-page-hero,
+
+  .gallery-booking-section,
+
+  .gallery-highlight-section,
+
+  .mistara-gallery-section,
+
+  .mistara-timeless-section,
+
+  .gallery-story-section {
+
+    padding: 5% 3% !important;
+
+  }
+
 }
 
 
 /* =========================================================
-   GLOBAL SECTION SPACING
-   Same on every screen:
-   5% top/bottom + 3% left/right
+   GALLERY HERO — SAME AS ROOMS
 ========================================================= */
 
-.gallery-booking-section,
-.gallery-highlight-section,
-.mistara-gallery-section,
-.mistara-timeless-section,
-.gallery-story-section {
+.gallery-full-hero {
   width: 100%;
-  box-sizing: border-box;
-  padding: 5% 3% !important;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Marcellus', serif;
 }
 
-/* Booking section: keep full width without viewport offset tricks */
-.gallery-booking-section {
-  left: auto !important;
-  margin-left: 0 !important;
-}
-
-/* Inner section containers remain full width */
-.gallery-booking-card,
-.gallery-highlight-shell,
-.mistara-gallery-shell,
-.mistara-timeless,
-.gallery-story {
+.gallery-full-hero__image {
+  position: relative;
   width: 100%;
-  max-width: none;
-  box-sizing: border-box;
+  min-height: clamp(32rem, 72vh, 46rem);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-/* Hero image fills the available section width */
-/* Prevent breakpoint rules from changing section padding */
-@media (max-width: 1024px) {
-  .gallery-page-hero,
-  .gallery-booking-section,
-  .gallery-highlight-section,
-  .mistara-gallery-section,
-  .mistara-timeless-section,
-  .gallery-story-section {
-    padding: 5% 3% !important;
+.gallery-full-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(24,33,28,.03) 0%,
+    rgba(24,33,28,.08) 45%,
+    rgba(24,33,28,.65) 100%
+  );
+}
+
+.gallery-full-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: clamp(2.5rem, 5vh, 4rem) 3vw;
+  text-align: center;
+  color: #ffffff;
+}
+
+.gallery-full-hero__eyebrow {
+  margin: 0 0 clamp(.7rem, 1vh, 1rem);
+  color: rgba(255,255,255,.9);
+  font-family: 'Marcellus', serif;
+  font-size: clamp(11px, .82vw, 13px);
+  font-weight: 400;
+}
+
+.gallery-full-hero__title {
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.025em;
+}
+
+@media (max-width: 620px) {
+  .gallery-full-hero__image {
+    min-height: 68vh;
   }
-}
 
-@media (max-width: 760px) {
-  .gallery-page-hero,
-  .gallery-booking-section,
-  .gallery-highlight-section,
-  .mistara-gallery-section,
-  .mistara-timeless-section,
-  .gallery-story-section {
-    padding: 5% 3% !important;
+  .gallery-full-hero__content {
+    padding: 2.5rem 3vw;
   }
-}
 
-@media (max-width: 480px) {
-  .gallery-page-hero,
-  .gallery-booking-section,
-  .gallery-highlight-section,
-  .mistara-gallery-section,
-  .mistara-timeless-section,
-  .gallery-story-section {
-    padding: 5% 3% !important;
+  .gallery-full-hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
   }
 }
 
