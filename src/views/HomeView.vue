@@ -7,8 +7,9 @@
 
     <RoomsEditorialSection />
     <RoomsShowcaseSection />
-    <RoomsCollectionSection />
     <FacilitiesShowcaseSection />
+    <GalleryShowcaseSection />
+     <FaqShowcaseSection />
   </MainLayout>
 </template>
 
@@ -19,4 +20,6 @@ import IntroRevealSection from '../components/home/IntroRevealSection.vue'
 import RoomsEditorialSection from '../components/home/RoomsEditorialSection.vue'
 import RoomsShowcaseSection from '../components/home/RoomsShowcaseSection.vue'
 import FacilitiesShowcaseSection from '../components/home/FacilitiesShowcaseSection.vue'
+import GalleryShowcaseSection from '../components/home/GalleryShowcaseSection.vue'
+import FaqShowcaseSection from '../components/home/FaqShowcaseSection.vue'
 </script>
