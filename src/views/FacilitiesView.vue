@@ -8,7 +8,7 @@
       <InnerPageHero
         title="Facilities"
         text="Everything you need for a comfortable and memorable stay at Mistara Ella."
-        image="/Images/Image_Gallery/happy-family.jpg"
+        image="./Images/Image_Gallery/happy-family.jpg"
       />
 
       <!-- =====================================================

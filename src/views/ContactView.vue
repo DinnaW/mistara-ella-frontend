@@ -5,7 +5,7 @@
         eyebrow="Talk to us"
         title="Contact"
         text="We would love to help you plan a memorable stay in Ella."
-        image="/Images/Image_Gallery/girl-waterfall.jpg"
+        image="./Images/Image_Gallery/girl-waterfall.jpg"
       />
 
       <section class="contact-details-section">
