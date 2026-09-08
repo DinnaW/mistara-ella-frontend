@@ -2,16 +2,14 @@
   <MainLayout>
     <main class="contact-page">
       <InnerPageHero
-        eyebrow="Talk to us"
-        title="Contact"
-        text="We would love to help you plan a memorable stay in Ella."
+        eyebrow="Let’s make your stay memorable"
+        title="Contact us to plan your stay"
         image="./Images/Image_Gallery/girl-waterfall.jpg"
       />
 
       <section class="contact-details-section">
         <div class="contact-shell contact-hero-inner">
           <div class="contact-information">
-            <p class="contact-eyebrow">Mistara Ella</p>
             <h1>Contact us</h1>
             <p class="contact-intro">
               Have a question about your stay, the best room for your visit, or
@@ -177,6 +175,42 @@ const form = reactive({
   --contact-line: rgba(37, 40, 31, 0.15);
   background: #ffffff;
   color: var(--contact-ink);
+}
+
+.contact-page :deep(.inner-hero h1) {
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.contact-page :deep(.inner-hero-content) {
+  width: 100%;
+  padding: clamp(2.5rem, 5vh, 4rem) 3vw;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(11px, 0.82vw, 13px);
+  font-weight: 400;
+}
+
+.contact-page :deep(.inner-hero p:not(.eyebrow)) {
+  max-width: 620px;
+  margin: 1rem auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(0.84rem, 0.92vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 .contact-shell {
