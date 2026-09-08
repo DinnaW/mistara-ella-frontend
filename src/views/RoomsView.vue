@@ -2560,11 +2560,11 @@ const rooms = [
 
 
 
-.mistara-room-card__description { min-height: 5rem; margin: 0 0 1.3rem; color: rgba(0, 0, 0, 0.7); font-size: clamp(.75rem, .8vw, .85rem); line-height: 1.65; }
+.mistara-room-card__description { min-height: 5rem; margin: 0 0 1.3rem; color: rgba(89, 88, 88, 0.7); font-size: clamp(.75rem, .8vw, .85rem); line-height: 1.65; font-family: var(--sans); }
 
 
 
-.mistara-room-card__button { width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .7rem; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #050505; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; transition: .25s ease; border-color: #e4e4e3;  }
+.mistara-room-card__button {font-family: var(--sans); width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .7rem; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #050505; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; transition: .25s ease; border-color: #e4e4e3;  }
 
 
 
