@@ -1084,6 +1084,7 @@ Car,
 
 import MainLayout from '../components/layout/MainLayout.vue'
 
+const baseUrl = import.meta.env.BASE_URL
 
 const selectedRoom = ref(null)
 
@@ -1235,46 +1236,39 @@ document.body.style.overflow = ''
 const heroImage =
 
 
-'/Images/Home/amenities/lounge.jpeg'
+`${baseUrl}Images/Home/amenities/lounge.jpeg`
 
 
 const experienceImageOne =
 
 
-'/Images/Home/outside1.jpeg'
+`${baseUrl}Images/Home/outside1.jpeg`
 
 
 const experienceImageTwo =
 
 
-'/Images/Home/outside2.jpeg'
+`${baseUrl}Images/Home/outside2.jpeg`
 
 
 const momentImages = [
 
 
-'/Images/Home/outside3.jpeg',
+`${baseUrl}Images/Home/outside3.jpeg`,
 
+`${baseUrl}Images/Home/outside2.jpeg`,
 
-'/Images/Home/outside2.jpeg',
+`${baseUrl}Images/Facility/food2.jpeg`,
 
+`${baseUrl}Images/Home/outside1.jpeg`,
 
-'/Images/Facility/food2.jpeg',
+`${baseUrl}Images/Banner/reception.jpeg`,
 
+`${baseUrl}Images/Facility/food1.jpeg`,
 
-'/Images/Home/outside1.jpeg',
+`${baseUrl}Images/Facility/room3.jpeg`,
 
-
-'/Images/Banner/reception.jpeg',
-
-
-'/Images/Facility/food1.jpeg',
-
-
-'/Images/Facility/room3.jpeg',
-
-
-'/Images/Home/amenities/parking.png',
+`${baseUrl}Images/Home/amenities/parking.png`,
 
 
 ]
@@ -1316,25 +1310,24 @@ const rooms = [
   image:
 
 
-    '/Images/Home/bed1.jpeg',
+    `${baseUrl}Images/Home/bed1.jpeg`,
 
 
   gallery: [
 
 
-    '/Images/Home/bed1.jpeg',
+    `${baseUrl}Images/Home/bed1.jpeg`,
 
 
-    '/Images/Banner/amenities.jpeg',
+    `${baseUrl}Images/Banner/amenities.jpeg`,
+
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
 
 
-    'Images/Banner/roomOut.jpeg',
+    `${baseUrl}Images/Banner/food.jpg`,
 
 
-    'Images/Banner/food.jpg',
-
-
-    '/Images/Banner/pool.jpeg',
+    `${baseUrl}Images/Banner/pool.jpeg`,
 
 
   ],
@@ -1388,25 +1381,25 @@ const rooms = [
   image:
 
 
-    '/Images/Home/bed2.jpeg',
+    `${baseUrl}Images/Home/bed2.jpeg`,
 
 
   gallery: [
 
 
-    '/Images/Home/bed2.jpeg',
+    `${baseUrl}Images/Home/bed2.jpeg`,
 
 
-    '/Images/Banner/amenities.jpeg',
+    `${baseUrl}Images/Banner/amenities.jpeg`,
 
 
-    'Images/Banner/roomOut.jpeg',
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
 
 
-    'Images/Banner/food.jpg',
+    `${baseUrl}Images/Banner/food.jpg`,
 
 
-    '/Images/Banner/pool.jpeg',
+    `${baseUrl}Images/Banner/pool.jpeg`,
 
 
   ],
@@ -1460,25 +1453,25 @@ const rooms = [
   image:
 
 
-    '/Images/Home/bed3.jpeg',
+    `${baseUrl}Images/Home/bed3.jpeg`,
 
 
   gallery: [
 
 
-    '/Images/Home/bed3.jpeg',
+    `${baseUrl}Images/Home/bed3.jpeg`,
 
 
-    '/Images/Banner/amenities.jpeg',
+    `${baseUrl}Images/Banner/amenities.jpeg`,
 
 
-    'Images/Banner/roomOut.jpeg',
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
 
 
-    'Images/Banner/food.jpg',
+    `${baseUrl}Images/Banner/food.jpg`,
 
 
-    '/Images/Banner/pool.jpeg',
+    `${baseUrl}Images/Banner/pool.jpeg`,
 
 
 
@@ -1500,11 +1493,7 @@ const rooms = [
 
 },
 
-
-{
-
-
-  id: 4,
+{id: 4,
 
 
   type: 'SIGNATURE ROOM',
@@ -1534,163 +1523,27 @@ const rooms = [
   image:
 
 
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85',
+    `${baseUrl}Images/Home/bed3.jpeg`,
 
 
   gallery: [
 
 
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85',
+    `${baseUrl}Images/Home/bed3.jpeg`,
 
 
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85',
+    `${baseUrl}Images/Banner/amenities.jpeg`,
 
 
-    'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=900&q=85',
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
 
 
-    'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85',
+    `${baseUrl}Images/Banner/food.jpg`,
 
 
-    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85',
+    `${baseUrl}Images/Banner/pool.jpeg`,
 
 
-  ],
-
-
-  description:
-
-
-    'Our most spacious stay, combining elevated comfort, elegant finishes and unforgettable mountain surroundings.',
-
-
-  longDescription:
-
-
-    'Our signature room offers more space, refined interiors and a relaxing atmosphere designed around the panoramic beauty and peaceful character of Ella.',
-
-
-},{
-
-
-  id: 5,
-
-
-  type: 'SIGNATURE ROOM',
-
-
-  title: 'Mistara View Suite',
-
-
-  guests: 'Up to 2 guests',
-
-
-  size: '38 m²',
-
-
-  availability: 'ONLY A FEW LEFT',
-
-
-  offer: 'SIGNATURE PANORAMIC STAY',
-
-
-  price: 110,
-
-
-  oldPrice: 135,
-
-
-  image:
-
-
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85',
-
-
-  gallery: [
-
-
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85',
-
-
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85',
-
-
-  ],
-
-
-  description:
-
-
-    'Our most spacious stay, combining elevated comfort, elegant finishes and unforgettable mountain surroundings.',
-
-
-  longDescription:
-
-
-    'Our signature room offers more space, refined interiors and a relaxing atmosphere designed around the panoramic beauty and peaceful character of Ella.',
-
-
-},{
-
-
-  id: 6,
-
-
-  type: 'SIGNATURE ROOM',
-
-
-  title: 'Mistara View Suite',
-
-
-  guests: 'Up to 2 guests',
-
-
-  size: '38 m²',
-
-
-  availability: 'ONLY A FEW LEFT',
-
-
-  offer: 'SIGNATURE PANORAMIC STAY',
-
-
-  price: 110,
-
-
-  oldPrice: 135,
-
-
-  image:
-
-
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85',
-
-
-  gallery: [
-
-
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85',
-
-
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85',
-
-
-    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85',
 
 
   ],
@@ -1710,7 +1563,145 @@ const rooms = [
 
 },
 
+{id: 5,
 
+
+  type: 'SIGNATURE ROOM',
+
+
+  title: 'Mistara View Suite',
+
+
+  guests: 'Up to 2 guests',
+
+
+  size: '38 m²',
+
+
+  availability: 'ONLY A FEW LEFT',
+
+
+  offer: 'SIGNATURE PANORAMIC STAY',
+
+
+  price: 110,
+
+
+  oldPrice: 135,
+
+
+  image:
+
+
+    `${baseUrl}Images/Home/bed3.jpeg`,
+
+
+  gallery: [
+
+
+    `${baseUrl}Images/Home/bed3.jpeg`,
+
+
+    `${baseUrl}Images/Banner/amenities.jpeg`,
+
+
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
+
+
+    `${baseUrl}Images/Banner/food.jpg`,
+
+
+    `${baseUrl}Images/Banner/pool.jpeg`,
+
+
+
+
+  ],
+
+
+  description:
+
+
+    'Our most spacious stay, combining elevated comfort, elegant finishes and unforgettable mountain surroundings.',
+
+
+  longDescription:
+
+
+    'Our signature room offers more space, refined interiors and a relaxing atmosphere designed around the panoramic beauty and peaceful character of Ella.',
+
+
+},
+
+{id: 6,
+
+
+  type: 'SIGNATURE ROOM',
+
+
+  title: 'Mistara View Suite',
+
+
+  guests: 'Up to 2 guests',
+
+
+  size: '38 m²',
+
+
+  availability: 'ONLY A FEW LEFT',
+
+
+  offer: 'SIGNATURE PANORAMIC STAY',
+
+
+  price: 110,
+
+
+  oldPrice: 135,
+
+
+  image:
+
+
+    `${baseUrl}Images/Home/bed3.jpeg`,
+
+
+  gallery: [
+
+
+    `${baseUrl}Images/Home/bed3.jpeg`,
+
+
+    `${baseUrl}Images/Banner/amenities.jpeg`,
+
+
+    `${baseUrl}Images/Banner/roomOut.jpeg`,
+
+
+    `${baseUrl}Images/Banner/food.jpg`,
+
+
+    `${baseUrl}Images/Banner/pool.jpeg`,
+
+
+
+
+  ],
+
+
+  description:
+
+
+    'Our most spacious stay, combining elevated comfort, elegant finishes and unforgettable mountain surroundings.',
+
+
+  longDescription:
+
+
+    'Our signature room offers more space, refined interiors and a relaxing atmosphere designed around the panoramic beauty and peaceful character of Ella.',
+
+
+}
 ]
 
 
