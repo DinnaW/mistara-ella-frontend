@@ -6,9 +6,9 @@
       ====================================================== -->
 
       <InnerPageHero
-        title="Facilities"
-        text="Everything you need for a comfortable and memorable stay at Mistara Ella."
-        image="/Images/Image_Gallery/happy-family.jpg"
+        eyebrow="Designed for comfort"
+        title="Explore Our Facilities"
+        image="./Images/Image_Gallery/happy-family.jpg"
       />
 
       <!-- =====================================================
@@ -20,10 +20,10 @@
           <div class="section-heading reveal">
             <div>
               <h2>
-                Explore our facilities
+                Discover the comforts of your stay.
                 <br />
                 Everything
-                <br />
+
                 <em>within reach.</em>
               </h2>
             </div>
@@ -81,121 +81,6 @@
       </section>
 
       <!-- =====================================================
-           EXPERIENCE MOSAIC
-      ====================================================== -->
-
-      <section class="experience-mosaic">
-        <div class="mosaic-grid">
-          <!-- LARGE IMAGE SLIDESHOW -->
-
-          <div class="mosaic-large-image reveal">
-            <div
-              v-for="(slide, index) in mosaicSlides"
-              :key="slide.image"
-              class="mosaic-slide"
-              :class="{ active: activeMosaicSlide === index }"
-            >
-              <img :src="slide.image" :alt="slide.alt" />
-            </div>
-
-            <div class="mosaic-large-gradient"></div>
-
-            <div class="mosaic-large-content">
-              <span>
-                {{ String(activeMosaicSlide + 1).padStart(2, "0") }} &nbsp;
-                RELAX
-              </span>
-
-              <h2>
-                Relax,
-                <br />
-                refresh &
-                <br />
-                <em>unwind.</em>
-              </h2>
-
-              <div class="mosaic-arrows">
-                <button
-                  type="button"
-                  aria-label="Previous photo"
-                  @click="previousMosaicSlide"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  aria-label="Next photo"
-                  @click="nextMosaicSlide"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-
-            <div class="mosaic-slide-counter">
-              {{ String(activeMosaicSlide + 1).padStart(2, "0") }} /
-              {{ String(mosaicSlides.length).padStart(2, "0") }}
-            </div>
-          </div>
-
-          <!-- DINING PANEL -->
-
-          <div class="mosaic-panel brown reveal">
-            <span class="panel-number"> 02 &nbsp; TASTE </span>
-
-            <h3>
-              Taste the
-              <br />
-              <em>island.</em>
-            </h3>
-
-            <p>
-              Enjoy delicious meals, refreshing drinks and memorable moments at
-              Mistara.
-            </p>
-
-            <a href="#amenities"> DISCOVER DINING </a>
-          </div>
-
-          <!-- RESTAURANT -->
-
-          <div class="mosaic-image reveal">
-            <img
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-              alt="Restaurant"
-            />
-          </div>
-
-          <!-- ROOM -->
-
-          <div class="mosaic-image reveal">
-            <img
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
-              alt="Hotel bedroom"
-            />
-          </div>
-
-          <!-- ROOM PANEL -->
-
-          <div class="mosaic-panel light reveal">
-            <span class="panel-number"> 03 &nbsp; REST </span>
-
-            <h3>
-              A comfortable
-              <br />
-              <em>stay.</em>
-            </h3>
-
-            <p>
-              Thoughtful amenities for a relaxing and comfortable experience.
-            </p>
-
-            <a href="/rooms"> EXPLORE ROOMS </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
            PREMIUM AMENITIES
            EDITORIAL STYLE
       ====================================================== -->
@@ -206,9 +91,7 @@
 
           <div class="amenities-intro reveal">
             <h2>
-              Premium amenities
-              <br />
-              Spaces designed
+              Premium amenities Spaces designed
               <br />
               <em>for a better stay.</em>
             </h2>
@@ -261,7 +144,7 @@
                 Things to do
                 <br />
                 Let's go on
-                <br />
+
                 <em>a journey.</em>
               </h2>
             </div>
@@ -315,7 +198,7 @@
                 Travel stories
                 <br />
                 Stories
-                <br />
+
                 <em>from Ella.</em>
               </h2>
             </div>
@@ -419,9 +302,7 @@
           <h2>
             Your next getaway
             <br />
-            Your stay
-            <br />
-            starts <em>here.</em>
+            Your stay starts <em>here.</em>
           </h2>
 
           <div class="booking-divider"></div>
@@ -712,44 +593,6 @@ const previousStory = () => {
 };
 
 /* =====================================================
-   EXPERIENCE MOSAIC SLIDESHOW
-===================================================== */
-
-const activeMosaicSlide = ref(0);
-
-const mosaicSlides = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1800&q=90",
-    alt: "Infinity swimming pool",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=90",
-    alt: "Mountain landscape",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1800&q=90",
-    alt: "Ella landscape",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=90",
-    alt: "Mountain view",
-  },
-];
-
-const nextMosaicSlide = () => {
-  activeMosaicSlide.value = (activeMosaicSlide.value + 1) % mosaicSlides.length;
-};
-
-const previousMosaicSlide = () => {
-  activeMosaicSlide.value =
-    (activeMosaicSlide.value - 1 + mosaicSlides.length) % mosaicSlides.length;
-};
-
-/* =====================================================
    SCROLL REVEAL
 ===================================================== */
 
@@ -804,6 +647,42 @@ onMounted(() => {
   color: var(--black);
 
   font-family: "Inter", sans-serif;
+}
+
+.facilities-page :deep(.inner-hero h1) {
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.facilities-page :deep(.inner-hero-content) {
+  width: 100%;
+  padding: clamp(2.5rem, 5vh, 4rem) 3vw;
+  text-align: center;
+  color: #ffffff;
+}
+
+.facilities-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(11px, 0.82vw, 13px);
+  font-weight: 400;
+}
+
+.facilities-page :deep(.inner-hero p:not(.eyebrow)) {
+  max-width: 620px;
+  margin: 1rem auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(0.84rem, 0.92vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* =====================================================
@@ -873,8 +752,6 @@ h3 {
 h2 em,
 h3 em {
   font-style: italic;
-
-  color: var(--brown);
 }
 
 /* =====================================================
@@ -1136,9 +1013,15 @@ h3 em {
 .section-heading h2 {
   margin: 0;
 
-  font-size: clamp(53px, 6vw, 84px);
+  color: #25281f;
 
-  line-height: 0.92;
+  font-family: "Marcellus", Georgia, serif;
+
+  font-size: clamp(42px, 5vw, 51px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
 }
 
 .heading-right {
@@ -1537,6 +1420,11 @@ h3 em {
   letter-spacing: 0.14em;
 }
 
+.mosaic-panel a:hover,
+.mosaic-panel a:focus-visible {
+  color: #123c32;
+}
+
 .mosaic-image {
   overflow: hidden;
 }
@@ -1752,7 +1640,7 @@ h3 em {
 }
 
 .amenities-intro h2 em {
-  color: var(--brown);
+  color: inherit;
 
   font-style: italic;
 }
@@ -2221,17 +2109,17 @@ h3 em {
 
   font-family: "Marcellus", Georgia, serif;
 
-  font-size: clamp(58px, 6.5vw, 90px);
+  font-size: clamp(42px, 5vw, 51px);
 
   font-weight: 400;
 
-  line-height: 0.88;
+  line-height: 1.1;
 
-  color: var(--black);
+  color: #25281f;
 }
 
 .stories-title h2 em {
-  color: var(--brown);
+  color: inherit;
 
   font-style: italic;
 }
@@ -2483,6 +2371,11 @@ h3 em {
   color: white;
 }
 
+.story-meta a:hover,
+.story-meta a:focus-visible {
+  color: white;
+}
+
 .story-meta a span {
   font-size: 13px;
 
@@ -2586,6 +2479,26 @@ h3 em {
   color: white;
 }
 
+.view-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+
+  color: #123c32;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  transition: color 0.3s ease;
+}
+
 .mosaic-panel a > span,
 .view-link > span,
 .story-meta a > span {
@@ -2602,10 +2515,45 @@ h3 em {
   border: 1px solid currentColor;
 
   border-radius: 50%;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.view-link:hover,
+.view-link:focus-visible {
+  color: #123c32;
+}
+
+.view-link:hover > span,
+.view-link:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
+  transform: translateX(5px);
 }
 
 .story-meta a > span {
   border-color: rgba(255, 255, 255, 0.72);
+}
+
+.mosaic-panel a:hover > span,
+.mosaic-panel a:focus-visible > span,
+.story-meta a:hover > span,
+.story-meta a:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
+  transform: translateX(5px);
 }
 
 /* =====================================================
@@ -2730,6 +2678,31 @@ h3 em {
   background: white;
 
   color: var(--brown-dark);
+}
+
+.booking-bottom a > span {
+  display: inline-flex;
+
+  width: 30px;
+
+  height: 30px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+
+  transition: transform 0.3s ease;
+}
+
+.booking-bottom a:hover > span,
+.booking-bottom a:focus-visible > span {
+  transform: translateX(5px);
 }
 
 /* =====================================================
@@ -2924,7 +2897,7 @@ h3 em {
   }
 
   .section-heading h2 {
-    font-size: 52px;
+    font-size: clamp(38px, 13vw, 51px);
   }
 
   .heading-right {
@@ -3084,7 +3057,7 @@ h3 em {
   }
 
   .stories-title h2 {
-    font-size: clamp(48px, 14vw, 68px);
+    font-size: clamp(38px, 13vw, 51px);
   }
 
   .stories-slider {

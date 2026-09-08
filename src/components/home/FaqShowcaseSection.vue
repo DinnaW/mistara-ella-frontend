@@ -1,15 +1,10 @@
 <template>
-  <section
-    class="mistara-faq"
-    aria-labelledby="mistara-faq-title"
-  >
+  <section class="mistara-faq" aria-labelledby="mistara-faq-title">
     <div class="mistara-faq__inner">
       <!-- LEFT EDITORIAL COLUMN -->
       <div class="mistara-faq__intro">
         <div class="mistara-faq__intro-sticky">
-          <p class="mistara-faq__kicker">
-            Before your stay
-          </p>
+          <p class="mistara-faq__kicker">Before your stay</p>
 
           <h2 id="mistara-faq-title">
             A few things
@@ -17,25 +12,15 @@
           </h2>
 
           <p class="mistara-faq__description">
-            We want every part of your stay to feel easy.
-            Here are a few of the questions guests often ask
-            before arriving at Mistara Ella.
+            We want every part of your stay to feel easy. Here are a few of the
+            questions guests often ask before arriving at Mistara Ella.
           </p>
 
-          <RouterLink
-            class="mistara-faq__contact"
-            to="/contact"
-          >
+          <RouterLink class="mistara-faq__contact" to="/contact">
             <span>Still have a question?</span>
 
-            <span
-              class="mistara-faq__contact-icon"
-              aria-hidden="true"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+            <span class="mistara-faq__contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
                 <path d="M7 17L17 7" />
                 <path d="M9 7H17V15" />
               </svg>
@@ -60,17 +45,14 @@
             @click="toggleFaq(index)"
           >
             <span class="mistara-faq__number">
-              {{ String(index + 1).padStart(2, '0') }}
+              {{ String(index + 1).padStart(2, "0") }}
             </span>
 
             <span class="mistara-faq__question-text">
               {{ item.question }}
             </span>
 
-            <span
-              class="mistara-faq__toggle"
-              aria-hidden="true"
-            >
+            <span class="mistara-faq__toggle" aria-hidden="true">
               <span></span>
               <span></span>
             </span>
@@ -93,49 +75,46 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const openIndex = ref(0)
+const openIndex = ref(0);
 
 const faqItems = [
   {
-    question: 'How can I make a reservation at Mistara Ella?',
+    question: "How can I make a reservation at Mistara Ella?",
     answer:
-      'You can send us a booking enquiry through the website and our team will help you with availability, room options and the details needed to confirm your stay.',
+      "You can send us a booking enquiry through the website and our team will help you with availability, room options and the details needed to confirm your stay.",
   },
   {
-    question: 'What kind of rooms are available?',
+    question: "What kind of rooms are available?",
     answer:
-      'Mistara Ella offers a selection of comfortable rooms designed around calm interiors, privacy and the surrounding hill-country views. You can explore the room collection on our Rooms page.',
+      "Mistara Ella offers a selection of comfortable rooms designed around calm interiors, privacy and the surrounding hill-country views. You can explore the room collection on our Rooms page.",
   },
   {
-    question: 'Is breakfast available during the stay?',
+    question: "Is breakfast available during the stay?",
     answer:
-      'Yes. Guests can enjoy relaxed dining and breakfast at the property. If you have dietary preferences or special requirements, let us know before arrival so our team can assist where possible.',
+      "Yes. Guests can enjoy relaxed dining and breakfast at the property. If you have dietary preferences or special requirements, let us know before arrival so our team can assist where possible.",
   },
   {
-    question: 'How far is Mistara Ella from the main attractions in Ella?',
+    question: "How far is Mistara Ella from the main attractions in Ella?",
     answer:
-      'Mistara Ella is positioned for guests who want a peaceful stay while still being able to explore Ella and its surrounding viewpoints, walks and attractions. Contact us if you would like help planning your route.',
+      "Mistara Ella is positioned for guests who want a peaceful stay while still being able to explore Ella and its surrounding viewpoints, walks and attractions. Contact us if you would like help planning your route.",
   },
   {
-    question: 'Can you help arrange transport or local experiences?',
+    question: "Can you help arrange transport or local experiences?",
     answer:
-      'Our team can help point you in the right direction for local travel and experiences around Ella. Send us your plans before your stay and we will assist with the options available at the time.',
+      "Our team can help point you in the right direction for local travel and experiences around Ella. Send us your plans before your stay and we will assist with the options available at the time.",
   },
   {
-    question: 'Can I make a special request before arriving?',
+    question: "Can I make a special request before arriving?",
     answer:
-      'Absolutely. If you are celebrating something, travelling with a particular requirement or simply need a little extra help preparing for your stay, contact us in advance and we will do our best to assist.',
+      "Absolutely. If you are celebrating something, travelling with a particular requirement or simply need a little extra help preparing for your stay, contact us in advance and we will do our best to assist.",
   },
-]
+];
 
 const toggleFaq = (index) => {
-  openIndex.value =
-    openIndex.value === index
-      ? -1
-      : index
-}
+  openIndex.value = openIndex.value === index ? -1 : index;
+};
 </script>
 
 <style scoped>
@@ -153,7 +132,7 @@ const toggleFaq = (index) => {
 }
 
 .mistara-faq::before {
-  content: '';
+  content: "";
 
   position: absolute;
   top: 0;
@@ -162,7 +141,7 @@ const toggleFaq = (index) => {
 
   height: 1px;
 
-  background: rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .mistara-faq__inner {
@@ -171,7 +150,7 @@ const toggleFaq = (index) => {
 
   display: grid;
   grid-template-columns:
-    minmax(300px, .82fr)
+    minmax(300px, 0.82fr)
     minmax(0, 1.18fr);
 
   gap: clamp(70px, 9vw, 160px);
@@ -194,13 +173,13 @@ const toggleFaq = (index) => {
 .mistara-faq__kicker {
   margin: 0 0 clamp(24px, 2.6vw, 42px);
 
-  color: rgba(245, 240, 230, .56);
+  color: rgba(245, 240, 230, 0.56);
 
   font-family: var(--sans);
-  font-size: clamp(10px, .68vw, 12px);
+  font-size: clamp(10px, 0.68vw, 12px);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -213,7 +192,7 @@ const toggleFaq = (index) => {
   font-size: clamp(38px, 3.5vw, 58px);
   font-weight: 400;
   line-height: 1.02;
-  letter-spacing: -.028em;
+  letter-spacing: -0.028em;
 }
 
 .mistara-faq h2 em {
@@ -223,25 +202,21 @@ const toggleFaq = (index) => {
   font-weight: inherit;
   font-style: italic;
 
-  color: #c8b58c;
+  color: inherit;
 }
 
 .mistara-faq__description {
   max-width: 430px;
 
-  margin:
-    clamp(32px, 3.2vw, 50px)
-    0
-    0
-    clamp(24px, 4vw, 68px);
+  margin: clamp(32px, 3.2vw, 50px) 0 0 clamp(24px, 4vw, 68px);
 
-  color: rgba(245, 240, 230, .66);
+  color: rgba(245, 240, 230, 0.66);
 
   font-family: var(--sans);
-  font-size: clamp(13px, .9vw, 15px);
+  font-size: clamp(13px, 0.9vw, 15px);
   font-weight: 300;
   line-height: 1.75;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 }
 
 .mistara-faq__contact {
@@ -251,11 +226,7 @@ const toggleFaq = (index) => {
   align-items: center;
   gap: 16px;
 
-  margin:
-    clamp(34px, 3.5vw, 56px)
-    0
-    0
-    clamp(24px, 4vw, 68px);
+  margin: clamp(34px, 3.5vw, 56px) 0 0 clamp(24px, 4vw, 68px);
 
   color: #f5f0e6;
 
@@ -270,14 +241,14 @@ const toggleFaq = (index) => {
   display: grid;
   place-items: center;
 
-  border: 1px solid rgba(245, 240, 230, .28);
+  border: 1px solid rgba(245, 240, 230, 0.28);
   border-radius: 50%;
 
   transition:
-    background .3s ease,
-    color .3s ease,
-    border-color .3s ease,
-    transform .3s ease;
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .mistara-faq__contact-icon svg {
@@ -292,15 +263,13 @@ const toggleFaq = (index) => {
   stroke-linejoin: round;
 }
 
-.mistara-faq__contact:hover
-.mistara-faq__contact-icon {
+.mistara-faq__contact:hover .mistara-faq__contact-icon {
   border-color: #c8b58c;
   background: #c8b58c;
   color: #102f27;
 
   transform: translate(2px, -2px);
 }
-
 
 /* =========================================================
    FAQ ACCORDION
@@ -309,11 +278,11 @@ const toggleFaq = (index) => {
 .mistara-faq__list {
   min-width: 0;
 
-  border-top: 1px solid rgba(245, 240, 230, .18);
+  border-top: 1px solid rgba(245, 240, 230, 0.18);
 }
 
 .mistara-faq__item {
-  border-bottom: 1px solid rgba(245, 240, 230, .18);
+  border-bottom: 1px solid rgba(245, 240, 230, 0.18);
 }
 
 .mistara-faq__question {
@@ -328,9 +297,7 @@ const toggleFaq = (index) => {
   align-items: center;
   gap: clamp(16px, 1.8vw, 30px);
 
-  padding:
-    clamp(24px, 2.3vw, 38px)
-    0;
+  padding: clamp(24px, 2.3vw, 38px) 0;
 
   border: 0;
 
@@ -347,15 +314,15 @@ const toggleFaq = (index) => {
 
   padding-top: 4px;
 
-  color: rgba(245, 240, 230, .38);
+  color: rgba(245, 240, 230, 0.38);
 
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 
-  transition: color .35s ease;
+  transition: color 0.35s ease;
 }
 
 .mistara-faq__question-text {
@@ -365,11 +332,11 @@ const toggleFaq = (index) => {
   font-size: clamp(20px, 1.55vw, 27px);
   font-weight: 400;
   line-height: 1.22;
-  letter-spacing: -.018em;
+  letter-spacing: -0.018em;
 
   transition:
-    color .35s ease,
-    transform .35s ease;
+    color 0.35s ease,
+    transform 0.35s ease;
 }
 
 .mistara-faq__toggle {
@@ -382,13 +349,13 @@ const toggleFaq = (index) => {
 
   justify-self: end;
 
-  border: 1px solid rgba(245, 240, 230, .22);
+  border: 1px solid rgba(245, 240, 230, 0.22);
   border-radius: 50%;
 
   transition:
-    border-color .35s ease,
-    background .35s ease,
-    transform .35s ease;
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
 }
 
 .mistara-faq__toggle span {
@@ -404,28 +371,23 @@ const toggleFaq = (index) => {
   transform: translate(-50%, -50%);
 
   transition:
-    transform .35s cubic-bezier(.22, 1, .36, 1),
-    opacity .3s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
 }
 
 .mistara-faq__toggle span:last-child {
-  transform:
-    translate(-50%, -50%)
-    rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__number {
+.mistara-faq__item.is-open .mistara-faq__number {
   color: #c8b58c;
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__question-text {
+.mistara-faq__item.is-open .mistara-faq__question-text {
   color: #d6c49d;
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__toggle {
+.mistara-faq__item.is-open .mistara-faq__toggle {
   border-color: #c8b58c;
 
   background: #c8b58c;
@@ -434,27 +396,21 @@ const toggleFaq = (index) => {
   transform: rotate(180deg);
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__toggle span:last-child {
+.mistara-faq__item.is-open .mistara-faq__toggle span:last-child {
   opacity: 0;
 
-  transform:
-    translate(-50%, -50%)
-    rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
 }
-
 
 /* Smooth answer animation */
 .mistara-faq__answer-wrap {
   display: grid;
   grid-template-rows: 0fr;
 
-  transition:
-    grid-template-rows .5s cubic-bezier(.22, 1, .36, 1);
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__answer-wrap {
+.mistara-faq__item.is-open .mistara-faq__answer-wrap {
   grid-template-rows: 1fr;
 }
 
@@ -466,47 +422,39 @@ const toggleFaq = (index) => {
 .mistara-faq__answer p {
   max-width: 680px;
 
-  margin:
-    0
-    62px
-    clamp(28px, 2.8vw, 44px)
-    calc(44px + clamp(16px, 1.8vw, 30px));
+  margin: 0 62px clamp(28px, 2.8vw, 44px) calc(44px + clamp(16px, 1.8vw, 30px));
 
-  color: rgba(245, 240, 230, .62);
+  color: rgba(245, 240, 230, 0.62);
 
   font-family: var(--sans);
-  font-size: clamp(13px, .88vw, 15px);
+  font-size: clamp(13px, 0.88vw, 15px);
   font-weight: 300;
   line-height: 1.72;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 
   opacity: 0;
   transform: translateY(-8px);
 
   transition:
-    opacity .35s ease .05s,
-    transform .45s cubic-bezier(.22, 1, .36, 1) .05s;
+    opacity 0.35s ease 0.05s,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
 }
 
-.mistara-faq__item.is-open
-.mistara-faq__answer p {
+.mistara-faq__item.is-open .mistara-faq__answer p {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .mistara-faq__question:hover
-  .mistara-faq__question-text {
+  .mistara-faq__question:hover .mistara-faq__question-text {
     color: #d6c49d;
     transform: translateX(4px);
   }
 
-  .mistara-faq__question:hover
-  .mistara-faq__toggle {
-    border-color: rgba(214, 196, 157, .72);
+  .mistara-faq__question:hover .mistara-faq__toggle {
+    border-color: rgba(214, 196, 157, 0.72);
   }
 }
-
 
 /* =========================================================
    LARGE DESKTOP
@@ -520,7 +468,7 @@ const toggleFaq = (index) => {
 
   .mistara-faq__inner {
     grid-template-columns:
-      minmax(360px, .8fr)
+      minmax(360px, 0.8fr)
       minmax(0, 1.2fr);
   }
 
@@ -537,7 +485,6 @@ const toggleFaq = (index) => {
   }
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -549,7 +496,7 @@ const toggleFaq = (index) => {
 
   .mistara-faq__inner {
     grid-template-columns:
-      minmax(260px, .78fr)
+      minmax(260px, 0.78fr)
       minmax(0, 1.22fr);
 
     gap: 7vw;
@@ -573,11 +520,9 @@ const toggleFaq = (index) => {
   }
 
   .mistara-faq__answer p {
-    margin-left:
-      calc(34px + clamp(16px, 1.8vw, 30px));
+    margin-left: calc(34px + clamp(16px, 1.8vw, 30px));
   }
 }
-
 
 /* =========================================================
    MOBILE
@@ -642,11 +587,7 @@ const toggleFaq = (index) => {
   }
 
   .mistara-faq__answer p {
-    margin:
-      0
-      46px
-      28px
-      40px;
+    margin: 0 46px 28px 40px;
 
     font-size: 13px;
   }
