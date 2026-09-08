@@ -84,12 +84,13 @@
       </section>
 
       <section class="contact-quote">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark"></div>
         <blockquote>
-          In Ella, slow down and savour the moments that matter <br />— misty
+          In Ella, slow down and savour the moments that matter — misty
           mornings,
           <br />
           mountain views, and the quiet comfort of a
+          <br />
           <em>stay made to be remembered.</em>
         </blockquote>
         <p class="quote-author">Mistara Ella</p>
@@ -243,14 +244,14 @@ const form = reactive({
   padding: 50px 0 45px;
 }
 
-.contact-eyebrow,
-.form-eyebrow,
-.detail-label {
-  color: var(--contact-gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.contact-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: none !important;
+  letter-spacing: 0em;
 }
 
 .contact-eyebrow,
@@ -448,16 +449,16 @@ const form = reactive({
   height: 38px;
   color: var(--contact-ink);
   font-family: Georgia, serif;
-  font-size: 58px;
+  font-size: 24px !important;
   line-height: 0.8;
 }
 
 .contact-quote blockquote {
-  max-width: 720px;
+  max-width: 860px;
   margin: 22px auto 18px;
   color: #25281f;
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(35px, 4vw, 51px);
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: 400;
   line-height: 1.1;
 }
@@ -540,7 +541,7 @@ const form = reactive({
   flex: 1;
   min-width: 0;
   border: 0;
-  padding: 12px 0;
+  padding: 15px 0;
   outline: 0;
   background: transparent;
   color: var(--contact-ink);
@@ -559,7 +560,7 @@ const form = reactive({
 }
 
 .newsletter-form button:hover {
-  color: var(--contact-gold);
+  color: #123c32;
 }
 
 .newsletter-success {

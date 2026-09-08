@@ -48,22 +48,13 @@ import InnerPageHero from "../components/layout/InnerPageHero.vue";
   text-align: center;
   color: #ffffff;
 }
-
 .packages-page :deep(.inner-hero .eyebrow) {
   margin: 0 0 clamp(0.7rem, 1vh, 1rem);
   color: rgba(255, 255, 255, 0.9);
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(11px, 0.82vw, 13px);
+  font-size: 18px;
   font-weight: 400;
-}
-
-.packages-page :deep(.inner-hero p:not(.eyebrow)) {
-  max-width: 620px;
-  margin: 1rem auto 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(0.84rem, 0.92vw, 0.98rem);
-  font-weight: 400;
-  line-height: 1.7;
+  text-transform: none !important;
+  letter-spacing: 0em;
 }
 </style>
