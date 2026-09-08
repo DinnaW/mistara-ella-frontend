@@ -4,7 +4,7 @@
       <InnerPageHero
         eyebrow="Let’s make your stay memorable"
         title="Contact us to plan your stay"
-        image="./Images/Image_Gallery/girl-waterfall.jpg"
+        image="./Images/Home/hero2.jpeg"
       />
 
       <section class="contact-details-section">
@@ -99,27 +99,27 @@
         <div class="contact-gallery-track">
           <figure class="gallery-frame gallery-frame--short">
             <img
-              src="/Images/Gallery/sidepool.png"
+              src="/Images/Home/outside1.jpeg"
               alt="Poolside at Mistara Ella"
             />
           </figure>
           <figure class="gallery-frame gallery-frame--low">
             <img
-              src="/Images/Gallery/bench.png"
+              src="/Images/Home/outside3.jpeg"
               alt="Breakfast beside the pool"
             />
           </figure>
           <figure class="gallery-frame">
             <img
-              src="/Images/Gallery/hotelpool.png"
+              src="/Images/Home/outside2.jpeg"
               alt="Mistara Ella pool at night"
             />
           </figure>
           <figure class="gallery-frame gallery-frame--low">
-            <img src="/Images/Gallery/food.png" alt="Freshly prepared dining" />
+            <img src="/Images/Home/lamp.jpeg" alt="Freshly prepared dining" />
           </figure>
           <figure class="gallery-frame gallery-frame--short">
-            <img src="/Images/Gallery/table.png" alt="Dinner by the sea" />
+            <img src="/Images/Home/view.jpeg" alt="Dinner by the sea" />
           </figure>
         </div>
       </section>
@@ -175,6 +175,9 @@ const form = reactive({
   --contact-line: rgba(37, 40, 31, 0.15);
   background: #ffffff;
   color: var(--contact-ink);
+}
+.contact-page :deep(.inner-hero) {
+  background-position: center top;
 }
 
 .contact-page :deep(.inner-hero h1) {
@@ -257,7 +260,7 @@ const form = reactive({
 
 .contact-information h1 {
   margin: 0 0 20px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: clamp(58px, 7vw, 90px);
   font-weight: 500;
   line-height: 0.88;
@@ -328,7 +331,7 @@ const form = reactive({
 
 .contact-form h2 {
   margin: 0 0 5px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: 37px;
   font-weight: 500;
   line-height: 1;
@@ -515,7 +518,7 @@ const form = reactive({
 
 .contact-newsletter h2 {
   margin: 0 0 10px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: clamp(35px, 4vw, 50px);
   font-weight: 500;
 }

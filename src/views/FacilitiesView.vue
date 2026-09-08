@@ -8,7 +8,7 @@
       <InnerPageHero
         eyebrow="Designed for comfort"
         title="Explore Our Facilities"
-        image="./Images/Image_Gallery/happy-family.jpg"
+        image="./Images/Facility/wellness5.jpeg"
       />
 
       <!-- =====================================================
@@ -133,30 +133,30 @@
       </section>
 
       <!-- =====================================================
-           THINGS TO DO
+           WELLNESS AT MISTARA ELLA
       ====================================================== -->
 
-      <section class="things-section">
+      <section class="things-section spa-section">
         <div class="container">
           <div class="section-heading reveal">
             <div>
               <h2>
-                Things to do
+                Wellness at Mistara
                 <br />
-                Let's go on
-
-                <em>a journey.</em>
+                Slow down and
+                <em>restore.</em>
               </h2>
             </div>
 
             <div class="heading-right">
               <p>
-                Hiking, waterfalls, tea plantations, local culture and more.
-                Discover hand-picked experiences to make the most of your stay.
+                Make space for stillness with thoughtful wellness moments,
+                soothing water and quiet corners designed to help you settle
+                into the rhythm of Ella.
               </p>
 
               <a href="#" class="view-link">
-                VIEW ALL EXPERIENCES
+                DISCOVER WELLNESS
                 <span>→</span>
               </a>
             </div>
@@ -212,10 +212,7 @@
           </div>
 
           <div class="stories-slider reveal">
-            <div class="stories-side-label">
-              <span>TRAVEL</span>
-              <span>STORIES</span>
-            </div>
+            <div class="stories-side-label"></div>
 
             <div class="stories-track">
               <article
@@ -330,53 +327,7 @@ import { onMounted, ref } from "vue";
 
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
-import ellaMountainImage from "../Images/Banner/ella-mountain-view.jpg";
-
-/* =====================================================
-   POPULAR FACILITIES
-===================================================== */
-
-const popularFacilities = [
-  {
-    title: "Indoor swimming pool",
-    icon: "≈",
-  },
-
-  {
-    title: "Free WiFi",
-    icon: "⌁",
-  },
-
-  {
-    title: "Family rooms",
-    icon: "♧",
-  },
-
-  {
-    title: "Free parking",
-    icon: "□",
-  },
-
-  {
-    title: "Restaurant",
-    icon: "≋",
-  },
-
-  {
-    title: "Bar",
-    icon: "○",
-  },
-
-  {
-    title: "Pet friendly",
-    icon: "◇",
-  },
-
-  {
-    title: "Room service",
-    icon: "⌂",
-  },
-];
+import ellaMountainImage from "C:/Users/USER/OneDrive/Desktop/Weblook/New folder (2)/mistara-ella-frontend/public/Images/Home/amenities/lounge.jpeg";
 
 /* =====================================================
    FACILITIES
@@ -448,18 +399,6 @@ const facilities = [
   },
 
   {
-    icon: "≈",
-    title: "Indoor Swimming Pool",
-    items: [
-      "Open all year",
-      "Rooftop pool",
-      "All ages welcome",
-      "Pool towels",
-      "Beach chairs / loungers",
-    ],
-  },
-
-  {
     icon: "◇",
     title: "Safety & Security",
     items: [
@@ -468,6 +407,17 @@ const facilities = [
       "CCTV outside property",
       "Key card access",
       "Safe",
+    ],
+  },
+  {
+    icon: "≈",
+    title: "Indoor Swimming Pool",
+    items: [
+      "Open all year",
+      "Rooftop pool",
+      "All ages welcome",
+      "Pool towels",
+      "Beach chairs / loungers",
     ],
   },
 ];
@@ -489,22 +439,19 @@ const amenities = [
   {
     title: "Dining",
     category: "GOOD FOOD, GREAT MOMENTS",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=90",
+    image: "/Images/Facility/food1.jpeg",
   },
 
   {
     title: "Room Comfort",
     category: "THOUGHTFUL AMENITIES",
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=90",
+    image: "/Images/Facility/room1.jpeg",
   },
 
   {
     title: "Wellness & Views",
     category: "RELAXATION REDEFINED",
-    image:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=90",
+    image: "/Images/Facility/wellness5.jpeg",
   },
 ];
 
@@ -514,31 +461,27 @@ const amenities = [
 
 const thingsToDo = [
   {
-    title: "Hiking",
-    description: "Mountains & viewpoints",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85",
+    title: "Private Spa Moments",
+    description: "Unhurried treatments in a calm, intimate setting.",
+    image: "/Images/Facility/spa.png",
   },
 
   {
-    title: "Waterfalls",
-    description: "Nature's hidden gems",
-    image:
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=85",
+    title: "Poolside Stillness",
+    description: "Warm water, open air and time to simply be.",
+    image: "/Images/Facility/wellness1.jpg",
   },
 
   {
-    title: "Tea Plantations",
-    description: "Scenic tea country",
-    image:
-      "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=85",
+    title: "Green View Retreat",
+    description: "A restorative pause surrounded by Ella's hillside green.",
+    image: "/Images/Facility/wellness2.jpg",
   },
 
   {
-    title: "Local Culture",
-    description: "Authentic experiences",
-    image:
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=85",
+    title: "Evening Wellness",
+    description: "Soft lights, quiet water and a slower end to the day.",
+    image: "/Images/Facility/wellness3.jpeg",
   },
 ];
 
@@ -553,8 +496,7 @@ const stories = [
     description:
       "Discover the most beautiful viewpoints, waterfalls and hidden gems around Ella.",
     date: "Oct 14, 2024",
-    image:
-      "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85",
+    image: "/Images/Home/outside3.jpeg",
   },
 
   {
@@ -563,8 +505,7 @@ const stories = [
     description:
       "Explore the authentic tastes of Sri Lanka and discover the culinary side of Ella.",
     date: "Oct 10, 2024",
-    image:
-      "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85",
+    image: "/Images/Home/amenities/dining.jpeg",
   },
 
   {
@@ -573,8 +514,7 @@ const stories = [
     description:
       "Everything you need to know about one of Sri Lanka’s most memorable journeys.",
     date: "Oct 06, 2024",
-    image:
-      "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=85",
+    image: "/Images/Home/hero3.jpeg",
   },
 ];
 
@@ -658,6 +598,10 @@ onMounted(() => {
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.025em;
+}
+
+.facilities-page :deep(.inner-hero) {
+  background-position: center bottom;
 }
 
 .facilities-page :deep(.inner-hero-content) {
@@ -2073,7 +2017,7 @@ h3 em {
 .stories-section {
   padding: 125px 0 140px;
 
-  background: var(--off-white);
+  background: #f4f0e7;
 }
 
 .stories-top {
@@ -3279,16 +3223,19 @@ h3 em {
 }
 
 .facilities-page .facility-card:nth-child(1) {
-  background-image: url("/Images/Facility/roomview.png");
+  background-image: url("/Images/Home/bed4.jpeg");
 }
+
 .facilities-page .facility-card:nth-child(3) {
-  background-image: url("/Images/Facility/land.png");
+  background-image: url("/Images/Home/view.jpeg");
 }
 .facilities-page .facility-card:nth-child(6) {
-  background-image: url("/Images/Facility/washroom.png");
+  background-image: url("/Images/Home/amenities/lounge.jpeg");
+  background-position: bottom;
 }
 .facilities-page .facility-card:nth-child(8) {
-  background-image: url("/Images/Facility/family.png");
+  background-image: url("/Images/Home/outside3.jpeg");
+  background-position: center;
 }
 
 .facilities-page .facility-card:nth-child(5) {
@@ -3485,5 +3432,91 @@ h3 em {
 .stories-section,
 .booking-section {
   padding: 5% 2% 5% 2%;
+}
+
+.spa-section {
+  background: #f4f1ea;
+}
+
+.spa-section .section-heading {
+  align-items: end;
+  margin-bottom: 58px;
+}
+
+.spa-section .section-heading h2 {
+  max-width: 640px;
+  color: #25281f;
+}
+
+.spa-section .heading-right {
+  max-width: 390px;
+}
+
+.spa-section .heading-right p {
+  color: #5b6259;
+}
+
+.spa-section .things-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.spa-section .thing-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 40, 31, 0.06);
+}
+
+.spa-section .thing-image {
+  height: 270px;
+}
+
+.spa-section .thing-image img {
+  transition: transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.spa-section .thing-card:hover .thing-image img {
+  transform: scale(1.06);
+}
+
+.spa-section .thing-content {
+  min-height: 132px;
+  padding: 22px 22px 24px;
+  border-top: 1px solid rgba(37, 40, 31, 0.1);
+}
+
+.spa-section .thing-content h3 {
+  margin-bottom: 8px;
+  color: #25281f;
+  font-size: 23px !important;
+  line-height: 1.15 !important;
+}
+
+.spa-section .thing-content p {
+  color: #5b6259;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 1050px) {
+  .spa-section .things-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .spa-section .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .spa-section .things-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spa-section .thing-image {
+    height: 250px;
+  }
 }
 </style>
