@@ -26,30 +26,20 @@
             :stroke-width="1.4"
           />
 
+
           <X
             v-else
             :size="22"
             :stroke-width="1.4"
           />
+
+
+          <span class="menu-toggle__text">
+            {{ menuOpen ? 'Close' : 'Menu' }}
+          </span>
         </button>
-
-        <nav
-          class="desktop-nav"
-          aria-label="Primary navigation"
-        >
-          <RouterLink to="/rooms">
-            Stay
-          </RouterLink>
-
-          <RouterLink to="/facilities">
-            Facilities
-          </RouterLink>
-
-          <RouterLink to="/gallery">
-            Gallery
-          </RouterLink>
-        </nav>
       </div>
+
 
       <RouterLink
         to="/"
@@ -63,9 +53,11 @@
         />
       </RouterLink>
 
+
       <div class="header-actions">
         <span class="language-label">
           EN
+
 
           <ChevronDown
             :size="12"
@@ -73,12 +65,14 @@
           />
         </span>
 
+
         <RouterLink
           class="header-book"
           to="/contact"
         >
           Book your stay
         </RouterLink>
+
 
         <RouterLink
           class="header-arrow"
@@ -92,6 +86,7 @@
         </RouterLink>
       </div>
     </div>
+
 
     <!-- =====================================================
          PREMIUM FULL-SCREEN MENU
@@ -128,7 +123,9 @@
             </div>
           </div>
 
+
           <div class="mistara-menu__visual-shade"></div>
+
 
           <Transition
             name="mistara-preview"
@@ -142,9 +139,11 @@
                 {{ activePreview.kicker }}
               </span>
 
+
               <h2>
                 {{ activePreview.visualTitle }}
               </h2>
+
 
               <p>
                 {{ activePreview.description }}
@@ -152,12 +151,15 @@
             </div>
           </Transition>
 
+
           <div class="mistara-menu__visual-count">
             <span>
               {{ String(previewIndex + 1).padStart(2, '0') }}
             </span>
 
+
             <i></i>
+
 
             <span>
               {{ String(menuItems.length).padStart(2, '0') }}
@@ -165,11 +167,13 @@
           </div>
         </section>
 
+
         <!-- RIGHT: NAVIGATION -->
         <section
           ref="menuPanelRef"
           class="mistara-menu__panel"
         >
+
 
           <nav
             class="mistara-menu__nav"
@@ -190,15 +194,18 @@
             </RouterLink>
           </nav>
 
+
           <div class="mistara-menu__panel-bottom">
             <div class="mistara-menu__note">
               <span>Stay somewhere quieter.</span>
+
 
               <p>
                 Mountain air, thoughtful spaces and the slower
                 rhythm of Ella.
               </p>
             </div>
+
 
             <RouterLink
               class="mistara-menu__book"
@@ -208,6 +215,7 @@
               <span>
                 Book your stay
               </span>
+
 
               <span
                 class="mistara-menu__book-icon"
@@ -226,6 +234,7 @@
   </header>
 </template>
 
+
 <script setup>
 import {
   computed,
@@ -236,7 +245,9 @@ import {
   watch,
 } from 'vue'
 
+
 import { useRoute } from 'vue-router'
+
 
 import {
   ArrowUpRight,
@@ -245,20 +256,26 @@ import {
   X,
 } from 'lucide-vue-next'
 
+
 import { navItems } from '../../data/site'
+
 
 const route = useRoute()
 const baseUrl = import.meta.env.BASE_URL
+
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
 const previewIndex = ref(0)
 
+
 const menuButtonRef = ref(null)
 const menuPanelRef = ref(null)
 
+
 let previousHtmlOverflow = ''
 let previousBodyOverflow = ''
+
 
 const menuDetails = {
   '/': {
@@ -270,6 +287,7 @@ const menuDetails = {
       'Mountain air, warm hospitality and thoughtful spaces designed for slower stays.',
   },
 
+
   '/rooms': {
     image: `${baseUrl}Images/Home/bed2.jpeg`,
     imageAlt: 'Premium room at Mistara Ella',
@@ -278,6 +296,7 @@ const menuDetails = {
     description:
       'Restful rooms shaped by warm materials, privacy and the mountain landscape beyond.',
   },
+
 
   '/facilities': {
     image: `${baseUrl}Images/Facility/wellness3.jpeg`,
@@ -288,6 +307,7 @@ const menuDetails = {
       'From relaxed mornings to quiet afternoons, every shared space is designed around ease.',
   },
 
+
   '/gallery': {
     image: `${baseUrl}Images/Gallery/hotelpool.png`,
     imageAlt: 'Mistara Ella gallery view',
@@ -297,6 +317,7 @@ const menuDetails = {
       'Light, texture, landscape and the little details that give Mistara Ella its character.',
   },
 
+
   '/packages': {
     image: `${baseUrl}Images/Home/outside2.jpeg`,
     imageAlt: 'Mistara Ella surrounded by the hill country',
@@ -305,6 +326,7 @@ const menuDetails = {
     description:
       'Discover stay experiences created for quiet escapes, longer weekends and memorable occasions.',
   },
+
 
   '/contact': {
     image: `${baseUrl}Images/Banner/reception.jpeg`,
@@ -316,6 +338,7 @@ const menuDetails = {
   },
 }
 
+
 const menuItems = computed(() =>
   navItems.map((item) => ({
     ...item,
@@ -323,15 +346,18 @@ const menuItems = computed(() =>
   })),
 )
 
+
 const initialPreviewIndex = computed(() => {
   const index = menuItems.value.findIndex(
     (item) => item.to === route.path,
   )
 
+
   return index >= 0
     ? index
     : 0
 })
+
 
 const activePreview = computed(
   () =>
@@ -339,45 +365,57 @@ const activePreview = computed(
     menuItems.value[0],
 )
 
+
 const headerLogo = computed(() => {
   if (menuOpen.value || !scrolled.value) {
     return `${baseUrl}Images/mistara_white.png`
   }
 
+
   return `${baseUrl}Images/mistara_logo.png`
 })
+
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 36
 }
 
+
 const setPreview = (index) => {
   previewIndex.value = index
 }
+
 
 const openMenu = async () => {
   previewIndex.value = initialPreviewIndex.value
   menuOpen.value = true
 
+
   await nextTick()
+
 
   const currentLink =
     menuPanelRef.value?.querySelector(
       '.mistara-menu__nav-link.is-current',
     )
 
+
   const firstLink =
     menuPanelRef.value?.querySelector(
       '.mistara-menu__nav-link',
     )
 
+
   ;(currentLink || firstLink)?.focus()
 }
+
 
 const closeMenu = (restoreFocus = true) => {
   if (!menuOpen.value) return
 
+
   menuOpen.value = false
+
 
   if (restoreFocus) {
     nextTick(() => {
@@ -386,17 +424,21 @@ const closeMenu = (restoreFocus = true) => {
   }
 }
 
+
 const toggleMenu = () => {
   if (menuOpen.value) {
     closeMenu(false)
     return
   }
 
+
   openMenu()
 }
 
+
 const handleKeydown = (event) => {
   if (!menuOpen.value) return
+
 
   if (event.key === 'Escape') {
     event.preventDefault()
@@ -404,26 +446,33 @@ const handleKeydown = (event) => {
   }
 }
 
+
 watch(menuOpen, (isOpen) => {
   if (isOpen) {
     previousHtmlOverflow =
       document.documentElement.style.overflow
 
+
     previousBodyOverflow =
       document.body.style.overflow
+
 
     document.documentElement.style.overflow = 'hidden'
     document.body.style.overflow = 'hidden'
 
+
     return
   }
+
 
   document.documentElement.style.overflow =
     previousHtmlOverflow
 
+
   document.body.style.overflow =
     previousBodyOverflow
 })
+
 
 watch(
   () => route.fullPath,
@@ -434,8 +483,10 @@ watch(
   },
 )
 
+
 onMounted(() => {
   handleScroll()
+
 
   window.addEventListener(
     'scroll',
@@ -443,11 +494,13 @@ onMounted(() => {
     { passive: true },
   )
 
+
   window.addEventListener(
     'keydown',
     handleKeydown,
   )
 })
+
 
 onBeforeUnmount(() => {
   window.removeEventListener(
@@ -455,18 +508,22 @@ onBeforeUnmount(() => {
     handleScroll,
   )
 
+
   window.removeEventListener(
     'keydown',
     handleKeydown,
   )
 
+
   document.documentElement.style.overflow =
     previousHtmlOverflow
+
 
   document.body.style.overflow =
     previousBodyOverflow
 })
 </script>
+
 
 <style scoped>
 /* =========================================================
@@ -475,10 +532,13 @@ onBeforeUnmount(() => {
    Existing global header styling stays untouched.
 ========================================================= */
 
+
 .header-frame {
   position: relative;
   z-index: 4;
 }
+
+
 
 
 /* Keep the existing header, but let it float cleanly over
@@ -488,25 +548,29 @@ onBeforeUnmount(() => {
   box-shadow: none !important;
   color: #ffffff !important;
 
+
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
 }
 
-.site-header.menu-open .desktop-nav,
+
 .site-header.menu-open .header-actions {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
+
 .site-header.menu-open .menu-toggle {
   border-color: rgba(255, 255, 255, .38) !important;
   background: rgba(7, 29, 23, .18) !important;
   color: #ffffff !important;
 
+
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
+
 
 .site-header.menu-open .menu-toggle:hover {
   border-color: rgba(255, 255, 255, .72) !important;
@@ -514,47 +578,112 @@ onBeforeUnmount(() => {
 }
 
 
+
+
+/* Header menu trigger */
+.menu-toggle {
+  width: auto !important;
+  min-width: 0;
+  height: 42px;
+
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+
+  padding: 0 12px !important;
+}
+
+
+.menu-toggle__text {
+  display: inline-block;
+
+
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+
+
+  white-space: nowrap;
+}
+
+
+@media (max-width: 640px) {
+  .menu-toggle {
+    height: 40px;
+    gap: 7px;
+    padding: 0 10px !important;
+  }
+
+
+  .menu-toggle__text {
+    font-size: 10px;
+  }
+}
+
+
+
+
 /* =========================================================
    OVERLAY SHELL
 ========================================================= */
+
 
 .mistara-menu {
   position: fixed;
   z-index: 2;
   inset: 0;
 
+
   width: 100%;
+  height: 100vh;
   height: 100dvh;
-  min-height: 620px;
+  min-height: 0;
+
 
   display: grid;
   grid-template-columns:
     minmax(0, 56fr)
     minmax(430px, 44fr);
 
+
   overflow: hidden;
+
 
   background: #102f27;
   color: #f6f1e8;
 
+
   isolation: isolate;
 }
+
+
 
 
 /* =========================================================
    LEFT — CINEMATIC PREVIEW
 ========================================================= */
 
+
 .mistara-menu__visual {
   position: relative;
+
 
   min-width: 0;
   min-height: 0;
 
+
   overflow: hidden;
+
 
   background: #182f28;
 }
+
 
 .mistara-menu__images,
 .mistara-menu__image {
@@ -562,41 +691,53 @@ onBeforeUnmount(() => {
   inset: 0;
 }
 
+
 .mistara-menu__image {
   opacity: 0;
 
+
   transform: scale(1.055);
+
 
   transition:
     opacity .72s ease,
     transform 1.35s cubic-bezier(.16, 1, .3, 1);
 }
 
+
 .mistara-menu__image.is-active {
   z-index: 1;
 
+
   opacity: 1;
+
 
   transform: scale(1);
 }
+
 
 .mistara-menu__image img {
   width: 100%;
   height: 100%;
   max-width: none;
 
+
   display: block;
+
 
   object-fit: cover;
   object-position: center;
 
+
   user-select: none;
 }
+
 
 .mistara-menu__visual-shade {
   position: absolute;
   z-index: 2;
   inset: 0;
+
 
   background:
     linear-gradient(
@@ -614,24 +755,33 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 .mistara-menu__visual-copy {
   position: absolute;
   z-index: 3;
 
+
   left: 5vw;
   bottom: clamp(62px, 8vh, 106px);
 
+
   width: min(560px, 72%);
+
 
   color: #ffffff;
 }
 
+
 .mistara-menu__visual-kicker {
   display: block;
 
+
   margin-bottom: clamp(16px, 1.6vw, 26px);
 
+
   color: rgba(255, 255, 255, .66);
+
 
   font-family: var(--sans);
   font-size: clamp(9px, .64vw, 11px);
@@ -641,12 +791,16 @@ onBeforeUnmount(() => {
   text-transform: uppercase;
 }
 
+
 .mistara-menu__visual-copy h2 {
   max-width: 530px;
 
+
   margin: 0;
 
+
   color: #ffffff;
+
 
   font-family: var(--serif);
   font-size: clamp(38px, 3.3vw, 60px);
@@ -655,12 +809,16 @@ onBeforeUnmount(() => {
   letter-spacing: -.028em;
 }
 
+
 .mistara-menu__visual-copy p {
   max-width: 420px;
 
+
   margin: clamp(18px, 1.6vw, 26px) 0 0;
 
+
   color: rgba(255, 255, 255, .67);
+
 
   font-family: var(--sans);
   font-size: clamp(12px, .82vw, 14px);
@@ -668,18 +826,23 @@ onBeforeUnmount(() => {
   line-height: 1.7;
 }
 
+
 .mistara-menu__visual-count {
   position: absolute;
   z-index: 3;
 
+
   right: 4vw;
   bottom: clamp(66px, 8vh, 108px);
+
 
   display: flex;
   align-items: center;
   gap: 10px;
 
+
   color: rgba(255, 255, 255, .62);
+
 
   font-family: var(--sans);
   font-size: 9px;
@@ -687,35 +850,46 @@ onBeforeUnmount(() => {
   letter-spacing: .1em;
 }
 
+
 .mistara-menu__visual-count i {
   width: clamp(34px, 3vw, 54px);
   height: 1px;
 
+
   background: rgba(255, 255, 255, .42);
 }
+
+
 
 
 /* =========================================================
    RIGHT — EDITORIAL NAVIGATION PANEL
 ========================================================= */
 
+
 .mistara-menu__panel {
   position: relative;
 
+
   min-width: 0;
   min-height: 0;
+
 
   display: grid;
   grid-template-rows:
     1fr
     auto;
 
+
   padding:
-    clamp(118px, 11vh, 150px)
-    clamp(42px, 4.2vw, 78px)
-    clamp(38px, 4vh, 58px);
+    clamp(96px, 9.5vh, 118px)
+    clamp(38px, 3.8vw, 66px)
+    clamp(28px, 3.2vh, 42px);
+
 
   overflow-y: auto;
+  overscroll-behavior: contain;
+
 
   background:
     radial-gradient(
@@ -730,18 +904,24 @@ onBeforeUnmount(() => {
       #0f332b 100%
     );
 
+
   color: #f5f0e6;
 }
+
 
 .mistara-menu__panel::before {
   content: '';
 
+
   position: absolute;
   inset: 0;
 
+
   pointer-events: none;
 
+
   opacity: .17;
+
 
   background-image:
     radial-gradient(
@@ -749,10 +929,13 @@ onBeforeUnmount(() => {
       transparent .55px
     );
 
+
   background-size: 6px 6px;
+
 
   mix-blend-mode: soft-light;
 }
+
 
 .mistara-menu__nav,
 .mistara-menu__panel-bottom {
@@ -767,44 +950,64 @@ onBeforeUnmount(() => {
 
 
 
+
+
+
+
+
+
+
+
 /* Navigation — large editorial page names */
 .mistara-menu__nav {
   position: relative;
   z-index: 1;
 
+
   align-self: center;
+
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  gap: clamp(8px, 1.2vh, 16px);
+
+  gap: clamp(4px, .7vh, 10px);
+
 
   width: 100%;
   margin: 0;
-  padding: clamp(28px, 4.5vh, 58px) 0;
+  padding: clamp(18px, 2.8vh, 34px) 0;
 }
+
 
 .mistara-menu__nav-link {
   position: relative;
 
+
   width: min(100%, 660px);
+
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+
   padding:
-    clamp(16px, 1.8vh, 24px)
+    clamp(12px, 1.35vh, 18px)
     clamp(10px, 1vw, 16px);
+
 
   border: 0;
   border-bottom: 1px solid rgba(245, 240, 230, .13);
 
+
   color: rgba(245, 240, 230, .94);
 
+
   text-align: center;
+
 
   transition:
     color .35s ease,
@@ -812,18 +1015,22 @@ onBeforeUnmount(() => {
     opacity .35s ease;
 }
 
+
 .mistara-menu__nav-link:first-child {
   border-top: 1px solid rgba(245, 240, 230, .13);
 }
 
+
 .mistara-menu__nav-title {
   display: block;
 
+
   font-family: var(--serif);
-  font-size: clamp(46px, 4.2vw, 76px);
+  font-size: clamp(38px, 3.35vw, 58px);
   font-weight: 400;
   line-height: .98;
   letter-spacing: -.035em;
+
 
   transition:
     color .35s ease,
@@ -831,16 +1038,21 @@ onBeforeUnmount(() => {
     letter-spacing .5s cubic-bezier(.16, 1, .3, 1);
 }
 
+
 .mistara-menu__nav-link:hover,
 .mistara-menu__nav-link:focus-visible {
   color: #d8c59b;
 
+
   border-color: rgba(216, 197, 155, .34);
+
 
   outline: none;
 
+
   transform: translateX(5px);
 }
+
 
 /* Keep non-hovered links quiet while exploring the menu. */
 @media (hover: hover) and (pointer: fine) {
@@ -851,6 +1063,8 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 /* Bottom area */
 .mistara-menu__panel-bottom {
   display: flex;
@@ -858,31 +1072,41 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   gap: 28px;
 
+
   padding-top: clamp(24px, 2.8vh, 40px);
+
 
   border-top: 1px solid rgba(245, 240, 230, .16);
 }
+
 
 .mistara-menu__note {
   max-width: 230px;
 }
 
+
 .mistara-menu__note span {
   display: block;
 
+
   margin-bottom: 7px;
 
+
   color: rgba(245, 240, 230, .78);
+
 
   font-family: var(--serif);
   font-size: 15px;
   line-height: 1.2;
 }
 
+
 .mistara-menu__note p {
   margin: 0;
 
+
   color: rgba(245, 240, 230, .40);
+
 
   font-family: var(--sans);
   font-size: 10px;
@@ -890,34 +1114,43 @@ onBeforeUnmount(() => {
   line-height: 1.55;
 }
 
+
 .mistara-menu__book {
   display: inline-flex;
   align-items: center;
   gap: 14px;
 
+
   color: #f5f0e6;
+
 
   font-family: var(--serif);
   font-size: clamp(16px, 1.1vw, 19px);
   line-height: 1;
 }
 
+
 .mistara-menu__book-icon {
   width: 46px;
   height: 46px;
 
+
   display: grid;
   place-items: center;
 
+
   border-radius: 50%;
+
 
   background: #c8b58c;
   color: #123a31;
+
 
   transition:
     transform .4s cubic-bezier(.16, 1, .3, 1),
     background .3s ease;
 }
+
 
 .mistara-menu__book:hover
 .mistara-menu__book-icon {
@@ -925,21 +1158,27 @@ onBeforeUnmount(() => {
     translate(2px, -2px)
     rotate(6deg);
 
+
   background: #efe2c6;
 }
+
+
 
 
 /* =========================================================
    OPEN / CLOSE MOTION
 ========================================================= */
 
+
 .mistara-menu-enter-active {
   transition: opacity .58s ease;
 }
 
+
 .mistara-menu-leave-active {
   transition: opacity .42s ease;
 }
+
 
 .mistara-menu-enter-active
 .mistara-menu__visual,
@@ -950,6 +1189,7 @@ onBeforeUnmount(() => {
     transform .92s cubic-bezier(.16, 1, .3, 1);
 }
 
+
 .mistara-menu-enter-active
 .mistara-menu__panel,
 .mistara-menu-leave-active
@@ -957,6 +1197,7 @@ onBeforeUnmount(() => {
   transition:
     transform .82s cubic-bezier(.16, 1, .3, 1);
 }
+
 
 .mistara-menu-enter-active
 .mistara-menu__nav-link {
@@ -967,74 +1208,92 @@ onBeforeUnmount(() => {
     border-color .35s ease;
 }
 
+
 .mistara-menu-enter-from {
   opacity: 0;
 }
+
 
 .mistara-menu-enter-from
 .mistara-menu__visual {
   clip-path: inset(0 72% 0 0);
 
+
   transform: scale(1.035);
 }
+
 
 .mistara-menu-enter-from
 .mistara-menu__panel {
   transform: translateX(100%);
 }
 
+
 .mistara-menu-enter-from
 .mistara-menu__nav-link {
   opacity: 0;
 
+
   transform: translateY(28px);
 }
+
 
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(1) {
   transition-delay: .14s;
 }
 
+
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(2) {
   transition-delay: .19s;
 }
+
 
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(3) {
   transition-delay: .24s;
 }
 
+
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(4) {
   transition-delay: .29s;
 }
+
 
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(5) {
   transition-delay: .34s;
 }
 
+
 .mistara-menu-enter-active
 .mistara-menu__nav-link:nth-child(6) {
   transition-delay: .39s;
 }
 
+
 .mistara-menu-leave-to {
   opacity: 0;
 }
+
 
 .mistara-menu-leave-to
 .mistara-menu__visual {
   clip-path: inset(0 0 0 18%);
 
+
   transform: scale(1.018);
 }
+
 
 .mistara-menu-leave-to
 .mistara-menu__panel {
   transform: translateX(18%);
 }
+
+
 
 
 /* Preview text crossfade when hovering nav items */
@@ -1045,10 +1304,12 @@ onBeforeUnmount(() => {
     transform .48s cubic-bezier(.16, 1, .3, 1);
 }
 
+
 .mistara-preview-enter-from {
   opacity: 0;
   transform: translateY(16px);
 }
+
 
 .mistara-preview-leave-to {
   opacity: 0;
@@ -1056,9 +1317,12 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 /* =========================================================
    LARGE DESKTOP
 ========================================================= */
+
 
 @media (min-width: 1700px) {
   .mistara-menu {
@@ -1067,20 +1331,25 @@ onBeforeUnmount(() => {
       minmax(620px, 42fr);
   }
 
+
   .mistara-menu__panel {
     padding-left: 72px;
     padding-right: 72px;
   }
 
+
   .mistara-menu__nav-title {
-    font-size: clamp(58px, 4.1vw, 76px);
+    font-size: clamp(44px, 3.25vw, 60px);
   }
 }
+
+
 
 
 /* =========================================================
    TABLET / SMALL LAPTOP
 ========================================================= */
+
 
 @media (max-width: 1100px) {
   .mistara-menu {
@@ -1089,18 +1358,22 @@ onBeforeUnmount(() => {
       minmax(480px, 52fr);
   }
 
+
   .mistara-menu__visual-copy {
     width: min(450px, 78%);
   }
+
 
   .mistara-menu__visual-count {
     right: 3vw;
   }
 
+
   .mistara-menu__panel {
     padding-left: 42px;
     padding-right: 42px;
   }
+
 
   .mistara-menu__nav-title {
     font-size: clamp(28px, 3.4vw, 38px);
@@ -1108,9 +1381,12 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 /* =========================================================
    MOBILE / TABLET PORTRAIT
 ========================================================= */
+
 
 @media (max-width: 900px) {
   .site-header.menu-open,
@@ -1118,12 +1394,17 @@ onBeforeUnmount(() => {
     height: 72px;
   }
 
+
   .site-header.menu-open .header-frame {
     width: calc(100% - 28px);
   }
 
+
   .mistara-menu {
+    height: 100vh;
+    height: 100dvh;
     min-height: 0;
+
 
     display: grid;
     grid-template-columns: 1fr;
@@ -1131,57 +1412,73 @@ onBeforeUnmount(() => {
       minmax(210px, 31svh)
       minmax(0, 1fr);
 
+
     overflow-y: auto;
   }
+
 
   .mistara-menu__visual {
     min-height: 210px;
   }
 
+
   .mistara-menu__visual-copy {
     left: 20px;
     bottom: 24px;
 
+
     width: min(520px, calc(100% - 110px));
   }
+
 
   .mistara-menu__visual-kicker {
     margin-bottom: 8px;
 
+
     font-size: 8px;
   }
+
 
   .mistara-menu__visual-copy h2 {
     max-width: 480px;
 
+
     font-size: clamp(26px, 5vw, 38px);
   }
+
 
   .mistara-menu__visual-copy p {
     display: none;
   }
+
 
   .mistara-menu__visual-count {
     right: 20px;
     bottom: 26px;
   }
 
+
   .mistara-menu__panel {
     min-height: max-content;
 
+
     display: block;
+
 
     padding:
       26px
       24px
       30px;
 
+
     overflow: visible;
   }
+
 
   .mistara-menu__nav {
     margin: 14px 0 24px;
   }
+
 
   .mistara-menu__nav-link {
     grid-template-columns:
@@ -1190,14 +1487,18 @@ onBeforeUnmount(() => {
       auto
       38px;
 
+
     gap: 10px;
+
 
     min-height: 58px;
   }
 
+
   .mistara-menu__nav-title {
     font-size: clamp(26px, 5.8vw, 36px);
   }
+
 
   .mistara-menu__panel-bottom {
     padding-top: 22px;
@@ -1205,9 +1506,12 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
+
 
 @media (max-width: 640px) {
   .mistara-menu {
@@ -1216,24 +1520,30 @@ onBeforeUnmount(() => {
       minmax(0, 1fr);
   }
 
+
   .mistara-menu__visual-copy {
     bottom: 20px;
+
 
     width: calc(100% - 88px);
   }
 
+
   .mistara-menu__visual-copy h2 {
     font-size: clamp(24px, 7.6vw, 32px);
   }
+
 
   .mistara-menu__visual-count {
     right: 16px;
     bottom: 21px;
   }
 
+
   .mistara-menu__visual-count i {
     width: 22px;
   }
+
 
   .mistara-menu__panel {
     padding:
@@ -1242,9 +1552,11 @@ onBeforeUnmount(() => {
       26px;
   }
 
+
   .mistara-menu__nav {
     margin: 10px 0 20px;
   }
+
 
   .mistara-menu__nav-link {
     grid-template-columns:
@@ -1252,32 +1564,41 @@ onBeforeUnmount(() => {
       minmax(0, 1fr)
       34px;
 
+
     min-height: 52px;
   }
+
 
   .mistara-menu__nav-title {
     font-size: clamp(24px, 7.2vw, 30px);
   }
 
+
   .mistara-menu__note {
     display: none;
   }
+
 
   .mistara-menu__panel-bottom {
     justify-content: flex-end;
   }
 
+
   .mistara-menu__book {
     width: 100%;
+
 
     justify-content: space-between;
   }
 }
 
 
+
+
 /* =========================================================
    SHORT DESKTOPS
 ========================================================= */
+
 
 @media (min-width: 901px) and (max-height: 760px) {
   .mistara-menu__panel {
@@ -1285,30 +1606,37 @@ onBeforeUnmount(() => {
     padding-bottom: 24px;
   }
 
+
   .mistara-menu__nav {
     margin: 12px 0;
   }
 
+
   .mistara-menu__nav {
     gap: 6px;
   }
+
 
   .mistara-menu__nav-link {
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
+
   .mistara-menu__nav-title {
-    font-size: clamp(36px, 3.2vw, 50px);
+    font-size: clamp(32px, 2.8vw, 44px);
   }
+
 
   .mistara-menu__panel-bottom {
     padding-top: 18px;
   }
 
+
   .mistara-menu__visual-copy {
     bottom: 52px;
   }
+
 
   .mistara-menu__visual-count {
     bottom: 56px;
@@ -1316,9 +1644,12 @@ onBeforeUnmount(() => {
 }
 
 
+
+
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
+
 
 @media (prefers-reduced-motion: reduce) {
   .mistara-menu,
@@ -1336,3 +1667,6 @@ onBeforeUnmount(() => {
   }
 }
 </style>
+
+
+
