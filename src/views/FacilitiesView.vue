@@ -327,7 +327,7 @@ import { onMounted, ref } from "vue";
 
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
-import ellaMountainImage from "C:/Users/USER/OneDrive/Desktop/Weblook/New folder (2)/mistara-ella-frontend/public/Images/Home/amenities/lounge.jpeg";
+const ellaMountainImage = "/Images/Home/amenities/lounge.jpeg";
 
 /* =====================================================
    FACILITIES
