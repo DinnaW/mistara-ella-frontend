@@ -1726,8 +1726,13 @@ const rooms = [
 .mistara-rooms-showcase__heading { margin-bottom: clamp(2rem, 3vw, 3.2rem); text-align: center; }
 
 
-.mistara-rooms-showcase__eyebrow { display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom:clamp(1.5rem,2vw,2rem); color:#26352e; font-family:'Inter',Arial,sans-serif; font-size:clamp(11px,.82vw,13px); font-weight:400; line-height:1; letter-spacing:.055em; white-space:nowrap; }
-
+.mistara-rooms-showcase__eyebrow { display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom: clamp(26px, 2.8vw, 42px); color: #5b685f;
+  font-family: var(--sans);
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;}
 
 .mistara-rooms-showcase__eyebrow-line { width:clamp(54px,5vw,82px); height:1px; flex:0 0 auto; background:rgba(23,45,36,.55); }
 
@@ -1735,8 +1740,7 @@ const rooms = [
 .mistara-rooms-showcase__heading p { margin: 0 0 .5rem; color: #e6c9a5; font-size: clamp(.65rem, .7vw, .75rem); letter-spacing: .16em; text-transform: uppercase; }
 
 
-.mistara-rooms-showcase__heading h2 { margin: 0; color: #0b2c25; font-family: 'Marcellus', serif; font-size: clamp(34px, 3vw, 52px);; font-weight: 400; }
-
+.mistara-rooms-showcase__heading h2 { margin: 0; color: #1b2d25; font-family: var(--serif); font-size: clamp(36px, 3.35vw, 54px); font-weight: 400; line-height: 1.05; letter-spacing: -.026em; }
 
 .mistara-room-grid { width: 100%; display: flex; gap: clamp(1.2rem, 2vw, 2rem); overflow-x: auto; overflow-y: visible; padding:1.5rem .4rem 2rem; scroll-snap-type: x mandatory; scroll-padding-inline: .4rem; scroll-behavior: smooth; perspective: 1400px; scrollbar-width: none; -webkit-overflow-scrolling: touch; cursor: grab; }
 
@@ -1780,8 +1784,18 @@ const rooms = [
 .mistara-room-card__content { position: relative; z-index: 2; padding: clamp(1.3rem, 1.8vw, 1.8rem); background: #ffffff; transform: translateZ(14px); }
 
 
-.mistara-room-card__eyebrow { margin: 0 0 .5rem; color: #e6c9a5; font-size: .65rem; letter-spacing: .14em; }
-
+.mistara-room-card__eyebrow { display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: clamp(26px, 2.8vw, 42px);
+  color: #5b685f;
+  font-family: var(--sans);
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
 .mistara-room-card__content h3 { margin: 0 0 .9rem; color: #1b1a1a; font-family: 'Marcellus', serif; font-size: clamp(1.4rem, 1.7vw, 1.8rem); font-weight: 400; }
 
@@ -1834,8 +1848,7 @@ const rooms = [
 .room-moments-heading { padding:0 3vw; margin-bottom:clamp(1.8rem,3vw,3rem); text-align:center; }
 
 
-.room-moments-heading h2 { margin:0; color:#18211c; font-family:'Marcellus',serif; font-size: clamp(34px, 3vw, 52px); font-weight:400; line-height:1; letter-spacing:-.02em;}
-
+.room-moments-heading h2 { margin: 0; color: #1b2d25; font-family: var(--serif); font-size: clamp(36px, 3.35vw, 54px); font-weight: 400; line-height: 1.05; letter-spacing: -.026em;}
 
 .room-moments-track { width:100%; display:flex; gap:clamp(.7rem,1vw,1rem); overflow-x:auto; padding:0 3vw 1rem; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
 
@@ -1904,128 +1917,52 @@ const rooms = [
 
 
 .mistara-room-experience__eyebrow {
-
-
-display:flex;
-
-
-align-items:center;
-
-
-gap:20px;
-
-
-margin:0 0 clamp(34px,3.2vw,52px);
-
-
-color:#26352e;
-
-
-font-family:var(--sans,'Inter',Arial,sans-serif);
-
-
-font-size:clamp(11px,.82vw,13px);
-
-
-font-weight:400;
-
-
-line-height:1;
-
-
-letter-spacing:.055em;
-
-
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: clamp(26px, 2.8vw, 42px);
+  color: #5b685f;
+  font-family: var(--sans);
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
-
 
 .mistara-room-experience__eyebrow-line {
-
-
-width:clamp(54px,5vw,82px);
-
-
-height:1px;
-
-
-flex:0 0 auto;
-
-
-background:rgba(23,45,36,.55);
-
-
+  width: clamp(44px, 4vw, 68px);
+  height: 1px;
+  background: rgba(27, 57, 46, .45);
 }
 
-
 .mistara-room-experience__content h2 {
-
-
-margin:0;
-
-
-color:#17281f;
-
-
-font-family:var(--serif,'Marcellus',Georgia,serif);
-
-
-font-size: clamp(34px, 3vw, 52px);
-
-
-font-weight:400;
-
-
-line-height:1.08;
-
-
-letter-spacing:-.02em;
-
-
+  margin: 0;
+  color: #1b2d25;
+  font-family: var(--serif);
+  font-size: clamp(36px, 3.35vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.026em;
 }
 
 
 .mistara-room-experience__content h2 em {
-
-
-font-family:inherit;
-
-
-font-weight:inherit;
-
-
-font-style:italic;
-
-
+  display: block;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: italic;
 }
 
-
 .mistara-room-experience__text {
-
-
-width: min(100%, 590px);
-
-
-margin: clamp(30px, 2.6vw, 42px) 0 0;
-
-
-color: #31423a;
-
-
-font-family: 'Inter', Arial, sans-serif;
-
-
-font-size: clamp(13px, .96vw, 15px);
-
-
-font-weight: 300;
-
-
-line-height: 1.8;
-
-
-letter-spacing: -.012em;
-
-
+  width: min(100%, 590px);
+  margin: clamp(30px, 2.6vw, 42px) 0 0;
+  color: #546159;
+  font-family: var(--sans);
+  font-size: clamp(13px, .92vw, 15px);
+  font-weight: 300;
+  line-height: 1.72;
+  letter-spacing: -.012em;
 }
 
 
@@ -2161,10 +2098,27 @@ transform: translateX(3px); }
 .room-modal__main { min-width: 0; }
 
 
-.room-modal__eyebrow { margin: 0 0 .6rem; color: #b78b5a; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.room-modal__eyebrow { display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: clamp(26px, 2.8vw, 42px);
+  color: #5b685f;
+  font-family: var(--sans);
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
-
-.room-modal__main > h2 { margin: 0 0 2rem; color: #18211c; font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 3.4vw, 3.5rem); font-weight: 400; }
+.room-modal__main > h2 { margin: 0;
+  color: #1b2d25;
+  font-family: var(--serif);
+  font-size: clamp(36px, 3.35vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.026em;
+ }
 
 
 .room-modal__options { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 1.5rem; }
