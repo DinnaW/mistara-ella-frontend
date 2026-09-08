@@ -22,6 +22,8 @@
 
 
 
+
+
          <p class="footer-brand__text">
 
            A quiet hillside retreat in Ella, shaped by mountain air, warm hospitality and the unhurried rhythm of Sri Lanka’s hill country.
@@ -30,7 +32,11 @@
 
 
 
+
+
          <p class="footer-brand__follow">Follow us on</p>
+
+
 
 
 
@@ -44,6 +50,8 @@
 
 
 
+
+
            <a href="#" aria-label="X">
 
              <i class="fa-brands fa-x-twitter"></i>
@@ -52,11 +60,15 @@
 
 
 
+
+
            <a href="#" aria-label="Instagram">
 
              <i class="fa-brands fa-instagram"></i>
 
            </a>
+
+
 
 
 
@@ -72,11 +84,15 @@
 
 
 
+
+
        <!-- STAY -->
 
        <nav class="footer-column" aria-label="Stay">
 
          <h3 class="footer-column__title">Stay</h3>
+
+
 
 
 
@@ -92,11 +108,15 @@
 
 
 
+
+
        <!-- EXPLORE -->
 
        <nav class="footer-column" aria-label="Explore">
 
          <h3 class="footer-column__title">Explore</h3>
+
+
 
 
 
@@ -124,6 +144,8 @@
 
 
 
+
+
        <!-- NEWSLETTER -->
 
        <div class="footer-newsletter">
@@ -132,11 +154,15 @@
 
 
 
+
+
          <p class="footer-newsletter__text">
 
            Stay close to the hills. Receive quiet updates, seasonal offers and stay inspiration from Mistara Ella.
 
          </p>
+
+
 
 
 
@@ -154,6 +180,8 @@
 
 
 
+
+
            <button type="submit">Stay Updated</button>
 
          </form>
@@ -166,11 +194,15 @@
 
 
 
+
+
    <!-- UTILITY BAR - DOWNLOAD SECTION REMOVED -->
 
    <div class="footer-utility">
 
      <div class="footer-support">
+
+
 
 
 
@@ -190,9 +222,13 @@
 
 
 
+
+
      <div class="footer-support-brands">
 
        <span class="footer-support-brands__label">We Support</span>
+
+
 
 
 
@@ -216,6 +252,8 @@
 
 
 
+
+
          <img
 
            src="https://api.iconify.design/logos:visa.svg"
@@ -228,6 +266,8 @@
 
 
 
+
+
          <img
 
            src="https://api.iconify.design/logos:paypal.svg"
@@ -237,6 +277,8 @@
            class="payment-logo payment-logo--paypal"
 
          />
+
+
 
 
 
@@ -264,6 +306,8 @@
 
 
 
+
+
            <span class="western-union-logo__text">
 
              <strong>Western</strong>
@@ -282,11 +326,16 @@
 
 
 
+
+
    <!-- BOTTOM BAR -->
 
    <div class="footer-bottom">
+
      <span class="footer-bottom__copyright">
+
        © {{ year }} Mistara Ella. All rights reserved.
+
      </span>
 
      <div class="footer-bottom__links">
@@ -297,9 +346,13 @@
 
 
 
+
+
        <a href="#/contact">Terms &amp; Conditions</a>
 
        <span class="footer-bottom__divider" aria-hidden="true"></span>
+
+
 
 
 
@@ -308,12 +361,19 @@
      </div>
 
      <div class="footer-bottom__powered">
+
        <span>Powered by</span>
+
        <img
+
          :src="`${baseUrl}Images/saasbedslogoblue.png`"
+
          alt="SaaSbed"
+
          class="footer-bottom__saasbed-logo"
+
        />
+
      </div>
 
    </div>
@@ -324,1133 +384,780 @@
 
 
 
+
+
 <script setup>
 
 const baseUrl = import.meta.env.BASE_URL
+
 const year = new Date().getFullYear()
 
 </script>
 
 
 
-<style scoped>
 
+
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap');
 
-
-
 .site-footer {
+  --serif: 'Marcellus', Georgia, serif;
+  --sans: 'Inter', Arial, sans-serif;
 
- --serif: 'Marcellus', Georgia, serif;
+  width: 100%;
+  overflow: hidden;
 
- --sans: 'Inter', Arial, sans-serif;
+  background: #000000;
+  color: #ffffff;
 
-
-
- width: 100%;
-
- overflow: hidden;
-
-
-
- background: #000000;
-
- color: #ffffff;
-
-
-
- font-family: var(--sans);
-
+  font-family: var(--sans);
 }
-
-
 
 /* =========================================================
-
-  TOP FOOTER
-
+   DESKTOP
+   vw-based sizing keeps the physical preview much closer
+   between 100% and 80% browser zoom.
+   Text enlarged in v7 while keeping payment icons compact.
 ========================================================= */
 
-
-
 .footer-main {
-
- width: 100%;
-
- padding: clamp(18px, 1.2vw, 28px) 3vw clamp(12px, 1vw, 24px);
-
- box-sizing: border-box;
-
+  width: 100%;
+  padding: 2.5vw 4vw 2.3vw;
+  box-sizing: border-box;
 }
-
-
 
 .footer-grid {
+  display: grid;
 
- display: grid;
+  grid-template-columns:
+    minmax(13vw, 1.25fr)
+    minmax(7.8vw, .65fr)
+    minmax(7.8vw, .65fr)
+    minmax(15.6vw, 1.35fr);
 
- grid-template-columns: 1.25fr .7fr .7fr 1.25fr;
+  column-gap: 3.5vw;
 
- gap: clamp(24px, 3vw, 52px);
-
- width: 100%;
-
+  width: 100%;
+  align-items: start;
 }
-
-
 
 /* BRAND */
 
-
-
 .footer-brand {
-
- min-width: 0;
-
+  min-width: 0;
 }
-
-
 
 .footer-brand__logo {
-
- display: block;
-
- width: auto;
-
- height: clamp(74px, 6.4vw, 88px);
-
- object-fit: contain;
-
+  display: block;
+  width: 6.5vw;
+  height: auto;
+  object-fit: contain;
 }
-
-
 
 .footer-brand__text {
+  max-width: 38ch;
 
- max-width: 34ch;
+  margin: 1.15vw 0 0;
 
+  color: rgba(255, 255, 255, .58);
 
-
- margin: clamp(14px, 1.5vw, 20px) 0 0;
-
-
-
- color: rgba(255, 255, 255, .58);
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(11px, .88vw, 13px);
-
- font-weight: 400;
-
- line-height: 1.65;
-
+  font-family: var(--sans);
+  font-size: .86vw;
+  font-weight: 400;
+  line-height: 1.7;
 }
-
-
 
 .footer-brand__follow {
+  margin: 1.45vw 0 .63vw;
 
- margin: clamp(22px, 2.4vw, 34px) 0 clamp(9px, .9vw, 13px);
+  color: rgba(255, 255, 255, .65);
 
-
-
- color: rgba(255, 255, 255, .65);
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(11px, .88vw, 13px);
-
- font-weight: 500;
-
+  font-family: var(--sans);
+  font-size: .86vw;
+  font-weight: 500;
 }
-
-
 
 .footer-brand__socials {
-
- display: flex;
-
- align-items: center;
-
- gap: clamp(12px, 1.1vw, 18px);
-
+  display: flex;
+  align-items: center;
+  gap: .9vw;
 }
-
-
 
 .footer-brand__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
- display: inline-flex;
+  color: rgba(255, 255, 255, .58);
+  text-decoration: none;
 
- align-items: center;
+  font-size: 1.10vw;
 
- justify-content: center;
-
-
-
- color: rgba(255, 255, 255, .52);
-
- text-decoration: none;
-
-
-
- font-size: clamp(15px, 1.15vw, 18px);
-
-
-
- transition:
-
-   color .2s ease,
-
-   transform .2s ease;
-
+  transition:
+    color .2s ease,
+    transform .2s ease;
 }
-
-
 
 .footer-brand__socials a:hover {
-
- color: #b79a69;
-
- transform: translateY(-2px);
-
+  color: #b79a69;
+  transform: translateY(-2px);
 }
-
-
-
-/* COLUMNS */
-
-
-
-.footer-column,
-
-.footer-newsletter {
-
- min-width: 0;
-
-}
-
-
-
-.footer-column {
-
- display: flex;
-
- flex-direction: column;
-
- align-items: flex-start;
-
-}
-
-
-
-.footer-column__title {
-
- margin: 0 0 clamp(16px, 1.6vw, 24px);
-
-
-
- color: #ffffff;
-
-
-
- font-family: var(--serif);
-
- font-size: clamp(15px, 1.18vw, 18px);
-
- font-weight: 400;
-
- line-height: 1.2;
-
-}
-
-
-
-.footer-column a {
-
- margin-bottom: clamp(10px, 1vw, 14px);
-
-
-
- color: rgba(255, 255, 255, .58);
-
- text-decoration: none;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(11px, .88vw, 13px);
-
- font-weight: 400;
-
- line-height: 1.4;
-
-
-
- transition: color .2s ease;
-
-}
-
-
-
-.footer-column a:hover {
-
- color: #b79a69;
-
-}
-
-
-
-.footer-sale-link {
-
- display: inline-flex;
-
- align-items: center;
-
- gap: 8px;
-
-}
-
-
-
-.footer-badge {
-
- display: inline-flex;
-
- align-items: center;
-
-
-
- padding: 2px 8px;
-
-
-
- border-radius: 999px;
-
-
-
- background: rgba(239, 68, 68, .14);
-
- color: #ef4444;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(8px, .7vw, 10px);
-
- font-weight: 600;
-
-}
-
-
-
-/* NEWSLETTER */
-
-
-
-.footer-newsletter__text {
-
- margin: 0 0 clamp(14px, 1.5vw, 20px);
-
-
-
- color: rgba(255, 255, 255, .58);
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(11px, .88vw, 13px);
-
- font-weight: 400;
-
- line-height: 1.55;
-
-}
-
-
-
-.footer-newsletter__form {
-
- display: flex;
-
- flex-direction: column;
-
- gap: clamp(8px, .8vw, 11px);
-
-}
-
-
-
-.footer-newsletter__form input {
-
- width: 100%;
-
- height: clamp(40px, 3.2vw, 48px);
-
-
-
- padding: 0 clamp(12px, 1.1vw, 16px);
-
-
-
- border: 1px solid rgba(255, 255, 255, .16);
-
- border-radius: 7px;
-
-
-
- background: rgba(255, 255, 255, .05);
-
- color: #ffffff;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(10px, .85vw, 12px);
-
-
-
- outline: none;
-
- box-sizing: border-box;
-
-
-
- transition:
-
-   border-color .2s ease,
-
-background .2s ease;
-
-}
-
-
-
-.footer-newsletter__form input::placeholder {
-
- color: rgba(255, 255, 255, .36);
-
-}
-
-
-
-.footer-newsletter__form input:focus {
-
- border-color: #b79a69;
-
- background: rgba(255, 255, 255, .07);
-
-}
-
-
-
-.footer-newsletter__form button {
-
- width: 100%;
-
- height: clamp(40px, 3.2vw, 48px);
-
-
-
- border: 1px solid rgba(255, 255, 255, .58);
-
- border-radius: 8px;
-
-
-
- background: transparent;
-
- color: #ffffff;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(10px, .9vw, 13px);
-
- font-weight: 600;
-
-
-
- cursor: pointer;
-
-
-
- transition:
-
-   border-color .2s ease,
-
-   color .2s ease,
-
-background .2s ease;
-
-}
-
-
-
-.footer-newsletter__form button:hover {
-
- border-color: #ffffff;
-
- color: #ffffff;
-
- background: rgba(255, 255, 255, .06);
-
-}
-
-
 
 /* =========================================================
-
-  COMPACT UTILITY BAR
-
-  Download area removed
-
+   STAY / EXPLORE
 ========================================================= */
 
+.footer-column,
+.footer-newsletter {
+  min-width: 0;
+}
 
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column__title {
+  margin: 0 0 1.15vw;
+
+  color: #ffffff;
+
+  font-family: var(--serif);
+  font-size: 1.25vw;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.footer-column a {
+  display: block;
+  width: fit-content;
+
+  margin: 0 0 .73vw;
+
+  color: rgba(255, 255, 255, .58);
+  text-decoration: none;
+
+  font-family: var(--sans);
+  font-size: .86vw;
+  font-weight: 400;
+  line-height: 1.45;
+
+  transition: color .2s ease;
+}
+
+.footer-column a:hover {
+  color: #b79a69;
+}
+
+.footer-sale-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .42vw;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: .1vw .42vw;
+
+  border-radius: 999px;
+
+  background: rgba(239, 68, 68, .14);
+  color: #ef4444;
+
+  font-family: var(--sans);
+  font-size: .52vw;
+  font-weight: 600;
+}
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter__text {
+  max-width: 48ch;
+
+  margin: 0 0 1.15vw;
+
+  color: rgba(255, 255, 255, .58);
+
+  font-family: var(--sans);
+  font-size: .86vw;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.footer-newsletter__form {
+  display: flex;
+  flex-direction: column;
+
+  gap: .52vw;
+  width: 100%;
+}
+
+.footer-newsletter__form input,
+.footer-newsletter__form button {
+  width: 100%;
+  height: 2.6vw;
+
+  box-sizing: border-box;
+}
+
+.footer-newsletter__form input {
+  padding: 0 .83vw;
+
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, .05);
+  color: #ffffff;
+
+  font-family: var(--sans);
+  font-size: .80vw;
+
+  outline: none;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.footer-newsletter__form input::placeholder {
+  color: rgba(255, 255, 255, .36);
+}
+
+.footer-newsletter__form input:focus {
+  border-color: #b79a69;
+  background: rgba(255, 255, 255, .07);
+}
+
+.footer-newsletter__form button {
+  border: 1px solid rgba(255, 255, 255, .32);
+  border-radius: 7px;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: var(--sans);
+  font-size: .80vw;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease,
+    background .2s ease;
+}
+
+.footer-newsletter__form button:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, .06);
+}
+
+/* =========================================================
+   UTILITY BAR
+   Ella + We Support + payment methods remain on one line.
+========================================================= */
 
 .footer-utility {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
- display: grid;
+  gap: 2.4vw;
 
- grid-template-columns: minmax(250px, .55fr) minmax(500px, 1.45fr);
+  width: 100%;
+  min-height: 6vw;
 
- align-items: stretch;
+  padding: 1.35vw 4vw;
 
+  border-top: 1px solid rgba(255, 255, 255, .12);
 
+  background: #000000;
 
- width: 100%;
-
- min-height: clamp(86px, 7vw, 108px);
-
-
-
- background: #000000;
-
-
-
- border-top: 1px solid rgba(255, 255, 255, .12);
-
- border-bottom: 0;
-
+  box-sizing: border-box;
 }
-
-
-
-/* SUPPORT */
-
-
 
 .footer-support {
+  display: flex;
+  align-items: center;
 
- display: flex;
+  flex: 0 0 auto;
 
- align-items: center;
+  padding: 0;
+  border: 0;
 
-
-
- gap: clamp(10px, 1vw, 14px);
-
-
-
- padding: clamp(16px, 1.7vw, 24px) 3vw;
-
-
-
- border-right: 1px solid rgba(255, 255, 255, .12);
-
- box-sizing: border-box;
-
+  box-sizing: border-box;
 }
-
-
-
-.footer-support__icon {
-
- width: clamp(34px, 2.8vw, 42px);
-
- height: clamp(34px, 2.8vw, 42px);
-
-
-
- display: grid;
-
- place-items: center;
-
-
-
- flex: 0 0 auto;
-
-
-
- border-radius: 8px;
-
-
-
- background: rgba(255, 255, 255, .08);
-
- color: #b79a69;
-
-
-
- font-size: clamp(13px, 1.1vw, 16px);
-
-}
-
-
 
 .footer-support__text {
+  display: flex;
+  flex-direction: column;
 
- display: flex;
-
- flex-direction: column;
-
- gap: 3px;
-
+  gap: .36vw;
 }
 
-
+/* Same visual size as "We Support" */
 
 .footer-support__hours {
+  color: rgba(255, 255, 255, .72);
 
- color: rgba(255, 255, 255, .7);
+  font-family: var(--serif);
+  font-size: 1.10vw;
+  font-weight: 400;
+  line-height: 1;
 
-
-
- font-family: var(--sans);
-
- font-size: clamp(10px, .9vw, 13px);
-
- font-weight: 500;
-
-
-
- white-space: nowrap;
-
+  white-space: nowrap;
 }
-
-
 
 .footer-support__phone {
+  color: #ffffff;
+  text-decoration: none;
 
- color: #ffffff;
+  font-family: var(--sans);
+  font-size: .86vw;
+  font-weight: 600;
 
- text-decoration: none;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(10px, .9vw, 13px);
-
- font-weight: 600;
-
-
-
- white-space: nowrap;
-
+  white-space: nowrap;
 }
 
-
-
-/* PAYMENT */
-
-
+/* No vertical divider */
 
 .footer-support-brands {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 
- display: flex;
+  gap: 1.05vw;
 
- flex-direction: column;
+  flex: 0 0 auto;
 
- justify-content: center;
+  padding: 0;
+  border: 0;
 
- align-items: flex-start;
-
-
-
- padding: clamp(14px, 1.5vw, 20px) clamp(24px, 3vw, 48px);
-
-
-
- box-sizing: border-box;
-
+  box-sizing: border-box;
 }
-
-
 
 .footer-support-brands__label {
+  margin: 0;
 
- margin-bottom: clamp(10px, 1vw, 14px);
+  color: rgba(255, 255, 255, .72);
 
+  font-family: var(--serif);
+  font-size: 1.10vw;
+  font-weight: 400;
+  line-height: 1;
 
-
- color: rgba(255, 255, 255, .68);
-
-
-
- font-family: var(--serif);
-
- font-size: clamp(14px, 1.05vw, 17px);
-
- font-weight: 400;
-
- line-height: 1;
-
+  white-space: nowrap;
 }
-
-
 
 .footer-support-brands__icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 
- display: flex;
+  gap: .8vw;
 
- align-items: center;
-
- gap: clamp(12px, 1.2vw, 18px);
-
-
-
- width: 100%;
-
+  width: auto;
 }
-
-
 
 .payment-logo {
+  display: block;
 
- display: block;
+  width: auto;
+  height: auto;
 
- width: auto;
+  object-fit: contain;
 
- height: auto;
-
-
-
- object-fit: contain;
-
- flex: 0 0 auto;
-
+  flex: 0 0 auto;
 }
 
-
-
+/* Payment logos deliberately smaller */
 .payment-logo--mastercard {
-
- width: clamp(26px, 2.1vw, 34px);
-
+  width: 1.55vw;
 }
-
-
 
 .payment-logo--visa {
-
- width: clamp(30px, 2.4vw, 38px);
-
+  width: 1.7vw;
 }
-
-
 
 .payment-logo--paypal {
-
- width: clamp(24px, 1.8vw, 34px);
-
+  width: 1.45vw;
 }
-
-
 
 .payment-logo--amex {
-
- width: clamp(38px, 3vw, 48px);
-
- max-height: clamp(15px, 1.2vw, 19px);
-
+  width: 1.7vw;
+  max-height: .7vw;
 }
-
-
 
 /* WESTERN UNION */
 
-
-
 .western-union-logo {
+  display: flex;
+  align-items: center;
 
- display: flex;
+  gap: .22vw;
 
- align-items: center;
-
-
-
- gap: 4px;
-
-
-
- flex: 0 0 auto;
-
+  flex: 0 0 auto;
 }
-
-
 
 .western-union-logo__mark {
+  display: block;
 
- display: block;
-
-
-
- width: clamp(22px, 1.8vw, 29px);
-
- height: auto;
-
+  width: 1.4vw;
+  height: auto;
 }
-
-
 
 .western-union-logo__text {
+  display: flex;
+  flex-direction: column;
 
- display: flex;
+  color: #ffffff;
 
- flex-direction: column;
-
-
-
- color: #ffffff;
-
-
-
- font-family: var(--sans);
-
- font-size: clamp(8px, .7vw, 10px);
-
- font-weight: 600;
-
- line-height: .9;
-
- letter-spacing: -.02em;
-
+  font-family: var(--sans);
+  font-size: .42vw;
+  font-weight: 600;
+  line-height: .9;
+  letter-spacing: -.02em;
 }
 
-
-
 /* =========================================================
-
-  BOTTOM BAR
-
+   BOTTOM BAR
 ========================================================= */
 
-
-
 .footer-bottom {
- display: grid;
- grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
- align-items: center;
- column-gap: clamp(16px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
 
- width: 100%;
- margin: 0;
- padding: clamp(12px, 1.2vw, 16px) 3vw;
+  width: 100%;
+  margin: 0;
 
- background: #000000;
- box-sizing: border-box;
+  padding: .95vw 4vw;
+
+  column-gap: 1.45vw;
+
+  border-top: 1px solid rgba(255, 255, 255, .08);
+
+  background: #000000;
+
+  box-sizing: border-box;
 }
 
 .footer-bottom__copyright {
- justify-self: start;
- margin: 0;
- padding: 0;
+  justify-self: start;
 
- color: rgba(255, 255, 255, .5);
- font-family: var(--sans);
- font-size: clamp(9px, .82vw, 12px);
- font-weight: 400;
- line-height: 1.2;
- white-space: nowrap;
-}
+  margin: 0;
+  padding: 0;
 
-.footer-bottom__powered {
- justify-self: right;
- display: inline-flex;
- align-items: center;
- justify-content: right;
- gap: clamp(5px, .45vw, 8px);
- margin: 0;
- padding: 0;
+  color: rgba(255, 255, 255, .5);
 
- color: rgba(255, 255, 255, .5);
- font-family: var(--sans);
- font-size: clamp(9px, .82vw, 12px);
- font-weight: 400;
- line-height: 1;
- white-space: nowrap;
-}
+  font-family: var(--sans);
+  font-size: .70vw;
+  font-weight: 400;
+  line-height: 1.2;
 
-.footer-bottom__saasbed-logo {
- display: block;
- width: auto;
- height: clamp(14px, 1.25vw, 20px);
- object-fit: contain;
+  white-space: nowrap;
 }
 
 .footer-bottom__links {
- justify-self: end;
+  justify-self: center;
 
- display: flex;
+  display: flex;
+  align-items: center;
 
- align-items: center;
-
-
-
- gap: clamp(12px, 1.3vw, 20px);
-
+  gap: .83vw;
 }
-
-
 
 .footer-bottom__links a {
+  color: rgba(255, 255, 255, .5);
+  text-decoration: none;
 
- color: rgba(255, 255, 255, .5);
+  font-family: var(--sans);
+  font-size: .70vw;
+  font-weight: 400;
 
- text-decoration: none;
+  white-space: nowrap;
 
-
-
- font-family: var(--sans);
-
- font-size: clamp(9px, .82vw, 12px);
-
- font-weight: 400;
-
-
-
- white-space: nowrap;
-
-
-
- transition: color .2s ease;
-
+  transition: color .2s ease;
 }
-
-
 
 .footer-bottom__links a:hover {
-
- color: #b79a69;
-
+  color: #b79a69;
 }
-
-
 
 .footer-bottom__divider {
+  width: 1px;
+  height: .9vw;
 
- width: 1px;
+  background: rgba(255, 255, 255, .12);
 
- height: clamp(15px, 1.3vw, 20px);
-
-
-
- background: rgba(255, 255, 255, .12);
-
-
-
- flex: 0 0 auto;
-
+  flex: 0 0 auto;
 }
 
+.footer-bottom__powered {
+  justify-self: end;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: .36vw;
+
+  margin: 0;
+  padding: 0;
+
+  color: rgba(255, 255, 255, .5);
+
+  font-family: var(--sans);
+  font-size: .70vw;
+  font-weight: 400;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.footer-bottom__saasbed-logo {
+  display: block;
+
+  width: auto;
+  height: 1.04vw;
+
+  object-fit: contain;
+}
 
 /* =========================================================
-
-  RESPONSIVE
-
+   TABLET
+   Switch back to px/clamp so smaller devices remain readable.
 ========================================================= */
 
+@media (max-width: 1100px) {
+  .footer-main {
+    padding: 42px 5vw 38px;
+  }
 
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 34px;
+    row-gap: 36px;
+  }
 
-@media (max-width: 1050px) {
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
 
- .footer-grid {
+  .footer-brand__logo {
+    width: 120px;
+  }
 
-   grid-template-columns: 1.2fr .8fr .8fr;
+  .footer-brand__text,
+  .footer-brand__follow,
+  .footer-column a,
+  .footer-newsletter__text {
+    font-size: 14px;
+  }
 
- }
+  .footer-brand__text {
+    margin-top: 20px;
+  }
 
+  .footer-brand__follow {
+    margin: 26px 0 12px;
+  }
 
+  .footer-brand__socials {
+    gap: 16px;
+  }
 
- .footer-newsletter {
+  .footer-brand__socials a {
+    font-size: 18px;
+  }
 
-   grid-column: 1 / -1;
+  .footer-column__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
 
-   max-width: 620px;
+  .footer-column a {
+    margin-bottom: 13px;
+  }
 
- }
+  .footer-newsletter__text {
+    margin-bottom: 20px;
+  }
 
+  .footer-newsletter__form {
+    gap: 10px;
+  }
 
+  .footer-newsletter__form input,
+  .footer-newsletter__form button {
+    height: 48px;
+  }
 
- .footer-utility {
+  .footer-newsletter__form input {
+    padding: 0 15px;
+    font-size: 14px;
+  }
 
-   grid-template-columns: minmax(220px, .55fr) minmax(400px, 1.45fr);
+  .footer-newsletter__form button {
+    font-size: 14px;
+  }
 
- }
+  .footer-utility {
+    flex-wrap: wrap;
+    gap: 24px 34px;
+    min-height: auto;
+    padding: 24px 5vw;
+  }
 
+  .footer-support__text {
+    gap: 6px;
+  }
 
+  .footer-support__hours,
+  .footer-support-brands__label {
+    font-size: 20px;
+  }
 
- .footer-support-brands__icons {
+  .footer-support__phone {
+    font-size: 14px;
+  }
 
-   flex-wrap: wrap;
+  .footer-support-brands {
+    gap: 18px;
+  }
 
-   row-gap: 12px;
+  .footer-support-brands__icons {
+    gap: 14px;
+  }
 
- }
+  .payment-logo--mastercard {
+    width: 28px;
+  }
 
+  .payment-logo--visa {
+    width: 31px;
+  }
+
+  .payment-logo--paypal {
+    width: 26px;
+  }
+
+  .western-union-logo__mark {
+    width: 25px;
+  }
+
+  .western-union-logo__text {
+    font-size: 8px;
+  }
+
+  .footer-bottom {
+    padding: 18px 5vw;
+    column-gap: 24px;
+  }
+
+  .footer-bottom__copyright,
+  .footer-bottom__links a,
+  .footer-bottom__powered {
+    font-size: 12px;
+  }
+
+  .footer-bottom__links {
+    gap: 14px;
+  }
+
+  .footer-bottom__divider {
+    height: 16px;
+  }
+
+  .footer-bottom__saasbed-logo {
+    height: 18px;
+  }
 }
-
-
 
 @media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
- .footer-main {
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
 
-   padding-left: 5vw;
+  .footer-utility {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
 
-   padding-right: 5vw;
+  .footer-support-brands {
+    flex-wrap: wrap;
+  }
 
- }
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 10px;
+  }
 
+  .footer-bottom__copyright,
+  .footer-bottom__powered,
+  .footer-bottom__links {
+    justify-self: center;
+  }
 
+  .footer-bottom__copyright {
+    white-space: normal;
+    text-align: center;
+  }
 
- .footer-grid {
-
-   grid-template-columns: repeat(2, minmax(0, 1fr));
-
- }
-
-
-
- .footer-brand,
-
- .footer-newsletter {
-
-   grid-column: 1 / -1;
-
- }
-
-
-
- .footer-utility {
-
-   grid-template-columns: 1fr;
-
- }
-
-
-
- .footer-support {
-
-   padding-left: 5vw;
-
-   padding-right: 5vw;
-
-
-
-   border-right: 0;
-
-   border-bottom: 1px solid rgba(255, 255, 255, .12);
-
- }
-
-
-
- .footer-support-brands {
-
-   padding-left: 5vw;
-
-   padding-right: 5vw;
-
- }
-
-
-
- .footer-bottom {
-   grid-template-columns: 1fr;
-   justify-items: center;
-   row-gap: 10px;
-
-   padding-left: 5vw;
-   padding-right: 5vw;
- }
-
- .footer-bottom__copyright,
- .footer-bottom__powered,
- .footer-bottom__links {
-   justify-self: center;
- }
-
- .footer-bottom__copyright {
-   white-space: normal;
-   text-align: center;
- }
-
- .footer-bottom__links {
-   justify-content: center;
-   flex-wrap: wrap;
- }
-
+  .footer-bottom__links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
-
-
 
 @media (max-width: 520px) {
+  .footer-main {
+    padding: 36px 5vw 32px;
+  }
 
- .footer-grid {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
 
-   grid-template-columns: 1fr;
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: auto;
+  }
 
- }
+  .footer-support-brands {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
 
+  .footer-support-brands__icons {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
 
+  .footer-bottom__divider {
+    display: none;
+  }
 
- .footer-brand,
-
- .footer-newsletter {
-
-   grid-column: auto;
-
- }
-
-
-
- .footer-support-brands__icons {
-
-   gap: 14px;
-
- }
-
-
-
- .footer-bottom__divider {
-
-   display: none;
-
- }
-
-
-
- .footer-bottom__links {
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   gap: 8px;
- }
-
+  .footer-bottom__links {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
-
 </style>
