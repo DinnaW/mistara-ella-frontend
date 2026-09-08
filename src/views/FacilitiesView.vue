@@ -187,7 +187,7 @@
       </section>
 
       <!-- =====================================================
-           TRAVEL STORIES
+           WELLNESS JOURNAL
       ====================================================== -->
 
       <section class="stories-section">
@@ -195,18 +195,16 @@
           <div class="stories-top reveal">
             <div class="stories-title">
               <h2>
-                Travel stories
+                A Slower Way to Stay
                 <br />
-                Stories
-
-                <em>from Ella.</em>
+                <em>Relax, restore, reconnect.</em>
               </h2>
             </div>
 
             <div class="stories-intro">
               <p>
-                Travel slowly, discover deeply. Explore stories, places and
-                experiences from around Ella.
+                Take a slower look at the rituals, spaces and quiet details that
+                make wellness at Mistara Ella feel personal.
               </p>
             </div>
           </div>
@@ -476,7 +474,7 @@ const thingsToDo = [
   {
     title: "Green View Retreat",
     description: "A restorative pause surrounded by Ella's hillside green.",
-    image: `${baseUrl}Images/Facility/wellness2.jpg`,
+    image: `${baseUrl}Images/Home/hero2.jpeg`,
   },
 
   {
@@ -492,30 +490,30 @@ const thingsToDo = [
 
 const stories = [
   {
-    category: "TRAVEL GUIDE",
-    title: "10 Must-Visit Places in Ella",
+    category: "POOLSIDE CALM",
+    title: "Let the Day Move Slowly",
     description:
-      "Discover the most beautiful viewpoints, waterfalls and hidden gems around Ella.",
-    date: "Oct 14, 2024",
+      "Warm water, open air and the green hills of Ella create their own rhythm.",
+    date: "WELLNESS NOTE 02",
     image: `${baseUrl}Images/Home/outside3.jpeg`,
   },
 
   {
-    category: "FOOD & CULTURE",
-    title: "A Taste of Local Flavours",
+    category: "SPA RITUALS",
+    title: "A Quiet Moment for Yourself",
     description:
-      "Explore the authentic tastes of Sri Lanka and discover the culinary side of Ella.",
-    date: "Oct 10, 2024",
-    image: `${baseUrl}Images/Home/amenities/dining.jpeg`,
+      "Make room for stillness with restorative treatments and unhurried time.",
+    date: "WELLNESS NOTE 01",
+    image: `${baseUrl}Images/Home/lamp.jpeg`,
   },
 
   {
-    category: "EXPERIENCES",
-    title: "Riding the Iconic Train",
+    category: "MINDFUL STAYS",
+    title: "The Comfort of Doing Less",
     description:
-      "Everything you need to know about one of Sri Lanka’s most memorable journeys.",
-    date: "Oct 06, 2024",
-    image: `${baseUrl}Images/Home/hero3.jpeg`,
+      "Discover how a little more space, quiet and care can change a whole stay.",
+    date: "WELLNESS NOTE 03",
+    image: `${baseUrl}Images/Home/outside2.jpeg`,
   },
 ];
 
@@ -678,20 +676,14 @@ h3 {
   font-weight: 400;
 }
 
-.eyebrow {
-  display: block;
-
-  margin-bottom: 17px;
-
-  font-size: 8px;
-
-  font-weight: 500;
-
-  letter-spacing: 0.22em;
-
-  text-transform: uppercase;
-
-  color: #77716a;
+.facilities-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: none !important;
+  letter-spacing: 0em;
 }
 
 h2 em,
@@ -2606,23 +2598,23 @@ h3 em {
 
   gap: 18px;
 
-  padding: 15px 20px;
-
-  background: var(--brown-dark);
+  padding: 0;
 
   color: white;
 
-  font-size: 7px;
+  font-family: "Marcellus", Georgia, serif;
 
-  letter-spacing: 0.15em;
+  font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0;
 
   transition: 0.3s ease;
 }
 
 .booking-bottom a:hover {
-  background: white;
-
-  color: var(--brown-dark);
+  color: white;
 }
 
 .booking-bottom a > span {
@@ -2642,11 +2634,21 @@ h3 em {
 
   font-size: 14px;
 
-  transition: transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .booking-bottom a:hover > span,
 .booking-bottom a:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
   transform: translateX(5px);
 }
 
