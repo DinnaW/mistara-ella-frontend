@@ -6,8 +6,9 @@
       ====================================================== -->
 
       <InnerPageHero
-        title="Facilities"
-        text="Everything you need for a comfortable and memorable stay at Mistara Ella."
+      eyebrow="Designed for comfort"
+        title="Explore Our Facilities"
+
         image="./Images/Image_Gallery/happy-family.jpg"
       />
 
@@ -20,10 +21,10 @@
           <div class="section-heading reveal">
             <div>
               <h2>
-                Explore our facilities
+                Discover the comforts of your stay.
                 <br />
                 Everything
-                <br />
+               
                 <em>within reach.</em>
               </h2>
             </div>
@@ -92,7 +93,7 @@
           <div class="amenities-intro reveal">
             <h2>
               Premium amenities
-              <br />
+              
               Spaces designed
               <br />
               <em>for a better stay.</em>
@@ -146,7 +147,7 @@
                 Things to do
                 <br />
                 Let's go on
-                <br />
+      
                 <em>a journey.</em>
               </h2>
             </div>
@@ -200,7 +201,7 @@
                 Travel stories
                 <br />
                 Stories
-                <br />
+                
                 <em>from Ella.</em>
               </h2>
             </div>
@@ -305,7 +306,7 @@
             Your next getaway
             <br />
             Your stay
-            <br />
+          
             starts <em>here.</em>
           </h2>
 
@@ -651,6 +652,42 @@ onMounted(() => {
   color: var(--black);
 
   font-family: "Inter", sans-serif;
+}
+
+.facilities-page :deep(.inner-hero h1) {
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.025em;
+}
+
+.facilities-page :deep(.inner-hero-content) {
+  width: 100%;
+  padding: clamp(2.5rem, 5vh, 4rem) 3vw;
+  text-align: center;
+  color: #ffffff;
+}
+
+.facilities-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, .9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(11px, .82vw, 13px);
+  font-weight: 400;
+}
+
+.facilities-page :deep(.inner-hero p:not(.eyebrow)) {
+  max-width: 620px;
+  margin: 1rem auto 0;
+  color: rgba(255, 255, 255, .9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(.84rem, .92vw, .98rem);
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* =====================================================
@@ -1277,7 +1314,7 @@ h3 em {
 }
 
 .mosaic-large-content h2 em {
-  color: inherit;
+  color: white;
 }
 
 .mosaic-arrows {
@@ -1855,7 +1892,7 @@ h3 em {
 }
 
 .ella-header h2 em {
-  color: inherit;
+  color: var(--brown);
 }
 
 .ella-copy {
@@ -2437,6 +2474,26 @@ h3 em {
   color: white;
 }
 
+.view-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+
+  color: #123c32;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  transition: color 0.3s ease;
+}
+
 .mosaic-panel a > span,
 .view-link > span,
 .story-meta a > span {
@@ -2453,6 +2510,28 @@ h3 em {
   border: 1px solid currentColor;
 
   border-radius: 50%;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.view-link:hover,
+.view-link:focus-visible {
+  color: #123c32;
+}
+
+.view-link:hover > span,
+.view-link:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
+  transform: translateX(5px);
 }
 
 .story-meta a > span {
@@ -2524,7 +2603,7 @@ h3 em {
 }
 
 .booking-content h2 em {
-  color: inherit;
+  color: #dfd3c5;
 }
 
 .booking-divider {
