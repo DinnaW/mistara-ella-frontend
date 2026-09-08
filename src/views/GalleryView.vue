@@ -78,7 +78,7 @@
 
 
 
-          where peaceful stays, breathtaking views,
+          <br> where peaceful stays, breathtaking views,
 
 
 
