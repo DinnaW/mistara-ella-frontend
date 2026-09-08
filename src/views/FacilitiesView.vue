@@ -6,9 +6,8 @@
       ====================================================== -->
 
       <InnerPageHero
-      eyebrow="Designed for comfort"
+        eyebrow="Designed for comfort"
         title="Explore Our Facilities"
-
         image="./Images/Image_Gallery/happy-family.jpg"
       />
 
@@ -24,7 +23,7 @@
                 Discover the comforts of your stay.
                 <br />
                 Everything
-               
+
                 <em>within reach.</em>
               </h2>
             </div>
@@ -92,9 +91,7 @@
 
           <div class="amenities-intro reveal">
             <h2>
-              Premium amenities
-              
-              Spaces designed
+              Premium amenities Spaces designed
               <br />
               <em>for a better stay.</em>
             </h2>
@@ -147,7 +144,7 @@
                 Things to do
                 <br />
                 Let's go on
-      
+
                 <em>a journey.</em>
               </h2>
             </div>
@@ -201,7 +198,7 @@
                 Travel stories
                 <br />
                 Stories
-                
+
                 <em>from Ella.</em>
               </h2>
             </div>
@@ -305,9 +302,7 @@
           <h2>
             Your next getaway
             <br />
-            Your stay
-          
-            starts <em>here.</em>
+            Your stay starts <em>here.</em>
           </h2>
 
           <div class="booking-divider"></div>
@@ -662,7 +657,7 @@ onMounted(() => {
   font-size: clamp(2.5rem, 4.3vw, 4.8rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .facilities-page :deep(.inner-hero-content) {
@@ -673,19 +668,19 @@ onMounted(() => {
 }
 
 .facilities-page :deep(.inner-hero .eyebrow) {
-  margin: 0 0 clamp(.7rem, 1vh, 1rem);
-  color: rgba(255, 255, 255, .9);
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(11px, .82vw, 13px);
+  font-size: clamp(11px, 0.82vw, 13px);
   font-weight: 400;
 }
 
 .facilities-page :deep(.inner-hero p:not(.eyebrow)) {
   max-width: 620px;
   margin: 1rem auto 0;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(.84rem, .92vw, .98rem);
+  font-size: clamp(0.84rem, 0.92vw, 0.98rem);
   font-weight: 400;
   line-height: 1.7;
 }

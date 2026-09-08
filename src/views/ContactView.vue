@@ -4,14 +4,12 @@
       <InnerPageHero
         eyebrow="Let’s make your stay memorable"
         title="Contact us to plan your stay"
-      
         image="./Images/Image_Gallery/girl-waterfall.jpg"
       />
 
       <section class="contact-details-section">
         <div class="contact-shell contact-hero-inner">
           <div class="contact-information">
-            
             <h1>Contact us</h1>
             <p class="contact-intro">
               Have a question about your stay, the best room for your visit, or
@@ -187,7 +185,7 @@ const form = reactive({
   font-size: clamp(2.5rem, 4.3vw, 4.8rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .contact-page :deep(.inner-hero-content) {
@@ -198,19 +196,19 @@ const form = reactive({
 }
 
 .contact-page :deep(.inner-hero .eyebrow) {
-  margin: 0 0 clamp(.7rem, 1vh, 1rem);
-  color: rgba(255, 255, 255, .9);
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(11px, .82vw, 13px);
+  font-size: clamp(11px, 0.82vw, 13px);
   font-weight: 400;
 }
 
 .contact-page :deep(.inner-hero p:not(.eyebrow)) {
   max-width: 620px;
   margin: 1rem auto 0;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(.84rem, .92vw, .98rem);
+  font-size: clamp(0.84rem, 0.92vw, 0.98rem);
   font-weight: 400;
   line-height: 1.7;
 }
