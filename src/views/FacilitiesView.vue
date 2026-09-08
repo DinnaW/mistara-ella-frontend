@@ -1420,6 +1420,11 @@ h3 em {
   letter-spacing: 0.14em;
 }
 
+.mosaic-panel a:hover,
+.mosaic-panel a:focus-visible {
+  color: #123c32;
+}
+
 .mosaic-image {
   overflow: hidden;
 }
@@ -2366,6 +2371,11 @@ h3 em {
   color: white;
 }
 
+.story-meta a:hover,
+.story-meta a:focus-visible {
+  color: white;
+}
+
 .story-meta a span {
   font-size: 13px;
 
@@ -2533,6 +2543,19 @@ h3 em {
   border-color: rgba(255, 255, 255, 0.72);
 }
 
+.mosaic-panel a:hover > span,
+.mosaic-panel a:focus-visible > span,
+.story-meta a:hover > span,
+.story-meta a:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
+  transform: translateX(5px);
+}
+
 /* =====================================================
    BOOKING
 ===================================================== */
@@ -2655,6 +2678,31 @@ h3 em {
   background: white;
 
   color: var(--brown-dark);
+}
+
+.booking-bottom a > span {
+  display: inline-flex;
+
+  width: 30px;
+
+  height: 30px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+
+  transition: transform 0.3s ease;
+}
+
+.booking-bottom a:hover > span,
+.booking-bottom a:focus-visible > span {
+  transform: translateX(5px);
 }
 
 /* =====================================================
