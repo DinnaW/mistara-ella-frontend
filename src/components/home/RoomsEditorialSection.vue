@@ -1,7 +1,7 @@
 <template>
   <section class="rooms-editorial" aria-labelledby="rooms-editorial-title">
     <div class="rooms-editorial__visual" aria-hidden="true">
-      <img src="/Images/Home/bed2.jpeg" alt="" />
+      <img src="/Images/Home/living.jpeg" alt="" />
     </div>
 
     <div class="rooms-editorial__content">
@@ -12,7 +12,7 @@
 
       <figure class="rooms-editorial__inset">
         <img
-          src="/Images/Home/view.jpeg"
+          src="/Images/Home/amenities/lounge.jpeg"
           alt="Open-air terrace at Mistara Ella overlooking the surrounding green hills"
         />
       </figure>
