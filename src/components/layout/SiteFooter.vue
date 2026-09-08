@@ -1,466 +1,900 @@
 <template>
-  <footer class="site-footer">
-    <div class="footer-inner">
+ <footer class="site-footer">
+   <div class="footer-main">
+     <div class="footer-grid">
+       <!-- BRAND -->
+       <div class="footer-brand">
+         <img
+           src="/Images/mistara_white.png"
+           alt="Mistara"
+           class="footer-brand__logo"
+         />
 
-      <!-- NEWSLETTER -->
-      <div class="footer-newsletter">
-        <p class="footer-newsletter__eyebrow">Stay Connected</p>
 
-        <h2 class="footer-newsletter__title">
-          Join our newsletter
-        </h2>
+         <p class="footer-brand__text">
+           A quiet hillside retreat in Ella, shaped by mountain air, warm hospitality and the unhurried rhythm of Sri Lanka’s hill country.
+         </p>
 
-        <p class="footer-newsletter__text">
-          Receive exclusive offers, seasonal updates and quiet escapes from Mistara Ella.
-        </p>
 
-        <form class="footer-newsletter__form" @submit.prevent>
-          <div class="footer-newsletter__input-wrap">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+         <p class="footer-brand__follow">Follow us on</p>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              aria-label="Email address"
-            />
-          </div>
 
-          <button type="submit">
-            Subscribe
-          </button>
-        </form>
-      </div>
+         <div class="footer-brand__socials" aria-label="Social links">
+           <a href="#" aria-label="Facebook">
+             <i class="fa-brands fa-facebook-f"></i>
+           </a>
 
-      <!-- FOOTER COLUMNS -->
-      <div class="footer-grid">
-        <div class="footer-column">
-          <p class="footer-label">Explore</p>
 
-          <nav class="footer-links" aria-label="Footer navigation">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/rooms">Rooms</RouterLink>
-            <RouterLink to="/facilities">Facilities</RouterLink>
-            <RouterLink to="/gallery">Gallery</RouterLink>
-            <RouterLink to="/packages">Packages</RouterLink>
-          </nav>
-        </div>
+           <a href="#" aria-label="X">
+             <i class="fa-brands fa-x-twitter"></i>
+           </a>
 
-        <div class="footer-column">
-          <p class="footer-label">Stay</p>
 
-          <div class="footer-links">
-            <RouterLink to="/rooms">Our Rooms</RouterLink>
-            <RouterLink to="/facilities">Facilities</RouterLink>
-            <RouterLink to="/gallery">Mountain Views</RouterLink>
-            <RouterLink to="/packages">Special Offers</RouterLink>
+           <a href="#" aria-label="Instagram">
+             <i class="fa-brands fa-instagram"></i>
+           </a>
 
-            <a
-              href="https://mistaraella.com/reservation"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book Your Stay
-            </a>
-          </div>
-        </div>
 
-        <div class="footer-column">
-          <p class="footer-label">Discover</p>
+           <a href="#" aria-label="LinkedIn">
+             <i class="fa-brands fa-linkedin-in"></i>
+           </a>
+         </div>
+       </div>
 
-          <div class="footer-links">
-            <RouterLink to="/gallery">Gallery</RouterLink>
-            <RouterLink to="/facilities">Experiences</RouterLink>
-            <RouterLink to="/contact">Contact</RouterLink>
 
-            <a
-              href="https://maps.app.goo.gl/o7RNPo53WvddZDjG6"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Maps
-            </a>
-          </div>
-        </div>
+       <!-- STAY -->
+       <nav class="footer-column" aria-label="Stay">
+         <h3 class="footer-column__title">Stay</h3>
 
-        <div class="footer-column">
-          <p class="footer-label">Contact</p>
 
-          <div class="footer-contact">
-            <a href="mailto:hello@mistaraella.com">
-              hello@mistaraella.com
-            </a>
+         <a href="#/">Home</a>
+         <a href="#/rooms">Rooms</a>
+         <a href="#/packages">Packages</a>
+         <a href="#/contact">Book Your Stay</a>
+       </nav>
 
-            <RouterLink to="/contact">
-              Contact Mistara
-            </RouterLink>
 
-            <a
-              href="https://mistaraella.com/reservation"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Reservations
-            </a>
-          </div>
-        </div>
+       <!-- EXPLORE -->
+       <nav class="footer-column" aria-label="Explore">
+         <h3 class="footer-column__title">Explore</h3>
 
-        <div class="footer-column footer-address">
-          <p class="footer-label">Address</p>
 
-          <address>
-            Mistara Ella<br />
-            Idemegama,<br />
-            73 Rathnagiri Estate Rd,<br />
-            Ella 90090, Sri Lanka
-          </address>
-        </div>
-      </div>
+         <a href="#/facilities">Facilities</a>
+         <a href="#/gallery">Gallery</a>
+         <a href="#/contact">Contact</a>
+         <a
+           href="https://maps.app.goo.gl/o7RNPo53WvddZDjG6"
+           target="_blank"
+           rel="noopener noreferrer"
+         >
+           Google Reviews
+         </a>
+       </nav>
 
-      <!-- BOTTOM -->
-      <div class="footer-bottom">
-        <span>
-          © {{ year }} Mistara Ella. All rights reserved.
-        </span>
 
-        <div class="footer-bottom__right">
-          <div class="footer-powered">
-            <span>Powered by</span>
+       <!-- NEWSLETTER -->
+       <div class="footer-newsletter">
+         <h3 class="footer-column__title">Mistara Ella</h3>
 
-            <a
-              href="https://saasbeds.com/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Visit Saasbeds"
-            >
-              <img
-                src="/Images/saasbedslogoblue.png"
-                alt="Saasbeds"
-                class="footer-saasbeds-logo"
-              />
-            </a>
-          </div>
 
-          <div class="footer-socials" aria-label="Social links">
-            <a href="#" aria-label="LinkedIn">
-              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-            </a>
+         <p class="footer-newsletter__text">
+           Stay close to the hills. Receive quiet updates, seasonal offers and stay inspiration from Mistara Ella.
+         </p>
 
-            <a href="#" aria-label="Instagram">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
 
-            <a href="#" aria-label="Facebook">
-              <i class="fa fa-facebook-official" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+         <form class="footer-newsletter__form" @submit.prevent>
+           <input
+             type="email"
+             placeholder="Enter your email address"
+             aria-label="Email address"
+           />
 
-    </div>
-  </footer>
+
+           <button type="submit">Stay Updated</button>
+         </form>
+       </div>
+     </div>
+   </div>
+
+
+   <!-- UTILITY BAR - DOWNLOAD SECTION REMOVED -->
+   <div class="footer-utility">
+     <div class="footer-support">
+
+
+       <div class="footer-support__text">
+         <span class="footer-support__hours">Ella, Sri Lanka</span>
+         <a href="#/contact" class="footer-support__phone">
+           Book Your Stay
+         </a>
+       </div>
+     </div>
+
+
+     <div class="footer-support-brands">
+       <span class="footer-support-brands__label">We Support</span>
+
+
+       <div
+         class="footer-support-brands__icons"
+         aria-label="Supported payment methods"
+       >
+         <img
+           src="https://api.iconify.design/logos:mastercard.svg"
+           alt="Mastercard"
+           class="payment-logo payment-logo--mastercard"
+         />
+
+
+         <img
+           src="https://api.iconify.design/logos:visa.svg"
+           alt="Visa"
+           class="payment-logo payment-logo--visa"
+         />
+
+
+         <img
+           src="https://api.iconify.design/logos:paypal.svg"
+           alt="PayPal"
+           class="payment-logo payment-logo--paypal"
+         />
+
+
+         <div class="western-union-logo" aria-label="Western Union">
+           <svg
+             class="western-union-logo__mark"
+             viewBox="0 0 56 30"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-hidden="true"
+           >
+             <polygon points="0,4 10,4 22,26 12,26" fill="#FFD400" />
+             <polygon points="14,4 24,4 36,26 26,26" fill="#FFD400" />
+             <polygon points="28,4 38,4 50,26 40,26" fill="#FFD400" />
+           </svg>
+
+
+           <span class="western-union-logo__text">
+             <strong>Western</strong>
+             <strong>Union</strong>
+           </span>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+   <!-- BOTTOM BAR -->
+   <div class="footer-bottom">
+     <span>© {{ year }} Mistara Ella. All rights reserved.</span>
+
+
+     <div class="footer-bottom__links">
+       <a href="#/contact">Booking Policy</a>
+       <span class="footer-bottom__divider" aria-hidden="true"></span>
+
+
+       <a href="#/contact">Terms &amp; Conditions</a>
+       <span class="footer-bottom__divider" aria-hidden="true"></span>
+
+
+       <a href="#/contact">Contact</a>
+     </div>
+   </div>
+ </footer>
 </template>
+
 
 <script setup>
 const year = new Date().getFullYear()
 </script>
 
+
 <style scoped>
-/*
-  No @media breakpoints anywhere below.
-  Every size that used to change per-breakpoint (padding, gaps,
-  font sizes, heights, grid tracks) is instead expressed with
-  vw/vh/clamp() so the footer scales continuously and keeps the
-  same proportions and layout structure at any screen width.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap');
+
 
 .site-footer {
-  width: 100%;
-  background: #070707;
-  color: #ffffff;
+ --serif: 'Marcellus', Georgia, serif;
+ --sans: 'Inter', Arial, sans-serif;
+
+
+ width: 100%;
+ overflow: hidden;
+
+
+ background: #000000;
+ color: #ffffff;
+
+
+ font-family: var(--sans);
 }
 
-.footer-inner {
-  width: 100%;
-  padding: clamp(20px, 3vh, 40px) clamp(16px, 3vw, 48px) 0;
-  box-sizing: border-box;
+
+/* =========================================================
+  TOP FOOTER
+========================================================= */
+
+
+.footer-main {
+ width: 100%;
+ padding: clamp(18px, 1.2vw, 28px) 3vw clamp(12px, 1vw, 24px);
+ box-sizing: border-box;
 }
 
-/* =========================
-   NEWSLETTER
-========================= */
-
-.footer-newsletter {
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-newsletter__eyebrow {
-  margin: 0 0 clamp(4px, .6vh, 8px);
-  color: #8da79b;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(9px, .9vw, 10px);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.footer-newsletter__title {
-  margin: 0;
-  color: #17281f;
-  font-family: 'Marcellus', Georgia, serif;
-  font-size: clamp(20px, 3.2vw, 28px);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -.02em;
-}
-
-.footer-newsletter__text {
-  max-width: 500px;
-  margin: clamp(4px, .8vh, 6px) auto 0;
-  color: #5a655f;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(11px, 1.3vw, 12px);
-  font-weight: 300;
-  line-height: 1.45;
-}
-
-.footer-newsletter__form {
-  width: min(100%, 460px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(6px, 1vw, 8px);
-  margin: clamp(16px, 3vh, 24px) auto clamp(18px, 3.5vh, 28px);
-}
-
-.footer-newsletter__input-wrap {
-  width: 100%;
-  height: clamp(34px, 5vh, 38px);
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 1vw, 8px);
-  padding: 0 clamp(10px, 1.5vw, 12px);
-  border: 1px solid rgba(23, 40, 31, .12);
-  border-radius: 100px;
-  background: #ffffff;
-  box-shadow: 0 4px 14px rgba(18, 60, 50, .04);
-}
-
-.footer-newsletter__input-wrap i {
-  color: #8da79b;
-  font-size: clamp(12px, 1.3vw, 13px);
-}
-
-.footer-newsletter__input-wrap input {
-  width: 100%;
-  min-width: 0;
-  height: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #17281f;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(11px, 1.3vw, 12px);
-}
-
-.footer-newsletter__input-wrap input::placeholder {
-  color: #8b938f;
-}
-
-.footer-newsletter__form button {
-  height: clamp(34px, 5vh, 38px);
-  min-width: clamp(84px, 10vw, 100px);
-  padding: 0 clamp(14px, 2vw, 18px);
-  border: 0;
-  border-radius: 100px;
-  background: #b79a69;
-  color: #ffffff;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(10px, 1.2vw, 11px);
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(18, 60, 50, .08);
-  transition: background .25s ease, transform .25s ease;
-  white-space: nowrap;
-}
-
-.footer-newsletter__form button:hover {
-  background: #a88957;
-  transform: translateY(-2px);
-}
-
-/* =========================
-   COLUMNS
-========================= */
 
 .footer-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns:
-    repeat(3, minmax(0, .75fr))
-    minmax(0, 1fr)
-    minmax(0, 1.15fr);
-  gap: clamp(12px, 2.2vw, 30px);
-  padding-bottom: 0;
+ display: grid;
+ grid-template-columns: 1.25fr .7fr .7fr 1.25fr;
+ gap: clamp(24px, 3vw, 52px);
+ width: 100%;
 }
+
+
+/* BRAND */
+
+
+.footer-brand {
+ min-width: 0;
+}
+
+
+.footer-brand__logo {
+ display: block;
+ width: auto;
+ height: clamp(74px, 6.4vw, 88px);
+ object-fit: contain;
+}
+
+
+.footer-brand__text {
+ max-width: 34ch;
+
+
+ margin: clamp(14px, 1.5vw, 20px) 0 0;
+
+
+ color: rgba(255, 255, 255, .58);
+
+
+ font-family: var(--sans);
+ font-size: clamp(11px, .88vw, 13px);
+ font-weight: 400;
+ line-height: 1.65;
+}
+
+
+.footer-brand__follow {
+ margin: clamp(22px, 2.4vw, 34px) 0 clamp(9px, .9vw, 13px);
+
+
+ color: rgba(255, 255, 255, .65);
+
+
+ font-family: var(--sans);
+ font-size: clamp(11px, .88vw, 13px);
+ font-weight: 500;
+}
+
+
+.footer-brand__socials {
+ display: flex;
+ align-items: center;
+ gap: clamp(12px, 1.1vw, 18px);
+}
+
+
+.footer-brand__socials a {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+
+
+ color: rgba(255, 255, 255, .52);
+ text-decoration: none;
+
+
+ font-size: clamp(15px, 1.15vw, 18px);
+
+
+ transition:
+   color .2s ease,
+   transform .2s ease;
+}
+
+
+.footer-brand__socials a:hover {
+ color: #b79a69;
+ transform: translateY(-2px);
+}
+
+
+/* COLUMNS */
+
+
+.footer-column,
+.footer-newsletter {
+ min-width: 0;
+}
+
 
 .footer-column {
-  min-width: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
 }
 
-.footer-label {
-  margin: 0 0 clamp(6px, 1.2vh, 10px);
-  color: #8da79b;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(10px, 1.1vw, 11px);
-  font-weight: 400;
-  line-height: 1;
+
+.footer-column__title {
+ margin: 0 0 clamp(16px, 1.6vw, 24px);
+
+
+ color: #ffffff;
+
+
+ font-family: var(--serif);
+ font-size: clamp(15px, 1.18vw, 18px);
+ font-weight: 400;
+ line-height: 1.2;
 }
 
-.footer-links,
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(6px, 1.2vh, 8px);
+
+.footer-column a {
+ margin-bottom: clamp(10px, 1vw, 14px);
+
+
+ color: rgba(255, 255, 255, .58);
+ text-decoration: none;
+
+
+ font-family: var(--sans);
+ font-size: clamp(11px, .88vw, 13px);
+ font-weight: 400;
+ line-height: 1.4;
+
+
+ transition: color .2s ease;
 }
 
-.footer-links a,
-.footer-contact a,
-.footer-address address {
-  color: #26352e;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(11px, 1.2vw, 12px);
-  font-weight: 300;
-  line-height: 1.4;
-  text-decoration: none;
+
+.footer-column a:hover {
+ color: #b79a69;
 }
 
-.footer-links a,
-.footer-contact a {
-  transition:
-    color .25s ease,
-    transform .25s ease;
+
+.footer-sale-link {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
 }
 
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: #123c32;
-  transform: translateX(3px);
+
+.footer-badge {
+ display: inline-flex;
+ align-items: center;
+
+
+ padding: 2px 8px;
+
+
+ border-radius: 999px;
+
+
+ background: rgba(239, 68, 68, .14);
+ color: #ef4444;
+
+
+ font-family: var(--sans);
+ font-size: clamp(8px, .7vw, 10px);
+ font-weight: 600;
 }
 
-.footer-address address {
-  margin: 0;
-  font-style: normal;
-}
 
-/* =========================
-   BOTTOM
-========================= */
+/* NEWSLETTER */
 
-.footer-bottom {
-  width: 100%;
-  min-height: clamp(32px, 5vh, 36px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(10px, 1.6vw, 14px);
-  padding: clamp(4px, .8vh, 6px) 0;
-  border-top: 1px solid rgba(23, 40, 31, .12);
-  flex-wrap: nowrap;
-}
-
-.footer-bottom > span,
-.footer-powered > span {
-  color: #6f7974;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: clamp(9px, 1vw, 10px);
-  font-weight: 300;
-  white-space: nowrap;
-}
-
-.footer-bottom__right {
-  display: flex;
-  align-items: center;
-  gap: clamp(16px, 3vw, 42px);
-}
-
-.footer-powered {
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 1vw, 10px);
-}
-
-.footer-powered a {
-  display: inline-flex;
-  align-items: center;
-}
-
-.footer-saasbeds-logo {
-  width: clamp(64px, 6vw, 100px);
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.footer-socials {
-  display: flex;
-  align-items: center;
-  gap: clamp(10px, 1.6vw, 14px);
-}
-
-.footer-socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #17281f;
-  font-size: clamp(15px, 1.8vw, 18px);
-  text-decoration: none;
-  transition:
-    color .25s ease,
-    transform .25s ease;
-}
-
-.footer-socials a:hover {
-  color: #123c32;
-  transform: translateY(-2px);
-}
-
-/* DARK FOOTER THEME */
-.footer-newsletter__title,
-.footer-links a,
-.footer-contact a,
-.footer-address address,
-.footer-socials a {
-  color: #ffffff;
-}
 
 .footer-newsletter__text {
-  color: rgba(255, 255, 255, .68);
+ margin: 0 0 clamp(14px, 1.5vw, 20px);
+
+
+ color: rgba(255, 255, 255, .58);
+
+
+ font-family: var(--sans);
+ font-size: clamp(11px, .88vw, 13px);
+ font-weight: 400;
+ line-height: 1.55;
 }
 
-.footer-newsletter__eyebrow,
-.footer-label {
-  color: #8da79b;
+
+.footer-newsletter__form {
+ display: flex;
+ flex-direction: column;
+ gap: clamp(8px, .8vw, 11px);
 }
+
+
+.footer-newsletter__form input {
+ width: 100%;
+ height: clamp(40px, 3.2vw, 48px);
+
+
+ padding: 0 clamp(12px, 1.1vw, 16px);
+
+
+ border: 1px solid rgba(255, 255, 255, .16);
+ border-radius: 7px;
+
+
+ background: rgba(255, 255, 255, .05);
+ color: #ffffff;
+
+
+ font-family: var(--sans);
+ font-size: clamp(10px, .85vw, 12px);
+
+
+ outline: none;
+ box-sizing: border-box;
+
+
+ transition:
+   border-color .2s ease,
+   background .2s ease;
+}
+
+
+.footer-newsletter__form input::placeholder {
+ color: rgba(255, 255, 255, .36);
+}
+
+
+.footer-newsletter__form input:focus {
+ border-color: #b79a69;
+ background: rgba(255, 255, 255, .07);
+}
+
+
+.footer-newsletter__form button {
+ width: 100%;
+ height: clamp(40px, 3.2vw, 48px);
+
+
+ border: 1px solid rgba(255, 255, 255, .58);
+ border-radius: 8px;
+
+
+ background: transparent;
+ color: #ffffff;
+
+
+ font-family: var(--sans);
+ font-size: clamp(10px, .9vw, 13px);
+ font-weight: 600;
+
+
+ cursor: pointer;
+
+
+ transition:
+   border-color .2s ease,
+   color .2s ease,
+   background .2s ease;
+}
+
+
+.footer-newsletter__form button:hover {
+ border-color: #ffffff;
+ color: #ffffff;
+ background: rgba(255, 255, 255, .06);
+}
+
+
+/* =========================================================
+  COMPACT UTILITY BAR
+  Download area removed
+========================================================= */
+
+
+.footer-utility {
+ display: grid;
+ grid-template-columns: minmax(250px, .55fr) minmax(500px, 1.45fr);
+ align-items: stretch;
+
+
+ width: 100%;
+ min-height: clamp(86px, 7vw, 108px);
+
+
+ background: #000000;
+
+
+ border-top: 1px solid rgba(255, 255, 255, .12);
+ border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+
+/* SUPPORT */
+
+
+.footer-support {
+ display: flex;
+ align-items: center;
+
+
+ gap: clamp(10px, 1vw, 14px);
+
+
+ padding: clamp(16px, 1.7vw, 24px) 3vw;
+
+
+ border-right: 1px solid rgba(255, 255, 255, .12);
+ box-sizing: border-box;
+}
+
+
+.footer-support__icon {
+ width: clamp(34px, 2.8vw, 42px);
+ height: clamp(34px, 2.8vw, 42px);
+
+
+ display: grid;
+ place-items: center;
+
+
+ flex: 0 0 auto;
+
+
+ border-radius: 8px;
+
+
+ background: rgba(255, 255, 255, .08);
+ color: #b79a69;
+
+
+ font-size: clamp(13px, 1.1vw, 16px);
+}
+
+
+.footer-support__text {
+ display: flex;
+ flex-direction: column;
+ gap: 3px;
+}
+
+
+.footer-support__hours {
+ color: rgba(255, 255, 255, .7);
+
+
+ font-family: var(--sans);
+ font-size: clamp(10px, .9vw, 13px);
+ font-weight: 500;
+
+
+ white-space: nowrap;
+}
+
+
+.footer-support__phone {
+ color: #ffffff;
+ text-decoration: none;
+
+
+ font-family: var(--sans);
+ font-size: clamp(10px, .9vw, 13px);
+ font-weight: 600;
+
+
+ white-space: nowrap;
+}
+
+
+/* PAYMENT */
+
+
+.footer-support-brands {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-start;
+
+
+ padding: clamp(14px, 1.5vw, 20px) clamp(24px, 3vw, 48px);
+
+
+ box-sizing: border-box;
+}
+
+
+.footer-support-brands__label {
+ margin-bottom: clamp(10px, 1vw, 14px);
+
+
+ color: rgba(255, 255, 255, .68);
+
+
+ font-family: var(--serif);
+ font-size: clamp(14px, 1.05vw, 17px);
+ font-weight: 400;
+ line-height: 1;
+}
+
+
+.footer-support-brands__icons {
+ display: flex;
+ align-items: center;
+ gap: clamp(12px, 1.2vw, 18px);
+
+
+ width: 100%;
+}
+
+
+.payment-logo {
+ display: block;
+ width: auto;
+ height: auto;
+
+
+ object-fit: contain;
+ flex: 0 0 auto;
+}
+
+
+.payment-logo--mastercard {
+ width: clamp(26px, 2.1vw, 34px);
+}
+
+
+.payment-logo--visa {
+ width: clamp(30px, 2.4vw, 38px);
+}
+
+
+.payment-logo--paypal {
+ width: clamp(24px, 1.8vw, 34px);
+}
+
+
+.payment-logo--amex {
+ width: clamp(38px, 3vw, 48px);
+ max-height: clamp(15px, 1.2vw, 19px);
+}
+
+
+/* WESTERN UNION */
+
+
+.western-union-logo {
+ display: flex;
+ align-items: center;
+
+
+ gap: 4px;
+
+
+ flex: 0 0 auto;
+}
+
+
+.western-union-logo__mark {
+ display: block;
+
+
+ width: clamp(22px, 1.8vw, 29px);
+ height: auto;
+}
+
+
+.western-union-logo__text {
+ display: flex;
+ flex-direction: column;
+
+
+ color: #ffffff;
+
+
+ font-family: var(--sans);
+ font-size: clamp(8px, .7vw, 10px);
+ font-weight: 600;
+ line-height: .9;
+ letter-spacing: -.02em;
+}
+
+
+/* =========================================================
+  BOTTOM BAR
+========================================================= */
+
 
 .footer-bottom {
-  border-top-color: rgba(255, 255, 255, .14);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+
+ gap: clamp(16px, 2vw, 28px);
+
+
+ width: 100%;
+
+
+ padding: clamp(14px, 1.5vw, 20px) 3vw;
+
+
+ background: #000000;
+
+
+ box-sizing: border-box;
 }
 
-.footer-bottom > span,
-.footer-powered > span {
-  color: rgba(255, 255, 255, .5);
+
+.footer-bottom > span {
+ color: rgba(255, 255, 255, .5);
+
+
+ font-family: var(--sans);
+ font-size: clamp(9px, .82vw, 12px);
+ font-weight: 400;
+
+
+ white-space: nowrap;
 }
 
-.footer-links a:hover,
-.footer-contact a:hover,
-.footer-socials a:hover {
-  color: #ffffff;
+
+.footer-bottom__links {
+ display: flex;
+ align-items: center;
+
+
+ gap: clamp(12px, 1.3vw, 20px);
 }
 
+
+.footer-bottom__links a {
+ color: rgba(255, 255, 255, .5);
+ text-decoration: none;
+
+
+ font-family: var(--sans);
+ font-size: clamp(9px, .82vw, 12px);
+ font-weight: 400;
+
+
+ white-space: nowrap;
+
+
+ transition: color .2s ease;
+}
+
+
+.footer-bottom__links a:hover {
+ color: #b79a69;
+}
+
+
+.footer-bottom__divider {
+ width: 1px;
+ height: clamp(15px, 1.3vw, 20px);
+
+
+ background: rgba(255, 255, 255, .12);
+
+
+ flex: 0 0 auto;
+}
+
+
+/* =========================================================
+  RESPONSIVE
+========================================================= */
+
+
+@media (max-width: 1050px) {
+ .footer-grid {
+   grid-template-columns: 1.2fr .8fr .8fr;
+ }
+
+
+ .footer-newsletter {
+   grid-column: 1 / -1;
+   max-width: 620px;
+ }
+
+
+ .footer-utility {
+   grid-template-columns: minmax(220px, .55fr) minmax(400px, 1.45fr);
+ }
+
+
+ .footer-support-brands__icons {
+   flex-wrap: wrap;
+   row-gap: 12px;
+ }
+}
+
+
+@media (max-width: 760px) {
+ .footer-main {
+   padding-left: 5vw;
+   padding-right: 5vw;
+ }
+
+
+ .footer-grid {
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+ }
+
+
+ .footer-brand,
+ .footer-newsletter {
+   grid-column: 1 / -1;
+ }
+
+
+ .footer-utility {
+   grid-template-columns: 1fr;
+ }
+
+
+ .footer-support {
+   padding-left: 5vw;
+   padding-right: 5vw;
+
+
+   border-right: 0;
+   border-bottom: 1px solid rgba(255, 255, 255, .12);
+ }
+
+
+ .footer-support-brands {
+   padding-left: 5vw;
+   padding-right: 5vw;
+ }
+
+
+ .footer-bottom {
+   padding-left: 5vw;
+   padding-right: 5vw;
+
+
+   flex-direction: column;
+   align-items: flex-start;
+ }
+
+
+ .footer-bottom__links {
+   flex-wrap: wrap;
+ }
+}
+
+
+@media (max-width: 520px) {
+ .footer-grid {
+   grid-template-columns: 1fr;
+ }
+
+
+ .footer-brand,
+ .footer-newsletter {
+   grid-column: auto;
+ }
+
+
+ .footer-support-brands__icons {
+   gap: 14px;
+ }
+
+
+ .footer-bottom__divider {
+   display: none;
+ }
+
+
+ .footer-bottom__links {
+   align-items: flex-start;
+   flex-direction: column;
+   gap: 8px;
+ }
+}
 </style>
