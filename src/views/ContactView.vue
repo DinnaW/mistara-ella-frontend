@@ -413,6 +413,20 @@ const form = reactive({
   border-radius: 50%;
   font-size: 16px;
   letter-spacing: 0;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-submit:focus-visible {
+  color: #123c32;
+  border-color: #123c32;
+}
+
+.contact-submit:hover span,
+.contact-submit:focus-visible span {
+  transform: translateX(5px);
 }
 
 .form-success,
