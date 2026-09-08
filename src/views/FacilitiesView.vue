@@ -327,7 +327,8 @@ import { onMounted, ref } from "vue";
 
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
-const ellaMountainImage = "/Images/Home/amenities/lounge.jpeg";
+const baseUrl = import.meta.env.BASE_URL;
+const ellaMountainImage = `${baseUrl}Images/Home/amenities/lounge.jpeg`;
 
 /* =====================================================
    FACILITIES
@@ -439,19 +440,19 @@ const amenities = [
   {
     title: "Dining",
     category: "GOOD FOOD, GREAT MOMENTS",
-    image: "/Images/Facility/food1.jpeg",
+    image: `${baseUrl}Images/Facility/food1.jpeg`,
   },
 
   {
     title: "Room Comfort",
     category: "THOUGHTFUL AMENITIES",
-    image: "/Images/Facility/room1.jpeg",
+    image: `${baseUrl}Images/Facility/room1.jpeg`,
   },
 
   {
     title: "Wellness & Views",
     category: "RELAXATION REDEFINED",
-    image: "/Images/Facility/wellness5.jpeg",
+    image: `${baseUrl}Images/Facility/wellness5.jpeg`,
   },
 ];
 
@@ -463,25 +464,25 @@ const thingsToDo = [
   {
     title: "Private Spa Moments",
     description: "Unhurried treatments in a calm, intimate setting.",
-    image: "/Images/Facility/spa.png",
+    image: `${baseUrl}Images/Facility/spa.png`,
   },
 
   {
     title: "Poolside Stillness",
     description: "Warm water, open air and time to simply be.",
-    image: "/Images/Facility/wellness1.jpg",
+    image: `${baseUrl}Images/Facility/wellness1.jpg`,
   },
 
   {
     title: "Green View Retreat",
     description: "A restorative pause surrounded by Ella's hillside green.",
-    image: "/Images/Facility/wellness2.jpg",
+    image: `${baseUrl}Images/Facility/wellness2.jpg`,
   },
 
   {
     title: "Evening Wellness",
     description: "Soft lights, quiet water and a slower end to the day.",
-    image: "/Images/Facility/wellness3.jpeg",
+    image: `${baseUrl}Images/Facility/wellness3.jpeg`,
   },
 ];
 
@@ -496,7 +497,7 @@ const stories = [
     description:
       "Discover the most beautiful viewpoints, waterfalls and hidden gems around Ella.",
     date: "Oct 14, 2024",
-    image: "/Images/Home/outside3.jpeg",
+    image: `${baseUrl}Images/Home/outside3.jpeg`,
   },
 
   {
@@ -505,7 +506,7 @@ const stories = [
     description:
       "Explore the authentic tastes of Sri Lanka and discover the culinary side of Ella.",
     date: "Oct 10, 2024",
-    image: "/Images/Home/amenities/dining.jpeg",
+    image: `${baseUrl}Images/Home/amenities/dining.jpeg`,
   },
 
   {
@@ -514,7 +515,7 @@ const stories = [
     description:
       "Everything you need to know about one of Sri Lanka’s most memorable journeys.",
     date: "Oct 06, 2024",
-    image: "/Images/Home/hero3.jpeg",
+    image: `${baseUrl}Images/Home/hero3.jpeg`,
   },
 ];
 
