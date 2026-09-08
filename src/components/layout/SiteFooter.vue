@@ -404,78 +404,99 @@ const year = new Date().getFullYear()
 .site-footer {
   --serif: 'Marcellus', Georgia, serif;
   --sans: 'Inter', Arial, sans-serif;
+
   width: 100%;
   overflow: hidden;
+
   background: #000000;
   color: #ffffff;
+
   font-family: var(--sans);
 }
 
 /* =========================================================
-   TOP FOOTER
+   DESKTOP
+   vw-based sizing keeps the physical preview much closer
+   between 100% and 80% browser zoom.
+   Text enlarged in v7 while keeping payment icons compact.
 ========================================================= */
+
 .footer-main {
   width: 100%;
-  padding: clamp(48px, 4.5vw, 72px) 4vw clamp(42px, 4vw, 64px);
+  padding: 2.5vw 4vw 2.3vw;
   box-sizing: border-box;
 }
 
 .footer-grid {
   display: grid;
+
   grid-template-columns:
-    minmax(250px, 1.25fr)
-    minmax(150px, .65fr)
-    minmax(150px, .65fr)
-    minmax(300px, 1.35fr);
-  column-gap: clamp(50px, 5vw, 90px);
+    minmax(13vw, 1.25fr)
+    minmax(7.8vw, .65fr)
+    minmax(7.8vw, .65fr)
+    minmax(15.6vw, 1.35fr);
+
+  column-gap: 3.5vw;
+
   width: 100%;
   align-items: start;
 }
 
 /* BRAND */
+
 .footer-brand {
   min-width: 0;
 }
 
 .footer-brand__logo {
   display: block;
-  width: clamp(105px, 8vw, 140px);
+  width: 6.5vw;
   height: auto;
   object-fit: contain;
 }
 
 .footer-brand__text {
   max-width: 38ch;
-  margin: clamp(22px, 2vw, 30px) 0 0;
+
+  margin: 1.15vw 0 0;
+
   color: rgba(255, 255, 255, .58);
+
   font-family: var(--sans);
-  font-size: clamp(13px, 1vw, 16px);
+  font-size: .86vw;
   font-weight: 400;
   line-height: 1.7;
 }
 
 .footer-brand__follow {
-  margin: clamp(28px, 2.5vw, 38px) 0 clamp(12px, 1vw, 16px);
+  margin: 1.45vw 0 .63vw;
+
   color: rgba(255, 255, 255, .65);
+
   font-family: var(--sans);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: .86vw;
   font-weight: 500;
 }
 
 .footer-brand__socials {
   display: flex;
   align-items: center;
-  gap: clamp(15px, 1.2vw, 22px);
+  gap: .9vw;
 }
 
 .footer-brand__socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   color: rgba(255, 255, 255, .58);
   text-decoration: none;
-  font-size: clamp(17px, 1.2vw, 21px);
-  transition: color .2s ease, transform .2s ease;
+
+  font-size: 1.10vw;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
 }
 
 .footer-brand__socials a:hover {
@@ -483,7 +504,10 @@ const year = new Date().getFullYear()
   transform: translateY(-2px);
 }
 
-/* STAY / EXPLORE */
+/* =========================================================
+   STAY / EXPLORE
+========================================================= */
+
 .footer-column,
 .footer-newsletter {
   min-width: 0;
@@ -496,10 +520,12 @@ const year = new Date().getFullYear()
 }
 
 .footer-column__title {
-  margin: 0 0 clamp(22px, 1.8vw, 28px);
+  margin: 0 0 1.15vw;
+
   color: #ffffff;
+
   font-family: var(--serif);
-  font-size: clamp(19px, 1.4vw, 23px);
+  font-size: 1.25vw;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -507,13 +533,17 @@ const year = new Date().getFullYear()
 .footer-column a {
   display: block;
   width: fit-content;
-  margin: 0 0 clamp(13px, 1vw, 17px);
+
+  margin: 0 0 .73vw;
+
   color: rgba(255, 255, 255, .58);
   text-decoration: none;
+
   font-family: var(--sans);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: .86vw;
   font-weight: 400;
   line-height: 1.45;
+
   transition: color .2s ease;
 }
 
@@ -524,28 +554,38 @@ const year = new Date().getFullYear()
 .footer-sale-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: .42vw;
 }
 
 .footer-badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
+
+  padding: .1vw .42vw;
+
   border-radius: 999px;
+
   background: rgba(239, 68, 68, .14);
   color: #ef4444;
+
   font-family: var(--sans);
-  font-size: clamp(8px, .7vw, 10px);
+  font-size: .52vw;
   font-weight: 600;
 }
 
-/* NEWSLETTER */
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
 .footer-newsletter__text {
   max-width: 48ch;
-  margin: 0 0 clamp(22px, 1.8vw, 28px);
+
+  margin: 0 0 1.15vw;
+
   color: rgba(255, 255, 255, .58);
+
   font-family: var(--sans);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: .86vw;
   font-weight: 400;
   line-height: 1.65;
 }
@@ -553,27 +593,36 @@ const year = new Date().getFullYear()
 .footer-newsletter__form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  gap: .52vw;
   width: 100%;
 }
 
 .footer-newsletter__form input,
 .footer-newsletter__form button {
   width: 100%;
-  height: clamp(48px, 3.5vw, 56px);
+  height: 2.6vw;
+
   box-sizing: border-box;
 }
 
 .footer-newsletter__form input {
-  padding: 0 clamp(15px, 1.2vw, 20px);
+  padding: 0 .83vw;
+
   border: 1px solid rgba(255, 255, 255, .16);
   border-radius: 7px;
+
   background: rgba(255, 255, 255, .05);
   color: #ffffff;
+
   font-family: var(--sans);
-  font-size: clamp(12px, .9vw, 14px);
+  font-size: .80vw;
+
   outline: none;
-  transition: border-color .2s ease, background .2s ease;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
 }
 
 .footer-newsletter__form input::placeholder {
@@ -588,13 +637,20 @@ const year = new Date().getFullYear()
 .footer-newsletter__form button {
   border: 1px solid rgba(255, 255, 255, .32);
   border-radius: 7px;
+
   background: transparent;
   color: #ffffff;
+
   font-family: var(--sans);
-  font-size: clamp(12px, .9vw, 14px);
+  font-size: .80vw;
   font-weight: 600;
+
   cursor: pointer;
-  transition: border-color .2s ease, color .2s ease, background .2s ease;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease,
+    background .2s ease;
 }
 
 .footer-newsletter__form button:hover {
@@ -604,86 +660,99 @@ const year = new Date().getFullYear()
 
 /* =========================================================
    UTILITY BAR
-   Location + booking + payment methods stay grouped on left
+   Ella + We Support + payment methods remain on one line.
 ========================================================= */
+
 .footer-utility {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  gap: clamp(42px, 4vw, 78px);
+
+  gap: 2.4vw;
 
   width: 100%;
-  min-height: clamp(118px, 8vw, 148px);
-  padding: clamp(26px, 2.2vw, 36px) 4vw;
+  min-height: 6vw;
+
+  padding: 1.35vw 4vw;
 
   border-top: 1px solid rgba(255, 255, 255, .12);
+
   background: #000000;
+
   box-sizing: border-box;
 }
 
 .footer-support {
   display: flex;
   align-items: center;
+
   flex: 0 0 auto;
+
   padding: 0;
   border: 0;
-  box-sizing: border-box;
-}
 
-.footer-support__icon {
-  width: clamp(38px, 2.8vw, 46px);
-  height: clamp(38px, 2.8vw, 46px);
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .08);
-  color: #b79a69;
-  font-size: clamp(14px, 1.1vw, 17px);
+  box-sizing: border-box;
 }
 
 .footer-support__text {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+
+  gap: .36vw;
 }
+
+/* Same visual size as "We Support" */
 
 .footer-support__hours {
   color: rgba(255, 255, 255, .72);
+
   font-family: var(--serif);
-  font-size: clamp(17px, 1.25vw, 21px);
+  font-size: 1.10vw;
   font-weight: 400;
   line-height: 1;
+
   white-space: nowrap;
 }
 
 .footer-support__phone {
   color: #ffffff;
   text-decoration: none;
+
   font-family: var(--sans);
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: .86vw;
   font-weight: 600;
+
   white-space: nowrap;
 }
+
+/* No vertical divider */
 
 .footer-support-brands {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  gap: clamp(18px, 1.6vw, 28px);
+  justify-content: flex-start;
+
+  gap: 1.05vw;
+
   flex: 0 0 auto;
+
   padding: 0;
+  border: 0;
+
   box-sizing: border-box;
 }
 
 .footer-support-brands__label {
   margin: 0;
+
   color: rgba(255, 255, 255, .72);
+
   font-family: var(--serif);
-  font-size: clamp(17px, 1.25vw, 21px);
+  font-size: 1.10vw;
   font-weight: 400;
   line-height: 1;
+
   white-space: nowrap;
 }
 
@@ -691,55 +760,67 @@ const year = new Date().getFullYear()
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: clamp(20px, 2vw, 32px);
+
+  gap: .8vw;
+
   width: auto;
 }
 
 .payment-logo {
   display: block;
+
   width: auto;
   height: auto;
+
   object-fit: contain;
+
   flex: 0 0 auto;
 }
 
+/* Payment logos deliberately smaller */
 .payment-logo--mastercard {
-  width: clamp(38px, 2.7vw, 48px);
+  width: 1.55vw;
 }
 
 .payment-logo--visa {
-  width: clamp(42px, 3vw, 54px);
+  width: 1.7vw;
 }
 
 .payment-logo--paypal {
-  width: clamp(34px, 2.5vw, 46px);
+  width: 1.45vw;
 }
 
 .payment-logo--amex {
-  width: clamp(44px, 3vw, 54px);
-  max-height: clamp(17px, 1.3vw, 21px);
+  width: 1.7vw;
+  max-height: .7vw;
 }
 
 /* WESTERN UNION */
+
 .western-union-logo {
   display: flex;
   align-items: center;
-  gap: 5px;
+
+  gap: .22vw;
+
   flex: 0 0 auto;
 }
 
 .western-union-logo__mark {
   display: block;
-  width: clamp(32px, 2.4vw, 42px);
+
+  width: 1.4vw;
   height: auto;
 }
 
 .western-union-logo__text {
   display: flex;
   flex-direction: column;
+
   color: #ffffff;
+
   font-family: var(--sans);
-  font-size: clamp(9px, .8vw, 12px);
+  font-size: .42vw;
   font-weight: 600;
   line-height: .9;
   letter-spacing: -.02em;
@@ -748,45 +829,61 @@ const year = new Date().getFullYear()
 /* =========================================================
    BOTTOM BAR
 ========================================================= */
+
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+
   width: 100%;
   margin: 0;
-  padding: clamp(18px, 1.5vw, 24px) 4vw;
-  column-gap: 30px;
+
+  padding: .95vw 4vw;
+
+  column-gap: 1.45vw;
+
   border-top: 1px solid rgba(255, 255, 255, .08);
+
   background: #000000;
+
   box-sizing: border-box;
 }
 
 .footer-bottom__copyright {
   justify-self: start;
+
   margin: 0;
   padding: 0;
+
   color: rgba(255, 255, 255, .5);
+
   font-family: var(--sans);
-  font-size: clamp(11px, .82vw, 13px);
+  font-size: .70vw;
   font-weight: 400;
   line-height: 1.2;
+
   white-space: nowrap;
 }
 
 .footer-bottom__links {
   justify-self: center;
+
   display: flex;
   align-items: center;
-  gap: clamp(14px, 1.2vw, 20px);
+
+  gap: .83vw;
 }
 
 .footer-bottom__links a {
   color: rgba(255, 255, 255, .5);
   text-decoration: none;
+
   font-family: var(--sans);
-  font-size: clamp(11px, .82vw, 13px);
+  font-size: .70vw;
   font-weight: 400;
+
   white-space: nowrap;
+
   transition: color .2s ease;
 }
 
@@ -796,180 +893,58 @@ const year = new Date().getFullYear()
 
 .footer-bottom__divider {
   width: 1px;
-  height: clamp(15px, 1.3vw, 20px);
+  height: .9vw;
+
   background: rgba(255, 255, 255, .12);
+
   flex: 0 0 auto;
 }
 
 .footer-bottom__powered {
   justify-self: end;
+
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+
+  gap: .36vw;
+
   margin: 0;
   padding: 0;
+
   color: rgba(255, 255, 255, .5);
+
   font-family: var(--sans);
-  font-size: clamp(11px, .82vw, 13px);
+  font-size: .70vw;
   font-weight: 400;
   line-height: 1;
+
   white-space: nowrap;
 }
 
 .footer-bottom__saasbed-logo {
   display: block;
+
   width: auto;
-  height: clamp(18px, 1.4vw, 24px);
+  height: 1.04vw;
+
   object-fit: contain;
 }
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
+   Switch back to px/clamp so smaller devices remain readable.
 ========================================================= */
 
-/*
-  Browser zoom around 80% creates a wider CSS viewport.
-  This wide-screen rule intentionally scales the footer up
-  so it still feels substantial instead of tiny.
-*/
-@media (min-width: 1500px) {
+@media (max-width: 1100px) {
   .footer-main {
-    padding: clamp(64px, 4.6vw, 92px) 4vw clamp(56px, 4vw, 80px);
-  }
-
-  .footer-grid {
-    grid-template-columns:
-      minmax(300px, 1.3fr)
-      minmax(180px, .68fr)
-      minmax(180px, .68fr)
-      minmax(360px, 1.4fr);
-    column-gap: clamp(64px, 5vw, 110px);
-  }
-
-  .footer-brand__logo {
-    width: clamp(140px, 8vw, 180px);
-  }
-
-  .footer-brand__text {
-    max-width: 40ch;
-    font-size: clamp(15px, .9vw, 18px);
-    line-height: 1.75;
-  }
-
-  .footer-brand__follow {
-    font-size: clamp(15px, .85vw, 17px);
-  }
-
-  .footer-brand__socials a {
-    font-size: clamp(20px, 1.1vw, 24px);
-  }
-
-  .footer-column__title {
-    font-size: clamp(22px, 1.3vw, 27px);
-    margin-bottom: clamp(24px, 1.6vw, 32px);
-  }
-
-  .footer-column a,
-  .footer-newsletter__text {
-    font-size: clamp(15px, .85vw, 17px);
-  }
-
-  .footer-column a {
-    margin-bottom: clamp(14px, .9vw, 19px);
-  }
-
-  .footer-newsletter__form input,
-  .footer-newsletter__form button {
-    height: clamp(54px, 3vw, 62px);
-    font-size: clamp(14px, .8vw, 16px);
-  }
-
-  .footer-utility {
-    min-height: clamp(130px, 7vw, 160px);
-    gap: clamp(52px, 4vw, 88px);
-    padding: clamp(30px, 2vw, 42px) 4vw;
-  }
-
-  .footer-support__hours {
-    font-size: clamp(20px, 1.1vw, 24px);
-  }
-
-  .footer-support__phone {
-    font-size: clamp(16px, .9vw, 19px);
-  }
-
-  .footer-support-brands__label {
-    font-size: clamp(20px, 1.1vw, 24px);
-    margin: 0;
-  }
-
-  .footer-support-brands__icons {
-    gap: clamp(22px, 1.7vw, 36px);
-  }
-
-  .payment-logo--mastercard {
-    width: clamp(46px, 2.5vw, 58px);
-  }
-
-  .payment-logo--visa {
-    width: clamp(50px, 2.7vw, 64px);
-  }
-
-  .payment-logo--paypal {
-    width: clamp(42px, 2.3vw, 54px);
-  }
-
-  .western-union-logo__mark {
-    width: clamp(38px, 2.2vw, 50px);
-  }
-
-  .western-union-logo__text {
-    font-size: clamp(10px, .7vw, 13px);
-  }
-
-  .footer-bottom {
-    padding: clamp(20px, 1.4vw, 28px) 4vw;
-  }
-
-  .footer-bottom__copyright,
-  .footer-bottom__links a,
-  .footer-bottom__powered {
-    font-size: clamp(12px, .72vw, 14px);
-  }
-
-  .footer-bottom__saasbed-logo {
-    height: clamp(20px, 1.25vw, 27px);
-  }
-}
-
-@media (max-width: 1180px) {
-  .footer-main {
-    padding-left: 4vw;
-    padding-right: 4vw;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1.15fr .75fr .75fr;
-    column-gap: clamp(32px, 4vw, 56px);
-    row-gap: 42px;
-  }
-
-  .footer-newsletter {
-    grid-column: 1 / -1;
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 820px) {
-  .footer-main {
-    padding: 44px 5vw 40px;
+    padding: 42px 5vw 38px;
   }
 
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 34px;
-    row-gap: 38px;
+    row-gap: 36px;
   }
 
   .footer-brand,
@@ -977,39 +952,160 @@ const year = new Date().getFullYear()
     grid-column: 1 / -1;
   }
 
+  .footer-brand__logo {
+    width: 120px;
+  }
+
   .footer-brand__text,
+  .footer-brand__follow,
+  .footer-column a,
   .footer-newsletter__text {
-    max-width: 56ch;
+    font-size: 14px;
+  }
+
+  .footer-brand__text {
+    margin-top: 20px;
+  }
+
+  .footer-brand__follow {
+    margin: 26px 0 12px;
+  }
+
+  .footer-brand__socials {
+    gap: 16px;
+  }
+
+  .footer-brand__socials a {
+    font-size: 18px;
+  }
+
+  .footer-column__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .footer-column a {
+    margin-bottom: 13px;
+  }
+
+  .footer-newsletter__text {
+    margin-bottom: 20px;
+  }
+
+  .footer-newsletter__form {
+    gap: 10px;
+  }
+
+  .footer-newsletter__form input,
+  .footer-newsletter__form button {
+    height: 48px;
+  }
+
+  .footer-newsletter__form input {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  .footer-newsletter__form button {
+    font-size: 14px;
+  }
+
+  .footer-utility {
+    flex-wrap: wrap;
+    gap: 24px 34px;
+    min-height: auto;
+    padding: 24px 5vw;
+  }
+
+  .footer-support__text {
+    gap: 6px;
+  }
+
+  .footer-support__hours,
+  .footer-support-brands__label {
+    font-size: 20px;
+  }
+
+  .footer-support__phone {
+    font-size: 14px;
+  }
+
+  .footer-support-brands {
+    gap: 18px;
+  }
+
+  .footer-support-brands__icons {
+    gap: 14px;
+  }
+
+  .payment-logo--mastercard {
+    width: 28px;
+  }
+
+  .payment-logo--visa {
+    width: 31px;
+  }
+
+  .payment-logo--paypal {
+    width: 26px;
+  }
+
+  .western-union-logo__mark {
+    width: 25px;
+  }
+
+  .western-union-logo__text {
+    font-size: 8px;
+  }
+
+  .footer-bottom {
+    padding: 18px 5vw;
+    column-gap: 24px;
+  }
+
+  .footer-bottom__copyright,
+  .footer-bottom__links a,
+  .footer-bottom__powered {
+    font-size: 12px;
+  }
+
+  .footer-bottom__links {
+    gap: 14px;
+  }
+
+  .footer-bottom__divider {
+    height: 16px;
+  }
+
+  .footer-bottom__saasbed-logo {
+    height: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: 1 / -1;
   }
 
   .footer-utility {
     flex-direction: column;
     align-items: flex-start;
-    gap: 26px;
-    padding: 28px 5vw;
-  }
-
-  .footer-support {
-    padding: 0;
-    border: 0;
+    gap: 22px;
   }
 
   .footer-support-brands {
-    padding: 0;
-    flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
-  }
-
-  .footer-support-brands__icons {
-    flex-wrap: nowrap;
   }
 
   .footer-bottom {
     grid-template-columns: 1fr;
     justify-items: center;
-    row-gap: 12px;
-    padding: 20px 5vw;
+    row-gap: 10px;
   }
 
   .footer-bottom__copyright,
@@ -1031,13 +1127,12 @@ const year = new Date().getFullYear()
 
 @media (max-width: 520px) {
   .footer-main {
-    padding-top: 38px;
-    padding-bottom: 34px;
+    padding: 36px 5vw 32px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    row-gap: 34px;
+    row-gap: 32px;
   }
 
   .footer-brand,
@@ -1045,16 +1140,15 @@ const year = new Date().getFullYear()
     grid-column: auto;
   }
 
-  .footer-brand__logo {
-    width: clamp(96px, 30vw, 124px);
-  }
-
-  .footer-column__title {
-    margin-bottom: 18px;
+  .footer-support-brands {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
   }
 
   .footer-support-brands__icons {
-    gap: 18px;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
   .footer-bottom__divider {
@@ -1062,8 +1156,6 @@ const year = new Date().getFullYear()
   }
 
   .footer-bottom__links {
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 8px;
   }
