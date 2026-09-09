@@ -4,7 +4,6 @@
       <InnerPageHero
         eyebrow="Stay a little longer"
         title="Discover packages made for you"
-        
         image="./Images/Home/amenities/lounge2.jpeg"
       />
       <section class="section">
@@ -39,7 +38,14 @@ import InnerPageHero from "../components/layout/InnerPageHero.vue";
 }
 
 .packages-page :deep(.inner-hero) {
+  min-height: clamp(32rem, 72vh, 46rem);
   background-position: center center;
+}
+
+@media (max-width: 620px) {
+  .packages-page :deep(.inner-hero) {
+    min-height: 68vh;
+  }
 }
 
 .packages-page :deep(.inner-hero-content) {

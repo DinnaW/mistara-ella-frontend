@@ -198,7 +198,14 @@ const form = reactive({
   color: var(--contact-ink);
 }
 .contact-page :deep(.inner-hero) {
+  min-height: clamp(32rem, 72vh, 46rem);
   background-position: center top;
+}
+
+@media (max-width: 620px) {
+  .contact-page :deep(.inner-hero) {
+    min-height: 68vh;
+  }
 }
 
 .contact-page :deep(.inner-hero h1) {
@@ -621,8 +628,6 @@ const form = reactive({
     padding-top: 35px;
   }
 
-  
-
   .contact-form {
     padding: 28px 22px 25px;
   }
@@ -664,7 +669,6 @@ const form = reactive({
    ========================================= */
 
 @media (max-width: 560px) {
-  
   /* Contact us — 58px to 90px */
   .contact-page .contact-information h1 {
     font-size: clamp(58px, 8vw, 90px) !important;
@@ -682,7 +686,6 @@ const form = reactive({
     font-size: clamp(36px, 8vw, 50px) !important;
     line-height: 1.05 !important;
   }
-
 }
 @media (max-width: 560px) {
   .contact-page .contact-information h1 {
@@ -695,7 +698,6 @@ const form = reactive({
    ========================================= */
 
 @media (min-width: 561px) and (max-width: 1024px) {
-
   /* Contact us — 58px to 90px */
   .contact-page .contact-information h1 {
     font-size: clamp(58px, 8vw, 90px) !important;
@@ -713,10 +715,8 @@ const form = reactive({
     font-size: clamp(36px, 5vw, 50px) !important;
     line-height: 1.05 !important;
   }
-
 }
 @media (max-width: 560px) {
-
   /* =========================================
      MOBILE GALLERY — SLIDESHOW
      ========================================= */
@@ -772,10 +772,8 @@ const form = reactive({
   .gallery-frame--low {
     margin-top: 62px;
   }
-
 }
 @media (max-width: 560px) {
-
   .contact-gallery {
     padding: 42px 0 55px;
     overflow: hidden;
@@ -831,7 +829,6 @@ const form = reactive({
    ========================================= */
 
 @media (min-width: 561px) and (max-width: 1024px) {
-
   .contact-page .contact-details-section {
     min-height: auto !important;
     padding: 60px 0 80px !important;
@@ -932,7 +929,6 @@ const form = reactive({
    ========================================= */
 
 @media (max-width: 560px) {
-
   .contact-page .contact-information {
     text-align: center !important;
   }
