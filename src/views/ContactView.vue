@@ -979,7 +979,7 @@ const form = reactive({
   /* Contact information */
   .contact-page .contact-details-section {
     padding-top: 5px !important;
-    padding-bottom: 60px !important;
+    padding-bottom: 5px !important;
   }
 
   /* Form */
