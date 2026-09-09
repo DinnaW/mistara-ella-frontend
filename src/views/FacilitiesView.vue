@@ -8,7 +8,7 @@
       <InnerPageHero
         eyebrow="Designed for comfort"
         title="Explore Our Facilities"
-        image="./Images/Image_Gallery/happy-family.jpg"
+        image="./Images/Facility/wellness5.jpeg"
       />
 
       <!-- =====================================================
@@ -133,30 +133,30 @@
       </section>
 
       <!-- =====================================================
-           THINGS TO DO
+           WELLNESS AT MISTARA ELLA
       ====================================================== -->
 
-      <section class="things-section">
+      <section class="things-section spa-section">
         <div class="container">
           <div class="section-heading reveal">
             <div>
               <h2>
-                Things to do
+                Wellness at Mistara
                 <br />
-                Let's go on
-
-                <em>a journey.</em>
+                Slow down and
+                <em>restore.</em>
               </h2>
             </div>
 
             <div class="heading-right">
               <p>
-                Hiking, waterfalls, tea plantations, local culture and more.
-                Discover hand-picked experiences to make the most of your stay.
+                Make space for stillness with thoughtful wellness moments,
+                soothing water and quiet corners designed to help you settle
+                into the rhythm of Ella.
               </p>
 
-              <a href="#" class="view-link">
-                VIEW ALL EXPERIENCES
+              <a href="#rooms" class="view-link">
+                DISCOVER WELLNESS
                 <span>→</span>
               </a>
             </div>
@@ -187,7 +187,7 @@
       </section>
 
       <!-- =====================================================
-           TRAVEL STORIES
+           WELLNESS JOURNAL
       ====================================================== -->
 
       <section class="stories-section">
@@ -195,27 +195,22 @@
           <div class="stories-top reveal">
             <div class="stories-title">
               <h2>
-                Travel stories
+                A Slower Way to Stay
                 <br />
-                Stories
-
-                <em>from Ella.</em>
+                <em>Relax, restore, reconnect.</em>
               </h2>
             </div>
 
             <div class="stories-intro">
               <p>
-                Travel slowly, discover deeply. Explore stories, places and
-                experiences from around Ella.
+                Take a slower look at the rituals, spaces and quiet details that
+                make wellness at Mistara Ella feel personal.
               </p>
             </div>
           </div>
 
           <div class="stories-slider reveal">
-            <div class="stories-side-label">
-              <span>TRAVEL</span>
-              <span>STORIES</span>
-            </div>
+            <div class="stories-side-label"></div>
 
             <div class="stories-track">
               <article
@@ -244,8 +239,8 @@
                   <div class="story-meta">
                     <span>{{ story.date }}</span>
 
-                    <a href="#">
-                      READ STORY
+                    <a href="#rooms">
+                      
                       <span>→</span>
                     </a>
                   </div>
@@ -314,7 +309,7 @@
               Stay for everything else.
             </p>
 
-            <a href="#">
+            <a href="#/contact">
               BOOK YOUR STAY
               <span>→</span>
             </a>
@@ -330,53 +325,8 @@ import { onMounted, ref } from "vue";
 
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
-import ellaMountainImage from "../Images/Banner/ella-mountain-view.jpg";
-
-/* =====================================================
-   POPULAR FACILITIES
-===================================================== */
-
-const popularFacilities = [
-  {
-    title: "Indoor swimming pool",
-    icon: "≈",
-  },
-
-  {
-    title: "Free WiFi",
-    icon: "⌁",
-  },
-
-  {
-    title: "Family rooms",
-    icon: "♧",
-  },
-
-  {
-    title: "Free parking",
-    icon: "□",
-  },
-
-  {
-    title: "Restaurant",
-    icon: "≋",
-  },
-
-  {
-    title: "Bar",
-    icon: "○",
-  },
-
-  {
-    title: "Pet friendly",
-    icon: "◇",
-  },
-
-  {
-    title: "Room service",
-    icon: "⌂",
-  },
-];
+const baseUrl = import.meta.env.BASE_URL;
+const ellaMountainImage = `${baseUrl}Images/Home/amenities/lounge.jpeg`;
 
 /* =====================================================
    FACILITIES
@@ -448,18 +398,6 @@ const facilities = [
   },
 
   {
-    icon: "≈",
-    title: "Indoor Swimming Pool",
-    items: [
-      "Open all year",
-      "Rooftop pool",
-      "All ages welcome",
-      "Pool towels",
-      "Beach chairs / loungers",
-    ],
-  },
-
-  {
     icon: "◇",
     title: "Safety & Security",
     items: [
@@ -468,6 +406,17 @@ const facilities = [
       "CCTV outside property",
       "Key card access",
       "Safe",
+    ],
+  },
+  {
+    icon: "≈",
+    title: "Indoor Swimming Pool",
+    items: [
+      "Open all year",
+      "Rooftop pool",
+      "All ages welcome",
+      "Pool towels",
+      "Beach chairs / loungers",
     ],
   },
 ];
@@ -489,22 +438,19 @@ const amenities = [
   {
     title: "Dining",
     category: "GOOD FOOD, GREAT MOMENTS",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=90",
+    image: `${baseUrl}Images/Facility/food1.jpeg`,
   },
 
   {
     title: "Room Comfort",
     category: "THOUGHTFUL AMENITIES",
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=90",
+    image: `${baseUrl}Images/Facility/room1.jpeg`,
   },
 
   {
     title: "Wellness & Views",
     category: "RELAXATION REDEFINED",
-    image:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=90",
+    image: `${baseUrl}Images/Facility/wellness5.jpeg`,
   },
 ];
 
@@ -514,31 +460,27 @@ const amenities = [
 
 const thingsToDo = [
   {
-    title: "Hiking",
-    description: "Mountains & viewpoints",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85",
+    title: "Private Spa Moments",
+    description: "Unhurried treatments in a calm, intimate setting.",
+    image: `${baseUrl}Images/Facility/spa.png`,
   },
 
   {
-    title: "Waterfalls",
-    description: "Nature's hidden gems",
-    image:
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=85",
+    title: "Poolside Stillness",
+    description: "Warm water, open air and time to simply be.",
+    image: `${baseUrl}Images/Facility/wellness1.jpg`,
   },
 
   {
-    title: "Tea Plantations",
-    description: "Scenic tea country",
-    image:
-      "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=85",
+    title: "Green View Retreat",
+    description: "A restorative pause surrounded by Ella's hillside green.",
+    image: `${baseUrl}Images/Home/hero2.jpeg`,
   },
 
   {
-    title: "Local Culture",
-    description: "Authentic experiences",
-    image:
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=85",
+    title: "Evening Wellness",
+    description: "Soft lights, quiet water and a slower end to the day.",
+    image: `${baseUrl}Images/Facility/wellness3.jpeg`,
   },
 ];
 
@@ -548,33 +490,30 @@ const thingsToDo = [
 
 const stories = [
   {
-    category: "TRAVEL GUIDE",
-    title: "10 Must-Visit Places in Ella",
+    category: "POOLSIDE CALM",
+    title: "Let the Day Move Slowly",
     description:
-      "Discover the most beautiful viewpoints, waterfalls and hidden gems around Ella.",
-    date: "Oct 14, 2024",
-    image:
-      "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85",
+      "Warm water, open air and the green hills of Ella create their own rhythm.",
+    date: "DISCOVER YOUR STAY",
+    image: `${baseUrl}Images/Home/outside3.jpeg`,
   },
 
   {
-    category: "FOOD & CULTURE",
-    title: "A Taste of Local Flavours",
+    category: "SPA RITUALS",
+    title: "A Quiet Moment for Yourself",
     description:
-      "Explore the authentic tastes of Sri Lanka and discover the culinary side of Ella.",
-    date: "Oct 10, 2024",
-    image:
-      "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85",
+      "Make room for stillness with restorative treatments and unhurried time.",
+    date: "DISCOVER YOUR STAY",
+    image: `${baseUrl}Images/Home/lamp.jpeg`,
   },
 
   {
-    category: "EXPERIENCES",
-    title: "Riding the Iconic Train",
+    category: "MINDFUL STAYS",
+    title: "The Comfort of Doing Less",
     description:
-      "Everything you need to know about one of Sri Lanka’s most memorable journeys.",
-    date: "Oct 06, 2024",
-    image:
-      "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=85",
+      "Discover how a little more space, quiet and care can change a whole stay.",
+    date: "DISCOVER YOUR STAY",
+    image: `${baseUrl}Images/Home/outside2.jpeg`,
   },
 ];
 
@@ -660,6 +599,17 @@ onMounted(() => {
   letter-spacing: -0.025em;
 }
 
+.facilities-page :deep(.inner-hero) {
+  min-height: clamp(32rem, 72vh, 46rem);
+  background-position: center bottom;
+}
+
+@media (max-width: 620px) {
+  .facilities-page :deep(.inner-hero) {
+    min-height: 68vh;
+  }
+}
+
 .facilities-page :deep(.inner-hero-content) {
   width: 100%;
   padding: clamp(2.5rem, 5vh, 4rem) 3vw;
@@ -733,20 +683,14 @@ h3 {
   font-weight: 400;
 }
 
-.eyebrow {
-  display: block;
-
-  margin-bottom: 17px;
-
-  font-size: 8px;
-
-  font-weight: 500;
-
-  letter-spacing: 0.22em;
-
-  text-transform: uppercase;
-
-  color: #77716a;
+.facilities-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: none !important;
+  letter-spacing: 0em;
 }
 
 h2 em,
@@ -2073,7 +2017,7 @@ h3 em {
 .stories-section {
   padding: 125px 0 140px;
 
-  background: var(--off-white);
+  background: #f4f0e7;
 }
 
 .stories-top {
@@ -2661,23 +2605,23 @@ h3 em {
 
   gap: 18px;
 
-  padding: 15px 20px;
-
-  background: var(--brown-dark);
+  padding: 0;
 
   color: white;
 
-  font-size: 7px;
+  font-family: "Marcellus", Georgia, serif;
 
-  letter-spacing: 0.15em;
+  font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0;
 
   transition: 0.3s ease;
 }
 
 .booking-bottom a:hover {
-  background: white;
-
-  color: var(--brown-dark);
+  color: white;
 }
 
 .booking-bottom a > span {
@@ -2697,11 +2641,21 @@ h3 em {
 
   font-size: 14px;
 
-  transition: transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .booking-bottom a:hover > span,
 .booking-bottom a:focus-visible > span {
+  border-color: #123c32;
+
+  background: #123c32;
+
+  color: white;
+
   transform: translateX(5px);
 }
 
@@ -3279,16 +3233,19 @@ h3 em {
 }
 
 .facilities-page .facility-card:nth-child(1) {
-  background-image: url("/Images/Facility/roomview.png");
+  background-image: url("/Images/Home/bed4.jpeg");
 }
+
 .facilities-page .facility-card:nth-child(3) {
-  background-image: url("/Images/Facility/land.png");
+  background-image: url("/Images/Home/view.jpeg");
 }
 .facilities-page .facility-card:nth-child(6) {
-  background-image: url("/Images/Facility/washroom.png");
+  background-image: url("/Images/Home/amenities/lounge.jpeg");
+  background-position: bottom;
 }
 .facilities-page .facility-card:nth-child(8) {
-  background-image: url("/Images/Facility/family.png");
+  background-image: url("/Images/Home/outside3.jpeg");
+  background-position: center;
 }
 
 .facilities-page .facility-card:nth-child(5) {
@@ -3485,5 +3442,337 @@ h3 em {
 .stories-section,
 .booking-section {
   padding: 5% 2% 5% 2%;
+}
+
+.spa-section {
+  background: #f4f1ea;
+}
+
+.spa-section .section-heading {
+  align-items: end;
+  margin-bottom: 58px;
+}
+
+.spa-section .section-heading h2 {
+  max-width: 640px;
+  color: #25281f;
+}
+
+.spa-section .heading-right {
+  max-width: 390px;
+}
+
+.spa-section .heading-right p {
+  color: #5b6259;
+}
+
+.spa-section .things-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.spa-section .thing-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 40, 31, 0.06);
+}
+
+.spa-section .thing-image {
+  height: 270px;
+}
+
+.spa-section .thing-image img {
+  transition: transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.spa-section .thing-card:hover .thing-image img {
+  transform: scale(1.06);
+}
+
+.spa-section .thing-content {
+  min-height: 132px;
+  padding: 22px 22px 24px;
+  border-top: 1px solid rgba(37, 40, 31, 0.1);
+}
+
+.spa-section .thing-content h3 {
+  margin-bottom: 8px;
+  color: #25281f;
+  font-size: 23px !important;
+  line-height: 1.15 !important;
+}
+
+.spa-section .thing-content p {
+  color: #5b6259;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 1050px) {
+  .spa-section .things-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .spa-section .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .spa-section .things-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spa-section .thing-image {
+    height: 250px;
+  }
+}
+/* =========================================
+   MOBILE HEADING SIZES & LINE HEIGHT
+   ========================================= */
+
+@media (max-width: 650px) {
+  /* -----------------------------------------
+     1. DISCOVER THE COMFORTS
+     ----------------------------------------- */
+  .facilities-page .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     2. PREMIUM AMENITIES
+     ----------------------------------------- */
+  .facilities-page .amenities-intro h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     3. WELLNESS AT MISTARA
+     ----------------------------------------- */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     4. WELLNESS JOURNAL
+     ----------------------------------------- */
+  .facilities-page .stories-title h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     5. FINAL CTA
+     ----------------------------------------- */
+  .facilities-page .booking-content h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     6. TRAVEL STORY HEADINGS
+     Let the Day Move Slowly
+     A Quiet Moment for Yourself
+     The Comfort of Doing Less
+     ----------------------------------------- */
+  .facilities-page .story-slide-content h3 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* -----------------------------------------
+     7. AMENITY HEADINGS
+     Dining
+     Room Comfort
+     Wellness & Views
+     ----------------------------------------- */
+  .facilities-page .amenity-title h3 {
+    font-size: 32px !important;
+    line-height: 1.05 !important;
+  }
+}
+/* =========================================
+   TABLET HEADING SIZES
+   ========================================= */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+  /* Main section headings */
+  .facilities-page .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Premium amenities heading */
+  .facilities-page .amenities-intro h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Wellness heading */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Wellness journal heading */
+  .facilities-page .stories-title h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Final CTA heading */
+  .facilities-page .booking-content h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Travel story card headings */
+  .facilities-page .story-slide-content h3 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Amenity card headings */
+  .facilities-page .amenity-title h3 {
+    font-size: 32px !important;
+    line-height: 1.05 !important;
+  }
+}
+/* =====================================================
+   TABLET — DISCOVER THE COMFORTS
+   651px – 1024px
+===================================================== */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+  /* Stack heading and description */
+  .facilities-page .facilities-section .section-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 28px !important;
+    margin-bottom: 50px !important;
+    text-align: left !important;
+  }
+
+  /* Main heading */
+  .facilities-page .facilities-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: 620px !important;
+  }
+
+  /* Paragraph + arrows underneath */
+  .facilities-page .facilities-section .heading-right {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Description */
+  .facilities-page .facilities-section .heading-right p {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 0 20px 0 !important;
+    text-align: left !important;
+  }
+
+  /* Arrows */
+  .facilities-page .facilities-section .arrows {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin-top: 20px !important;
+  }
+}
+/* =====================================================
+   TABLET — WELLNESS AT MISTARA
+   651px – 1024px
+===================================================== */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+  .facilities-page .spa-section .section-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 28px !important;
+    text-align: left !important;
+  }
+
+  /* Wellness heading */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  /* Paragraph + button below heading */
+  .facilities-page .spa-section .heading-right {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Wellness paragraph */
+  .facilities-page .spa-section .heading-right p {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 0 22px 0 !important;
+    text-align: left !important;
+  }
+
+  /* Discover Wellness */
+  .facilities-page .spa-section .view-link {
+    align-self: flex-start !important;
+    text-align: left !important;
+  }
+}
+/* =========================================
+   FACILITIES — MOBILE SECTION SPACING
+   ========================================= */
+@media (max-width: 650px) {
+
+
+  /* Keep the first/hero section from getting too much top space */
+  .facilities-page .facilities-section {
+    padding-top: 45px !important;
+  }
+
+  /* Extra breathing room between heading and content */
+  .facilities-page .section-heading {
+    margin-bottom: 40px !important;
+  }
+
+  .facilities-page .amenities-intro {
+    padding-top: 55px !important;
+    padding-bottom: 55px !important;
+  }
+
+  .facilities-page .spa-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .facilities-page .stories-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .facilities-page .booking-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
 }
 </style>

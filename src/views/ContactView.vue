@@ -4,7 +4,7 @@
       <InnerPageHero
         eyebrow="Let’s make your stay memorable"
         title="Contact us to plan your stay"
-        image="./Images/Image_Gallery/girl-waterfall.jpg"
+        image="./Images/Home/hero2.jpeg"
       />
 
       <section class="contact-details-section">
@@ -84,42 +84,43 @@
       </section>
 
       <section class="contact-quote">
-        <div class="quote-mark">&ldquo;</div>
+        <div class="quote-mark"></div>
         <blockquote>
-          In Ella, slow down and savour the moments that matter <br />— misty
+          In Ella, slow down and savour the moments that matter — misty
           mornings,
           <br />
           mountain views, and the quiet comfort of a
+          <br />
           <em>stay made to be remembered.</em>
         </blockquote>
         <p class="quote-author">Mistara Ella</p>
       </section>
 
       <section class="contact-gallery" aria-label="Moments at Mistara Ella">
-        <div class="contact-gallery-track">
+        <div class="contact-gallery-track" ref="galleryTrack">
           <figure class="gallery-frame gallery-frame--short">
             <img
-              src="/Images/Gallery/sidepool.png"
+              src="/Images/Home/outside1.jpeg"
               alt="Poolside at Mistara Ella"
             />
           </figure>
           <figure class="gallery-frame gallery-frame--low">
             <img
-              src="/Images/Gallery/bench.png"
+              src="/Images/Home/outside3.jpeg"
               alt="Breakfast beside the pool"
             />
           </figure>
           <figure class="gallery-frame">
             <img
-              src="/Images/Gallery/hotelpool.png"
+              src="/Images/Home/outside2.jpeg"
               alt="Mistara Ella pool at night"
             />
           </figure>
           <figure class="gallery-frame gallery-frame--low">
-            <img src="/Images/Gallery/food.png" alt="Freshly prepared dining" />
+            <img src="/Images/Home/lamp.jpeg" alt="Freshly prepared dining" />
           </figure>
           <figure class="gallery-frame gallery-frame--short">
-            <img src="/Images/Gallery/table.png" alt="Dinner by the sea" />
+            <img src="/Images/Home/view.jpeg" alt="Dinner by the sea" />
           </figure>
         </div>
       </section>
@@ -151,12 +152,32 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { nextTick, reactive, ref, onMounted } from "vue";
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
 
 const submitted = ref(false);
 const newsletterSubmitted = ref(false);
+const galleryTrack = ref(null);
+onMounted(async () => {
+  await nextTick();
+
+  if (window.innerWidth <= 560 && galleryTrack.value) {
+    const track = galleryTrack.value;
+    const middleImage = track.children[2];
+
+    if (middleImage) {
+      const scrollLeft =
+        middleImage.offsetLeft -
+        (track.clientWidth - middleImage.offsetWidth) / 2;
+
+      track.scrollTo({
+        left: scrollLeft,
+        behavior: "instant",
+      });
+    }
+  }
+});
 const form = reactive({
   firstName: "",
   lastName: "",
@@ -175,6 +196,16 @@ const form = reactive({
   --contact-line: rgba(37, 40, 31, 0.15);
   background: #ffffff;
   color: var(--contact-ink);
+}
+.contact-page :deep(.inner-hero) {
+  min-height: clamp(32rem, 72vh, 46rem);
+  background-position: center top;
+}
+
+@media (max-width: 620px) {
+  .contact-page :deep(.inner-hero) {
+    min-height: 68vh;
+  }
 }
 
 .contact-page :deep(.inner-hero h1) {
@@ -240,14 +271,14 @@ const form = reactive({
   padding: 50px 0 45px;
 }
 
-.contact-eyebrow,
-.form-eyebrow,
-.detail-label {
-  color: var(--contact-gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.contact-page :deep(.inner-hero .eyebrow) {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: none !important;
+  letter-spacing: 0em;
 }
 
 .contact-eyebrow,
@@ -257,7 +288,7 @@ const form = reactive({
 
 .contact-information h1 {
   margin: 0 0 20px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: clamp(58px, 7vw, 90px);
   font-weight: 500;
   line-height: 0.88;
@@ -328,7 +359,7 @@ const form = reactive({
 
 .contact-form h2 {
   margin: 0 0 5px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: 37px;
   font-weight: 500;
   line-height: 1;
@@ -445,16 +476,16 @@ const form = reactive({
   height: 38px;
   color: var(--contact-ink);
   font-family: Georgia, serif;
-  font-size: 58px;
+  font-size: 24px !important;
   line-height: 0.8;
 }
 
 .contact-quote blockquote {
-  max-width: 720px;
+  max-width: 860px;
   margin: 22px auto 18px;
   color: #25281f;
   font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(35px, 4vw, 51px);
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: 400;
   line-height: 1.1;
 }
@@ -515,7 +546,7 @@ const form = reactive({
 
 .contact-newsletter h2 {
   margin: 0 0 10px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Marcellus", Georgia, serif;
   font-size: clamp(35px, 4vw, 50px);
   font-weight: 500;
 }
@@ -537,7 +568,7 @@ const form = reactive({
   flex: 1;
   min-width: 0;
   border: 0;
-  padding: 12px 0;
+  padding: 15px 0;
   outline: 0;
   background: transparent;
   color: var(--contact-ink);
@@ -556,7 +587,7 @@ const form = reactive({
 }
 
 .newsletter-form button:hover {
-  color: var(--contact-gold);
+  color: #123c32;
 }
 
 .newsletter-success {
@@ -597,10 +628,6 @@ const form = reactive({
     padding-top: 35px;
   }
 
-  .contact-information h1 {
-    font-size: 62px;
-  }
-
   .contact-form {
     padding: 28px 22px 25px;
   }
@@ -634,6 +661,344 @@ const form = reactive({
 
   .gallery-frame--low {
     margin-top: 38px;
+  }
+}
+
+/* =========================================
+   MOBILE CONTACT HEADING SIZES
+   ========================================= */
+
+@media (max-width: 560px) {
+  /* Contact us — 58px to 90px */
+  .contact-page .contact-information h1 {
+    font-size: clamp(58px, 8vw, 90px) !important;
+    line-height: 0.9 !important;
+  }
+
+  /* Send a message — 36px to 37px */
+  .contact-page .contact-form h2 {
+    font-size: clamp(36px, 8vw, 37px) !important;
+    line-height: 1 !important;
+  }
+
+  /* Get the latest from Ella. — 36px to 50px */
+  .contact-page .contact-newsletter h2 {
+    font-size: clamp(36px, 8vw, 50px) !important;
+    line-height: 1.05 !important;
+  }
+}
+@media (max-width: 560px) {
+  .contact-page .contact-information h1 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+}
+/* =========================================
+   TABLET CONTACT HEADING SIZES
+   ========================================= */
+
+@media (min-width: 561px) and (max-width: 1024px) {
+  /* Contact us — 58px to 90px */
+  .contact-page .contact-information h1 {
+    font-size: clamp(58px, 8vw, 90px) !important;
+    line-height: 0.9 !important;
+  }
+
+  /* Send a message — 36px to 37px */
+  .contact-page .contact-form h2 {
+    font-size: clamp(36px, 4vw, 37px) !important;
+    line-height: 1 !important;
+  }
+
+  /* Get the latest from Ella. — 36px to 50px */
+  .contact-page .contact-newsletter h2 {
+    font-size: clamp(36px, 5vw, 50px) !important;
+    line-height: 1.05 !important;
+  }
+}
+@media (max-width: 560px) {
+  /* =========================================
+     MOBILE GALLERY — SLIDESHOW
+     ========================================= */
+
+  .contact-gallery {
+    padding: 42px 0 55px;
+    overflow: hidden;
+  }
+
+  .contact-gallery-track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    gap: 14px;
+
+    margin: 0;
+    padding: 0 14vw;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contact-gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-frame {
+    flex: 0 0 72vw;
+    width: 72vw;
+    min-width: 72vw;
+    margin: 0;
+    scroll-snap-align: center;
+  }
+
+  .gallery-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+  }
+
+  /* Keep desktop-style staggered positions */
+  .gallery-frame--short {
+    margin-top: 28px;
+  }
+
+  .gallery-frame--low {
+    margin-top: 62px;
+  }
+}
+@media (max-width: 560px) {
+  .contact-gallery {
+    padding: 42px 0 55px;
+    overflow: hidden;
+  }
+
+  .contact-gallery-track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 14px;
+    margin: 0;
+    padding: 0 22vw;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contact-gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-frame {
+    flex: 0 0 48vw;
+    width: 48vw;
+    min-width: 48vw;
+    margin: 0;
+    scroll-snap-align: center;
+  }
+
+  .gallery-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+  }
+
+  /* Keep the staggered desktop positioning */
+  .gallery-frame--short {
+    margin-top: 20px;
+  }
+
+  .gallery-frame--low {
+    margin-top: 42px;
+  }
+}
+/* =========================================
+   TABLET CONTACT SECTION — CENTERED
+   ========================================= */
+
+@media (min-width: 561px) and (max-width: 1024px) {
+  .contact-page .contact-details-section {
+    min-height: auto !important;
+    padding: 60px 0 80px !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: calc(100% - 48px) !important;
+    max-width: 700px !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 45px !important;
+  }
+
+  /* Contact information */
+
+  .contact-page .contact-information {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-information h1 {
+    margin: 0 auto 20px !important;
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-intro {
+    max-width: 560px !important;
+    margin: 0 auto 38px !important;
+    text-align: center !important;
+  }
+
+  /* Office / Phone / Email */
+
+  .contact-page .contact-details {
+    width: 100% !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+  }
+
+  .contact-page .contact-detail {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-detail p,
+  .contact-page .contact-detail a {
+    text-align: center !important;
+  }
+
+  /* Follow us */
+
+  .contact-page .contact-socials {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials > div {
+    justify-content: center !important;
+  }
+
+  /* Form */
+
+  .contact-page .contact-form {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+  }
+
+  .contact-page .contact-form .form-eyebrow {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-form h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+  }
+
+  /* Keep form fields themselves left aligned */
+
+  .contact-page .contact-form label {
+    text-align: left !important;
+  }
+}
+/* =========================================
+   MOBILE — CENTER CONTACT DETAILS
+   ========================================= */
+
+@media (max-width: 560px) {
+  .contact-page .contact-information {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-information h1 {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-intro {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-details {
+    width: 100% !important;
+    max-width: 390px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .contact-page .contact-detail {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-detail p,
+  .contact-page .contact-detail a {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials > div {
+    justify-content: center !important;
+  }
+}
+/* =========================================
+   CONTACT — MOBILE SECTION SPACING
+   ========================================= */
+@media (max-width: 560px) {
+
+  
+
+  /* Contact information */
+  .contact-page .contact-details-section {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  /* Form */
+  .contact-page .contact-form {
+    margin-top: 10px !important;
+    padding-top: 35px !important;
+    padding-bottom: 35px !important;
+  }
+
+  /* Gallery */
+  .contact-page .contact-gallery {
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Newsletter */
+  .contact-page .contact-newsletter {
+    padding-top: 55px !important;
+    padding-bottom: 60px !important;
   }
 }
 </style>
