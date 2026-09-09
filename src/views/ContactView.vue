@@ -165,6 +165,37 @@ const form = reactive({
   subject: "",
   message: "",
 });
+
+/* =========================================
+   MOBILE GALLERY INITIAL SLIDE
+   ========================================= */
+
+const galleryTrack = ref(null);
+
+const setInitialGallerySlide = () => {
+  if (!galleryTrack.value || window.innerWidth > 560) return;
+
+  const slides = galleryTrack.value.querySelectorAll(".gallery-frame");
+
+  if (slides.length < 3) return;
+
+  const middleSlide = slides[2];
+
+  const trackRect = galleryTrack.value.getBoundingClientRect();
+  const slideRect = middleSlide.getBoundingClientRect();
+
+  const scrollLeft =
+    middleSlide.offsetLeft -
+    (trackRect.width - slideRect.width) / 2;
+
+  galleryTrack.value.scrollLeft = Math.max(0, scrollLeft);
+};
+
+nextTick(() => {
+  setInitialGallerySlide();
+});
+
+window.addEventListener("resize", setInitialGallerySlide);
 </script>
 
 <style scoped>
