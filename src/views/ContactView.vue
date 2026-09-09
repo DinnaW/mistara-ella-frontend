@@ -664,62 +664,56 @@ const form = reactive({
   }
 }
 
-/* =========================================
-   MOBILE CONTACT HEADING SIZES
-   ========================================= */
+/* MOBILE CONTACT HEADING SIZES */
 
 @media (max-width: 560px) {
-  /* Contact us — 58px to 90px */
+  
   .contact-page .contact-information h1 {
     font-size: clamp(58px, 8vw, 90px) !important;
     line-height: 0.9 !important;
   }
 
-  /* Send a message — 36px to 37px */
   .contact-page .contact-form h2 {
     font-size: clamp(36px, 8vw, 37px) !important;
     line-height: 1 !important;
   }
-
-  /* Get the latest from Ella. — 36px to 50px */
+  
   .contact-page .contact-newsletter h2 {
     font-size: clamp(36px, 8vw, 50px) !important;
     line-height: 1.05 !important;
   }
 }
+
 @media (max-width: 560px) {
   .contact-page .contact-information h1 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 }
-/* =========================================
-   TABLET CONTACT HEADING SIZES
-   ========================================= */
+
 
 @media (min-width: 561px) and (max-width: 1024px) {
-  /* Contact us — 58px to 90px */
+ 
   .contact-page .contact-information h1 {
     font-size: clamp(58px, 8vw, 90px) !important;
     line-height: 0.9 !important;
   }
 
-  /* Send a message — 36px to 37px */
+  
   .contact-page .contact-form h2 {
     font-size: clamp(36px, 4vw, 37px) !important;
     line-height: 1 !important;
   }
 
-  /* Get the latest from Ella. — 36px to 50px */
+  
   .contact-page .contact-newsletter h2 {
     font-size: clamp(36px, 5vw, 50px) !important;
     line-height: 1.05 !important;
   }
 }
+
 @media (max-width: 560px) {
-  /* =========================================
-     MOBILE GALLERY — SLIDESHOW
-     ========================================= */
+  
 
   .contact-gallery {
     padding: 42px 0 55px;
@@ -764,7 +758,7 @@ const form = reactive({
     object-fit: cover;
   }
 
-  /* Keep desktop-style staggered positions */
+  
   .gallery-frame--short {
     margin-top: 28px;
   }
@@ -815,7 +809,7 @@ const form = reactive({
     object-fit: cover;
   }
 
-  /* Keep the staggered desktop positioning */
+ 
   .gallery-frame--short {
     margin-top: 20px;
   }
@@ -824,9 +818,7 @@ const form = reactive({
     margin-top: 42px;
   }
 }
-/* =========================================
-   TABLET CONTACT SECTION — CENTERED
-   ========================================= */
+
 
 @media (min-width: 561px) and (max-width: 1024px) {
   .contact-page .contact-details-section {
@@ -848,7 +840,6 @@ const form = reactive({
     gap: 45px !important;
   }
 
-  /* Contact information */
 
   .contact-page .contact-information {
     width: 100% !important;
@@ -871,7 +862,6 @@ const form = reactive({
     text-align: center !important;
   }
 
-  /* Office / Phone / Email */
 
   .contact-page .contact-details {
     width: 100% !important;
@@ -889,7 +879,7 @@ const form = reactive({
     text-align: center !important;
   }
 
-  /* Follow us */
+  
 
   .contact-page .contact-socials {
     justify-items: center !important;
@@ -900,7 +890,6 @@ const form = reactive({
     justify-content: center !important;
   }
 
-  /* Form */
 
   .contact-page .contact-form {
     width: 100% !important;
@@ -918,15 +907,12 @@ const form = reactive({
     text-align: center !important;
   }
 
-  /* Keep form fields themselves left aligned */
-
+ 
   .contact-page .contact-form label {
     text-align: left !important;
   }
 }
-/* =========================================
-   MOBILE — CENTER CONTACT DETAILS
-   ========================================= */
+
 
 @media (max-width: 560px) {
   .contact-page .contact-information {
@@ -969,33 +955,29 @@ const form = reactive({
     justify-content: center !important;
   }
 }
-/* =========================================
-   CONTACT — MOBILE SECTION SPACING
-   ========================================= */
+
 @media (max-width: 560px) {
 
-  
 
-  /* Contact information */
   .contact-page .contact-details-section {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
 
-  /* Form */
+  
   .contact-page .contact-form {
     margin-top: 10px !important;
     padding-top: 35px !important;
     padding-bottom: 35px !important;
   }
 
-  /* Gallery */
+
   .contact-page .contact-gallery {
     padding-top: 50px !important;
     padding-bottom: 60px !important;
   }
 
-  /* Newsletter */
+  
   .contact-page .contact-newsletter {
     padding-top: 55px !important;
     padding-bottom: 60px !important;
