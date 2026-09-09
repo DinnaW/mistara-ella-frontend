@@ -25,11 +25,14 @@
             and unforgettable moments await.
           </span>
         </h2>
-        <RouterLink to="/contact" class="gallery-booking-button gallery-room-button">
-          <span class="gallery-booking-button__icon gallery-room-button-icon" aria-hidden="true">
+        <RouterLink to="/contact" class="gallery-booking-button">
+          <span class="gallery-booking-button__icon" aria-hidden="true">
             <ArrowRight :size="12" stroke-width="1.5" />
           </span>
-          <span class="gallery-booking-button__text">Book Now</span>
+
+          <span class="gallery-booking-button__text">
+            Book Now
+          </span>
         </RouterLink>
       </div>
     </section>
@@ -256,6 +259,103 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* =========================================================
+   FINAL GALLERY BOOK NOW
+   EXACT ROOMS BOOK NOW STYLE
+========================================================= */
+
+.gallery-booking-card .gallery-booking-button {
+  width: max-content !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+
+  margin-top: clamp(34px, 3vw, 50px) !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  color: #17281f !important;
+
+  font-family: var(--serif, 'Marcellus', Georgia, serif) !important;
+  font-size: clamp(17px, 1.4vw, 22px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+
+  text-decoration: none !important;
+  white-space: nowrap;
+
+  transform: none !important;
+}
+
+
+/* TEXT */
+.gallery-booking-card .gallery-booking-button__text {
+  color: #17281f !important;
+
+  font-family: var(--serif, 'Marcellus', Georgia, serif) !important;
+  font-size: clamp(17px, 1.4vw, 22px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+
+
+/* CIRCLE */
+.gallery-booking-card .gallery-booking-button__icon {
+  width: clamp(48px, 3.5vw, 58px) !important;
+  height: clamp(48px, 3.5vw, 58px) !important;
+  flex: 0 0 auto !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  padding: 0 !important;
+
+  border: 1px solid rgba(23, 40, 31, .45) !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+  color: #17281f !important;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s ease !important;
+}
+
+
+/* BUTTON ITSELF DOES NOT CHANGE */
+.gallery-booking-card .gallery-booking-button:hover,
+.gallery-booking-card .gallery-booking-button:focus-visible {
+  background: transparent !important;
+  color: #17281f !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+
+/* ONLY CIRCLE CHANGES — SAME AS ROOMS */
+.gallery-booking-card
+.gallery-booking-button:hover
+.gallery-booking-button__icon,
+.gallery-booking-card
+.gallery-booking-button:focus-visible
+.gallery-booking-button__icon {
+  border-color: var(--forest-deep, #17281f) !important;
+  background: var(--forest-deep, #17281f) !important;
+  color: #ffffff !important;
+  transform: translateX(3px) !important;
+}
 
 /* GALLERY HERO EYEBROW — SAME AS FACILITY HERO */
 .gallery-full-hero .gallery-full-hero__content .gallery-full-hero__eyebrow {
@@ -599,11 +699,50 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 
 .gallery-booking-title span { display: inline; }
 .gallery-booking-title-soft { color: #92978f; }
-.gallery-booking-button { min-height: clamp(3.2rem, 3.6vw, 3.7rem); display: inline-flex; align-items: center; justify-content: center; gap: .7rem; margin-top: clamp(2rem, 3vw, 3rem); padding: 0 clamp(1.5rem, 2vw, 2rem); border: 1px solid #1d3028; border-radius: 100px; background: #1d3028; color: #fff; font-family: 'Marcellus', serif; font-size: clamp(.78rem, .85vw, .92rem); text-decoration: none; transition: background .3s ease, color .3s ease, transform .3s ease; }
-.gallery-booking-button:hover { background: #b78b5a; border-color: #b78b5a; color: #fff; transform: translateY(-2px); }
+.gallery-booking-button {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+
+  margin-top: clamp(34px, 3vw, 50px);
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  color: #17281f;
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.4vw, 22px);
+  font-weight: 400;
+  line-height: 1;
+
+  text-decoration: none;
+  cursor: pointer;
+}.gallery-booking-button:hover { background: #b78b5a; border-color: #b78b5a; color: #fff; transform: translateY(-2px); }
 .gallery-highlight__button { min-width: 180px; min-height: 48px; display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; padding: 5px 5px 5px 18px; border: 0; border-radius: 100px; background: #ffffff; color: #183b2f; font-family: 'Marcellus', serif; text-decoration: none; white-space: nowrap; transition: .25s ease; }
 .gallery-highlight__button-text { font-family: 'Marcellus', serif; font-size: 13px; font-weight: 400; line-height: 1; }
-.gallery-highlight__button-icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 50%; background: #e8672d; color: #ffffff; transition: .25s ease; }
+.gallery-booking-button__icon {
+  width: clamp(48px, 3.5vw, 58px);
+  height: clamp(48px, 3.5vw, 58px);
+
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+
+  border: 1px solid rgba(23, 40, 31, .45);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #17281f;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
 .gallery-highlight__button:hover { background: #ffffff; color: #183b2f; transform: translateY(-2px); }
 .gallery-highlight__button:hover .gallery-highlight__button-icon { background: #d95c24; transform: translateX(2px); }
 
@@ -611,9 +750,13 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 .gallery-booking-card .gallery-booking-button { min-width: 155px; min-height: 48px; display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: clamp(1.8rem, 2.5vw, 2.5rem); padding: 5px 5px 5px 18px; border: 0; border-radius: 100px; background: #0f4a38; color: #ffffff; font-family: 'Marcellus', serif; text-decoration: none; white-space: nowrap; visibility: visible; opacity: 1; transition: .25s ease; }
 .gallery-booking-button__text { font-family: 'Marcellus', serif; font-size: 13px; font-weight: 400; line-height: 1; color: #0f4a38; }
 .gallery-booking-button__icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 50%; background: #e8672d; color: #ffffff; transition: .25s ease; }
-.gallery-booking-card .gallery-booking-button:hover { background: #163f34; color: #ffffff; transform: translateY(-2px); }
-.gallery-booking-card .gallery-booking-button:hover .gallery-booking-button__icon { background: #0f4a38; transform: translateX(2px); }
-
+.gallery-booking-button:hover .gallery-booking-button__icon,
+.gallery-booking-button:focus-visible .gallery-booking-button__icon {
+  border-color: var(--forest-deep);
+  background: var(--forest-deep);
+  color: #ffffff;
+  transform: translateX(3px);
+}
 .gallery-booking-card .gallery-booking-button.gallery-room-button {
   min-width: 0 !important;
   min-height: 0 !important;
