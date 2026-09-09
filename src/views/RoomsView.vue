@@ -2365,7 +2365,17 @@ const rooms = [
 
 
 <style>
-
+/* GALLERY HERO EYEBROW — SAME AS FACILITY HERO */
+.rooms-full-hero .rooms-full-hero__content .rooms-full-hero__eyebrow {
+  margin: 0 0 clamp(0.7rem, 1vh, 1rem) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: "Marcellus", Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
 
 
 /* HERO */
