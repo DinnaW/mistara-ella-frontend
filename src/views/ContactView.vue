@@ -969,4 +969,36 @@ const form = reactive({
     justify-content: center !important;
   }
 }
+/* =========================================
+   CONTACT — MOBILE SECTION SPACING
+   ========================================= */
+@media (max-width: 560px) {
+
+  
+
+  /* Contact information */
+  .contact-page .contact-details-section {
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Form */
+  .contact-page .contact-form {
+    margin-top: 10px !important;
+    padding-top: 35px !important;
+    padding-bottom: 35px !important;
+  }
+
+  /* Gallery */
+  .contact-page .contact-gallery {
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Newsletter */
+  .contact-page .contact-newsletter {
+    padding-top: 55px !important;
+    padding-bottom: 60px !important;
+  }
+}
 </style>

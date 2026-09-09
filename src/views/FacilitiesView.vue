@@ -3739,4 +3739,40 @@ h3 em {
     text-align: left !important;
   }
 }
+/* =========================================
+   FACILITIES — MOBILE SECTION SPACING
+   ========================================= */
+@media (max-width: 650px) {
+
+
+  /* Keep the first/hero section from getting too much top space */
+  .facilities-page .facilities-section {
+    padding-top: 45px !important;
+  }
+
+  /* Extra breathing room between heading and content */
+  .facilities-page .section-heading {
+    margin-bottom: 40px !important;
+  }
+
+  .facilities-page .amenities-intro {
+    padding-top: 55px !important;
+    padding-bottom: 55px !important;
+  }
+
+  .facilities-page .spa-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .facilities-page .stories-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .facilities-page .booking-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
 </style>
