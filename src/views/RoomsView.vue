@@ -1736,7 +1736,7 @@ const heroImage =
 
 
 
-`${baseUrl}Images/Home/amenities/lounge.jpeg`
+`${baseUrl}Images/Home/bed2.jpeg`
 
 
 
