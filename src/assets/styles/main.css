@@ -3207,3 +3207,8 @@ p { color: var(--ink-soft); }
   }
 }
 
+@media (max-width: 760px) {
+  .hero-reviews {
+    display: none !important;
+  }
+}
