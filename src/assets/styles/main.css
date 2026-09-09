@@ -1,7 +1,3 @@
-/* =========================================================
-   HV MUSE — HERO DISPLAY FONT
-   Place the licensed file at: public/fonts/HV-Muse.woff
-========================================================= */
 @font-face {
   font-family: 'HV Muse';
   src: url('/fonts/HV-Muse.woff') format('woff');
@@ -1000,6 +996,9 @@ p { color: var(--ink-soft); }
 @media (max-width: 900px) {
   .scroll-intro {
     padding: 6vw;
+    /* Extra clearance so the title doesn't sit under the fixed
+       header (72px tall at this breakpoint) once scrolled into view. */
+    padding-top: 120px;
   }
 
   .scroll-intro__canvas {
@@ -1188,7 +1187,8 @@ p { color: var(--ink-soft); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: clamp(650px, 53vw, 900px);
+  height: 100vh;
+  min-height: 650px;
   overflow: hidden;
   background: #f4e8c9;
   color: var(--forest-deep);
@@ -1215,8 +1215,8 @@ p { color: var(--ink-soft); }
   display: grid;
   grid-template-rows: auto auto auto;
   justify-items: center;
-  align-content: start;
-  padding: 5vw;
+  align-content: center;
+  padding: clamp(35px, 3.5vw, 60px) 5vw;
   background: #f4e8c9;
 }
 
@@ -1240,9 +1240,9 @@ p { color: var(--ink-soft); }
 }
 
 .rooms-editorial__inset {
-  width: min(58%, 390px);
+  width: min(55%, 340px);
   aspect-ratio: 1.08 / 1;
-  margin: clamp(42px, 4.5vw, 72px) auto 0;
+  margin: clamp(25px, 2.5vw, 42px) auto 0;
   overflow: hidden;
   background: #d9d5c7;
 }
@@ -1262,7 +1262,7 @@ p { color: var(--ink-soft); }
 
 .rooms-editorial__description {
   width: min(64%, 450px);
-  margin: clamp(34px, 3.5vw, 54px) auto 0;
+  margin: clamp(22px, 2vw, 34px) auto 0;
   color: #273931;
   font-family: var(--sans);
   font-size: clamp(13px, .95vw, 15px);
@@ -1274,21 +1274,27 @@ p { color: var(--ink-soft); }
 
 @media (max-width: 980px) {
   .rooms-editorial {
-    min-height: clamp(610px, 70vw, 760px);
+    height: 100vh;
+    min-height: 600px;
   }
+
   .rooms-editorial__content {
-    padding: 5vw;
+    padding: clamp(32px, 4vw, 48px);
+    align-content: center;
   }
+
   .rooms-editorial__title {
     font-size: clamp(30px, 4.2vw, 42px);
   }
+
   .rooms-editorial__inset {
-    width: min(66%, 330px);
-    margin-top: clamp(34px, 4vw, 48px);
+    width: min(62%, 300px);
+    margin-top: clamp(24px, 3vw, 38px);
   }
+
   .rooms-editorial__description {
     width: min(78%, 410px);
-    margin-top: clamp(28px, 3.4vw, 42px);
+    margin-top: clamp(22px, 2.8vw, 34px);
     font-size: 13px;
     line-height: 1.65;
   }
@@ -1297,51 +1303,43 @@ p { color: var(--ink-soft); }
 @media (max-width: 700px) {
   .rooms-editorial {
     grid-template-columns: 1fr;
+
+    height: auto;
     min-height: 0;
   }
+
   .rooms-editorial__visual {
-    height: 68svh;
-    min-height: 470px;
+    height: 62svh;
+    min-height: 420px;
   }
-  .rooms-editorial__visual img {
-    object-position: 58% center;
-  }
+
   .rooms-editorial__content {
-    padding: 12vw 5vw;
-  }
-  .rooms-editorial__title {
-    width: min(100%, 470px);
-    margin-top: 0;
-    font-size: clamp(31px, 8.6vw, 44px);
-    line-height: 1.04;
-    letter-spacing: -.026em;
-  }
-  .rooms-editorial__inset {
-    width: min(76%, 350px);
-    margin-top: 10vw;
-  }
-  .rooms-editorial__description {
-    width: min(88%, 420px);
-    margin-top: 9vw;
-    font-size: 13px;
-    line-height: 1.7;
+    padding: clamp(52px, 10vw, 76px) 5vw;
   }
 }
 
 @media (max-width: 420px) {
   .rooms-editorial__visual {
-    height: 62svh;
-    min-height: 420px;
+    height: clamp(380px, 56svh, 460px);
   }
+
   .rooms-editorial__content {
-    padding-top: 14vw;
-    padding-bottom: 14vw;
+    padding: 52px 5vw;
   }
+
+  .rooms-editorial__title {
+    font-size: clamp(29px, 8.5vw, 38px);
+  }
+
   .rooms-editorial__inset {
-    width: 82%;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 38px;
   }
+
   .rooms-editorial__description {
     width: 94%;
+    margin-top: 32px;
   }
 }
 
