@@ -155,7 +155,7 @@
                 into the rhythm of Ella.
               </p>
 
-              <a href="#" class="view-link">
+              <a href="#rooms" class="view-link">
                 DISCOVER WELLNESS
                 <span>→</span>
               </a>
@@ -239,8 +239,8 @@
                   <div class="story-meta">
                     <span>{{ story.date }}</span>
 
-                    <a href="#">
-                      READ STORY
+                    <a href="#rooms">
+                      
                       <span>→</span>
                     </a>
                   </div>
@@ -309,7 +309,7 @@
               Stay for everything else.
             </p>
 
-            <a href="#">
+            <a href="#/contact">
               BOOK YOUR STAY
               <span>→</span>
             </a>
@@ -494,7 +494,7 @@ const stories = [
     title: "Let the Day Move Slowly",
     description:
       "Warm water, open air and the green hills of Ella create their own rhythm.",
-    date: "WELLNESS NOTE 02",
+    date: "DISCOVER YOUR STAY",
     image: `${baseUrl}Images/Home/outside3.jpeg`,
   },
 
@@ -503,7 +503,7 @@ const stories = [
     title: "A Quiet Moment for Yourself",
     description:
       "Make room for stillness with restorative treatments and unhurried time.",
-    date: "WELLNESS NOTE 01",
+    date: "DISCOVER YOUR STAY",
     image: `${baseUrl}Images/Home/lamp.jpeg`,
   },
 
@@ -512,7 +512,7 @@ const stories = [
     title: "The Comfort of Doing Less",
     description:
       "Discover how a little more space, quiet and care can change a whole stay.",
-    date: "WELLNESS NOTE 03",
+    date: "DISCOVER YOUR STAY",
     image: `${baseUrl}Images/Home/outside2.jpeg`,
   },
 ];
