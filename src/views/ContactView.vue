@@ -97,7 +97,7 @@
       </section>
 
       <section class="contact-gallery" aria-label="Moments at Mistara Ella">
-        <div class="contact-gallery-track">
+        <div class="contact-gallery-track" ref="galleryTrack">
           <figure class="gallery-frame gallery-frame--short">
             <img
               src="/Images/Home/outside1.jpeg"
@@ -152,12 +152,32 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { nextTick, reactive, ref, onMounted } from "vue";
 import MainLayout from "../components/layout/MainLayout.vue";
 import InnerPageHero from "../components/layout/InnerPageHero.vue";
 
 const submitted = ref(false);
 const newsletterSubmitted = ref(false);
+const galleryTrack = ref(null);
+onMounted(async () => {
+  await nextTick();
+
+  if (window.innerWidth <= 560 && galleryTrack.value) {
+    const track = galleryTrack.value;
+    const middleImage = track.children[2];
+
+    if (middleImage) {
+      const scrollLeft =
+        middleImage.offsetLeft -
+        (track.clientWidth - middleImage.offsetWidth) / 2;
+
+      track.scrollTo({
+        left: scrollLeft,
+        behavior: "instant",
+      });
+    }
+  }
+});
 const form = reactive({
   firstName: "",
   lastName: "",
@@ -644,10 +664,10 @@ const form = reactive({
    ========================================= */
 
 @media (max-width: 560px) {
-
+  
   /* Contact us — 58px to 90px */
   .contact-page .contact-information h1 {
-    font-size: clamp(58px, 15vw, 90px) !important;
+    font-size: clamp(58px, 8vw, 90px) !important;
     line-height: 0.9 !important;
   }
 
@@ -663,6 +683,12 @@ const form = reactive({
     line-height: 1.05 !important;
   }
 
+}
+@media (max-width: 560px) {
+  .contact-page .contact-information h1 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
 }
 /* =========================================
    TABLET CONTACT HEADING SIZES
@@ -798,6 +824,153 @@ const form = reactive({
 
   .gallery-frame--low {
     margin-top: 42px;
+  }
+}
+/* =========================================
+   TABLET CONTACT SECTION — CENTERED
+   ========================================= */
+
+@media (min-width: 561px) and (max-width: 1024px) {
+
+  .contact-page .contact-details-section {
+    min-height: auto !important;
+    padding: 60px 0 80px !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: calc(100% - 48px) !important;
+    max-width: 700px !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 45px !important;
+  }
+
+  /* Contact information */
+
+  .contact-page .contact-information {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-information h1 {
+    margin: 0 auto 20px !important;
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-intro {
+    max-width: 560px !important;
+    margin: 0 auto 38px !important;
+    text-align: center !important;
+  }
+
+  /* Office / Phone / Email */
+
+  .contact-page .contact-details {
+    width: 100% !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+  }
+
+  .contact-page .contact-detail {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-detail p,
+  .contact-page .contact-detail a {
+    text-align: center !important;
+  }
+
+  /* Follow us */
+
+  .contact-page .contact-socials {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials > div {
+    justify-content: center !important;
+  }
+
+  /* Form */
+
+  .contact-page .contact-form {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+  }
+
+  .contact-page .contact-form .form-eyebrow {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-form h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+  }
+
+  /* Keep form fields themselves left aligned */
+
+  .contact-page .contact-form label {
+    text-align: left !important;
+  }
+}
+/* =========================================
+   MOBILE — CENTER CONTACT DETAILS
+   ========================================= */
+
+@media (max-width: 560px) {
+
+  .contact-page .contact-information {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-information h1 {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-intro {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-details {
+    width: 100% !important;
+    max-width: 390px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .contact-page .contact-detail {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-detail p,
+  .contact-page .contact-detail a {
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-page .contact-socials > div {
+    justify-content: center !important;
   }
 }
 </style>
