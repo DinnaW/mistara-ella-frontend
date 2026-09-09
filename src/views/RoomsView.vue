@@ -82,17 +82,40 @@
           </button>
         </div>
 
+        <!-- Desktop: dots only. Tablet/Mobile: ← [dots] → -->
         <div class="mistara-room-dots" aria-label="Room carousel navigation">
           <button
-            v-for="dot in roomDotCount"
-            :key="`room-dot-${dot}`"
             type="button"
-            class="mistara-room-dot"
-            :class="{ active: activeRoomIndex === dot - 1 }"
-            :aria-label="`Show rooms starting from ${rooms[dot - 1]?.title || 'room'}`"
-            :aria-current="activeRoomIndex === dot - 1 ? 'true' : undefined"
-            @click.stop="scrollToRoom(dot - 1)"
-          ></button>
+            class="mistara-room-dots__arrow mistara-room-dots__arrow--prev"
+            :disabled="activeRoomIndex <= 0"
+            aria-label="Previous rooms"
+            @click.stop="scrollRoomCarousel(-1)"
+          >
+            <ChevronLeft :size="16" stroke-width="1.8" />
+          </button>
+
+          <div class="mistara-room-dots__list">
+            <button
+              v-for="dot in roomDotCount"
+              :key="`room-dot-${dot}`"
+              type="button"
+              class="mistara-room-dot"
+              :class="{ active: activeRoomIndex === dot - 1 }"
+              :aria-label="`Show rooms starting from ${rooms[dot - 1]?.title || 'room'}`"
+              :aria-current="activeRoomIndex === dot - 1 ? 'true' : undefined"
+              @click.stop="scrollToRoom(dot - 1)"
+            ></button>
+          </div>
+
+          <button
+            type="button"
+            class="mistara-room-dots__arrow mistara-room-dots__arrow--next"
+            :disabled="activeRoomIndex >= roomDotCount - 1"
+            aria-label="Next rooms"
+            @click.stop="scrollRoomCarousel(1)"
+          >
+            <ChevronRight :size="16" stroke-width="1.8" />
+          </button>
         </div>
       </div>
     </section>
@@ -828,7 +851,7 @@ const rooms = [
 .mistara-room-card__button { font-family: var(--sans); width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .7rem; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #050505; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; transition: .25s ease; border-color: #e4e4e3; }
 .mistara-room-card__button:hover { border-color: #f3efe7; background: #f3efe7; }
 
-/* ROOM CAROUSEL SIDE ARROWS */
+/* ROOM CAROUSEL SIDE ARROWS (DESKTOP ONLY) */
 .mistara-room-carousel { position: relative; width: 100%; }
 
 .mistara-room-arrow {
@@ -868,20 +891,65 @@ const rooms = [
   .mistara-room-arrow--next { right: 8px; }
 }
 
-@media (max-width: 620px) {
-  .mistara-room-arrow { width: 44px; height: 44px; }
-  .mistara-room-arrow--prev { left: 6px; }
-  .mistara-room-arrow--next { right: 6px; }
+/* Below 900px, hide the circular side arrows entirely — inline dot arrows take over */
+@media (max-width: 900px) {
+  .mistara-room-arrow { display: none; }
 }
 
-/* ROOM CAROUSEL DOTS */
-.mistara-room-dots { width: 100%; position: relative; z-index: 20; display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: -1.2rem; padding: .35rem 0 .5rem; pointer-events: auto; }
+/* ROOM CAROUSEL DOTS + INLINE ARROWS */
+.mistara-room-dots {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: -1.2rem;
+  padding: .35rem 0 .5rem;
+  pointer-events: auto;
+}
+
+.mistara-room-dots__list { display: flex; align-items: center; gap: .5rem; }
+
+/* Inline chevrons are hidden on desktop — the circular side arrows handle that breakpoint */
+.mistara-room-dots__arrow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid rgba(24, 33, 28, .14);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #1b2d25;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease;
+}
+
+.mistara-room-dots__arrow:hover:not(:disabled) {
+  border-color: #17281f;
+  background: #17281f;
+  color: #ffffff;
+}
+
+.mistara-room-dots__arrow:disabled { opacity: .32; cursor: default; }
+
 .mistara-room-dot { width: 7px; height: 7px; position: relative; z-index: 21; flex: 0 0 auto; padding: 0; border: 0; border-radius: 50%; background: rgba(24,33,28,.22); cursor: pointer; pointer-events: auto; touch-action: manipulation; transition: width .3s ease, background .3s ease, transform .3s ease; }
 .mistara-room-dot:hover { background: rgba(24,33,28,.45); }
 .mistara-room-dot.active { width: 28px; height: 7px; border-radius: 100px; background: #0f4a38; }
 
+/* Tablet + mobile: show inline arrows next to the dots */
+@media (max-width: 900px) {
+  .mistara-room-dots__arrow { display: flex; }
+}
+
 @media (max-width: 620px) {
   .mistara-room-dots { gap: .4rem; margin-top: -.8rem; padding-bottom: .3rem; }
+  .mistara-room-dots__list { gap: .4rem; }
+  .mistara-room-dots__arrow { width: 26px; height: 26px; }
   .mistara-room-dot { width: 6px; height: 6px; }
   .mistara-room-dot.active { width: 24px; height: 6px; }
 }
