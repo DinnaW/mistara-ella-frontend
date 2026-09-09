@@ -41,6 +41,18 @@
       </div>
 
 
+      <!-- DESKTOP NAVIGATION - LEFT OF LOGO -->
+      <nav
+        class="header-desktop-nav header-desktop-nav--left"
+        aria-label="Primary navigation left"
+      >
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/rooms">Rooms</RouterLink>
+        <RouterLink to="/facilities">Facilities</RouterLink>
+      </nav>
+
+
+      <!-- EXISTING LOGO - KEEP AS IT IS -->
       <RouterLink
         to="/"
         class="brand"
@@ -52,6 +64,17 @@
           alt="Mistara Ella"
         />
       </RouterLink>
+
+
+      <!-- DESKTOP NAVIGATION - RIGHT OF LOGO -->
+      <nav
+        class="header-desktop-nav header-desktop-nav--right"
+        aria-label="Primary navigation right"
+      >
+        <RouterLink to="/gallery">Gallery</RouterLink>
+        <RouterLink to="/packages">Packages</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
+      </nav>
 
 
       <div class="header-actions">
@@ -309,7 +332,7 @@ const menuDetails = {
 
 
   '/gallery': {
-    image: `${baseUrl}Images/Gallery/hotelpool.png`,
+    image: `${baseUrl}Images/Home/view.jpeg`,
     imageAlt: 'Mistara Ella gallery view',
     kicker: 'A glimpse of Mistara',
     visualTitle: 'See the moments between the moments.',
@@ -319,7 +342,7 @@ const menuDetails = {
 
 
   '/packages': {
-    image: `${baseUrl}Images/Home/outside2.jpeg`,
+    image: `${baseUrl}Images/Gallery/hotelpool.png`,
     imageAlt: 'Mistara Ella surrounded by the hill country',
     kicker: 'Plan your escape',
     visualTitle: 'A little more time in the hills.',
@@ -1316,7 +1339,129 @@ onBeforeUnmount(() => {
   transform: translateY(-10px);
 }
 
+/* =========================================================
+   DESKTOP NAVIGATION AROUND CENTER LOGO
+   Existing header remains unchanged
+========================================================= */
 
+.header-desktop-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  /* MORE SPACE BETWEEN LINKS */
+  gap: clamp(32px, 2.5vw, 48px);
+
+  transform: translateY(-50%);
+  font-family: var(--sans);
+}
+
+
+/* LEFT SIDE — MOVE FURTHER FROM LOGO */
+.header-desktop-nav--left {
+  right: calc(50% + clamp(120px, 7.5vw, 155px));
+  justify-content: flex-end;
+}
+
+
+/* RIGHT SIDE — MOVE FURTHER FROM LOGO */
+.header-desktop-nav--right {
+  left: calc(50% + clamp(120px, 7.5vw, 155px));
+  justify-content: flex-start;
+}
+
+
+/* LINKS */
+.header-desktop-nav a {
+  position: relative;
+
+  color: inherit;
+  text-decoration: none;
+
+  font-family: var(--sans);
+  font-size: clamp(10px, .72vw, 12px);
+  font-weight: 400;
+
+  line-height: 1;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  opacity: .82;
+
+  transition:
+    opacity .25s ease,
+    color .25s ease;
+}
+
+
+/* SMALL UNDERLINE */
+.header-desktop-nav a::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right center;
+
+  transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* HOVER */
+.header-desktop-nav a:hover {
+  opacity: 1;
+}
+
+.header-desktop-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+
+/* ACTIVE ROUTE */
+.header-desktop-nav a.router-link-exact-active {
+  opacity: 1;
+}
+
+.header-desktop-nav a.router-link-exact-active::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   WHEN FULL SCREEN MENU OPENS
+   Hide these links so your current premium menu stays clean
+========================================================= */
+
+.site-header.menu-open .header-desktop-nav {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALLER DESKTOP / TABLET
+   Keep your original header layout
+========================================================= */
+
+@media (max-width: 1180px) {
+  .header-desktop-nav {
+    display: none;
+  }
+}
 
 
 /* =========================================================

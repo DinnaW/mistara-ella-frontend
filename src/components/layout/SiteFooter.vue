@@ -20,25 +20,13 @@
 
          />
 
-
-
-
-
          <p class="footer-brand__text">
 
            A quiet hillside retreat in Ella, shaped by mountain air, warm hospitality and the unhurried rhythm of Sri Lanka’s hill country.
 
          </p>
 
-
-
-
-
          <p class="footer-brand__follow">Follow us on</p>
-
-
-
-
 
          <div class="footer-brand__socials" aria-label="Social links">
 
@@ -48,29 +36,17 @@
 
            </a>
 
-
-
-
-
            <a href="#" aria-label="X">
 
              <i class="fa-brands fa-x-twitter"></i>
 
            </a>
 
-
-
-
-
            <a href="#" aria-label="Instagram">
 
              <i class="fa-brands fa-instagram"></i>
 
            </a>
-
-
-
-
 
            <a href="#" aria-label="LinkedIn">
 
@@ -82,19 +58,11 @@
 
        </div>
 
-
-
-
-
        <!-- STAY -->
 
        <nav class="footer-column" aria-label="Stay">
 
          <h3 class="footer-column__title">Stay</h3>
-
-
-
-
 
          <a href="#/">Home</a>
 
@@ -106,19 +74,11 @@
 
        </nav>
 
-
-
-
-
        <!-- EXPLORE -->
 
        <nav class="footer-column" aria-label="Explore">
 
          <h3 class="footer-column__title">Explore</h3>
-
-
-
-
 
          <a href="#/facilities">Facilities</a>
 
@@ -142,29 +102,17 @@
 
        </nav>
 
-
-
-
-
        <!-- NEWSLETTER -->
 
        <div class="footer-newsletter">
 
          <h3 class="footer-column__title">Mistara Ella</h3>
 
-
-
-
-
          <p class="footer-newsletter__text">
 
            Stay close to the hills. Receive quiet updates, seasonal offers and stay inspiration from Mistara Ella.
 
          </p>
-
-
-
-
 
          <form class="footer-newsletter__form" @submit.prevent>
 
@@ -178,10 +126,6 @@
 
            />
 
-
-
-
-
            <button type="submit">Stay Updated</button>
 
          </form>
@@ -192,19 +136,9 @@
 
    </div>
 
-
-
-
-
-   <!-- UTILITY BAR - DOWNLOAD SECTION REMOVED -->
-
    <div class="footer-utility">
 
      <div class="footer-support">
-
-
-
-
 
        <div class="footer-support__text">
 
@@ -220,17 +154,9 @@
 
      </div>
 
-
-
-
-
      <div class="footer-support-brands">
 
        <span class="footer-support-brands__label">We Support</span>
-
-
-
-
 
        <div
 
@@ -250,10 +176,6 @@
 
          />
 
-
-
-
-
          <img
 
            src="https://api.iconify.design/logos:visa.svg"
@@ -264,10 +186,6 @@
 
          />
 
-
-
-
-
          <img
 
            src="https://api.iconify.design/logos:paypal.svg"
@@ -277,10 +195,6 @@
            class="payment-logo payment-logo--paypal"
 
          />
-
-
-
-
 
          <div class="western-union-logo" aria-label="Western Union">
 
@@ -304,10 +218,6 @@
 
            </svg>
 
-
-
-
-
            <span class="western-union-logo__text">
 
              <strong>Western</strong>
@@ -323,10 +233,6 @@
      </div>
 
    </div>
-
-
-
-
 
    <!-- BOTTOM BAR -->
 
@@ -344,17 +250,9 @@
 
        <span class="footer-bottom__divider" aria-hidden="true"></span>
 
-
-
-
-
        <a href="#/contact">Terms &amp; Conditions</a>
 
        <span class="footer-bottom__divider" aria-hidden="true"></span>
-
-
-
-
 
        <a href="#/contact">Contact</a>
 
@@ -365,7 +263,6 @@
        <span>Powered by</span>
 
        <img
-
          :src="`${baseUrl}Images/saasbedslogoblue.png`"
 
          alt="SaaSbed"
@@ -373,18 +270,12 @@
          class="footer-bottom__saasbed-logo"
 
        />
-
      </div>
-
    </div>
 
  </footer>
 
 </template>
-
-
-
-
 
 <script setup>
 
@@ -393,10 +284,6 @@ const baseUrl = import.meta.env.BASE_URL
 const year = new Date().getFullYear()
 
 </script>
-
-
-
-
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap');
@@ -413,13 +300,6 @@ const year = new Date().getFullYear()
 
   font-family: var(--sans);
 }
-
-/* =========================================================
-   DESKTOP
-   vw-based sizing keeps the physical preview much closer
-   between 100% and 80% browser zoom.
-   Text enlarged in v7 while keeping payment icons compact.
-========================================================= */
 
 .footer-main {
   width: 100%;
@@ -441,8 +321,6 @@ const year = new Date().getFullYear()
   width: 100%;
   align-items: start;
 }
-
-/* BRAND */
 
 .footer-brand {
   min-width: 0;
@@ -503,10 +381,6 @@ const year = new Date().getFullYear()
   color: #b79a69;
   transform: translateY(-2px);
 }
-
-/* =========================================================
-   STAY / EXPLORE
-========================================================= */
 
 .footer-column,
 .footer-newsletter {
@@ -572,10 +446,6 @@ const year = new Date().getFullYear()
   font-size: .52vw;
   font-weight: 600;
 }
-
-/* =========================================================
-   NEWSLETTER
-========================================================= */
 
 .footer-newsletter__text {
   max-width: 48ch;
@@ -658,11 +528,6 @@ const year = new Date().getFullYear()
   background: rgba(255, 255, 255, .06);
 }
 
-/* =========================================================
-   UTILITY BAR
-   Ella + We Support + payment methods remain on one line.
-========================================================= */
-
 .footer-utility {
   display: flex;
   align-items: center;
@@ -701,8 +566,6 @@ const year = new Date().getFullYear()
   gap: .36vw;
 }
 
-/* Same visual size as "We Support" */
-
 .footer-support__hours {
   color: rgba(255, 255, 255, .72);
 
@@ -724,8 +587,6 @@ const year = new Date().getFullYear()
 
   white-space: nowrap;
 }
-
-/* No vertical divider */
 
 .footer-support-brands {
   display: flex;
@@ -777,7 +638,6 @@ const year = new Date().getFullYear()
   flex: 0 0 auto;
 }
 
-/* Payment logos deliberately smaller */
 .payment-logo--mastercard {
   width: 1.55vw;
 }
@@ -826,13 +686,9 @@ const year = new Date().getFullYear()
   letter-spacing: -.02em;
 }
 
-/* =========================================================
-   BOTTOM BAR
-========================================================= */
-
 .footer-bottom {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: max-content 1fr max-content;
   align-items: center;
 
   width: 100%;
@@ -844,7 +700,7 @@ const year = new Date().getFullYear()
 
   border-top: 1px solid rgba(255, 255, 255, .08);
 
-  background: #000000;
+  background: #ffffff;
 
   box-sizing: border-box;
 }
@@ -855,7 +711,7 @@ const year = new Date().getFullYear()
   margin: 0;
   padding: 0;
 
-  color: rgba(255, 255, 255, .5);
+  color: rgba(5, 5, 5, 0.5);
 
   font-family: var(--sans);
   font-size: .70vw;
@@ -875,7 +731,7 @@ const year = new Date().getFullYear()
 }
 
 .footer-bottom__links a {
-  color: rgba(255, 255, 255, .5);
+  color:rgba(5, 5, 5, 0.5);
   text-decoration: none;
 
   font-family: var(--sans);
@@ -912,7 +768,7 @@ const year = new Date().getFullYear()
   margin: 0;
   padding: 0;
 
-  color: rgba(255, 255, 255, .5);
+  color: rgba(5, 5, 5, 0.5);
 
   font-family: var(--sans);
   font-size: .70vw;
@@ -931,10 +787,29 @@ const year = new Date().getFullYear()
   object-fit: contain;
 }
 
-/* =========================================================
-   TABLET
-   Switch back to px/clamp so smaller devices remain readable.
-========================================================= */
+.site-footer {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.footer-bottom {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+:global(html),
+:global(body),
+:global(#app) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:global(body) {
+  background: #ffffff;
+}
+/* TABLET */
 
 @media (max-width: 1100px) {
   .footer-main {
@@ -1059,26 +934,58 @@ const year = new Date().getFullYear()
   }
 
   .footer-bottom {
-    padding: 18px 5vw;
-    column-gap: 24px;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+
+    padding: 18px 4vw;
+    column-gap: 20px;
+
+    width: 100%;
   }
 
-  .footer-bottom__copyright,
-  .footer-bottom__links a,
-  .footer-bottom__powered {
-    font-size: 12px;
+  .footer-bottom__copyright {
+    justify-self: start;
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .footer-bottom__links {
-    gap: 14px;
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .footer-bottom__links a {
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .footer-bottom__divider {
-    height: 16px;
+    height: 14px;
+  }
+
+  .footer-bottom__powered {
+    justify-self: end;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 11px;
+    white-space: nowrap;
+    min-width: max-content;
   }
 
   .footer-bottom__saasbed-logo {
-    height: 18px;
+    height: 17px;
+    width: auto;
+    flex-shrink: 0;
   }
 }
 
