@@ -425,13 +425,11 @@ const updateRoomCarouselMetrics = () => {
   const cardWidth = firstCard.getBoundingClientRect().width
   if (!cardWidth) return
 
-  // Number of COMPLETE cards currently visible: 3 desktop, 2 tablet, 1 mobile.
   const visibleCards = Math.max(
     1,
     Math.round((track.clientWidth + gap) / (cardWidth + gap))
   )
 
-  // Dots represent valid carousel start positions, so every dot can actually move.
   roomDotCount.value = Math.max(1, track.children.length - visibleCards + 1)
   activeRoomIndex.value = Math.min(activeRoomIndex.value, roomDotCount.value - 1)
 }
@@ -445,7 +443,6 @@ const scrollToRoom = (index) => {
   const card = track.children?.[safeIndex]
   if (!card) return
 
-  // getBoundingClientRect makes this reliable regardless of offsetParent/layout.
   const trackRect = track.getBoundingClientRect()
   const cardRect = card.getBoundingClientRect()
   const requestedLeft = track.scrollLeft + (cardRect.left - trackRect.left)
@@ -466,7 +463,6 @@ const scrollRoomCarousel = (direction) => {
 const startRoomDrag = (event) => {
   const track = roomTrack.value
   if (!track || event.pointerType === 'touch') return
-  // Keep buttons and links clickable instead of starting a drag from them.
   if (event.target.closest('button, a')) return
 
   isRoomDragging.value = true
@@ -546,7 +542,6 @@ const handleEscape = (event) => {
 onMounted(() => {
   window.addEventListener('keydown', handleEscape)
   window.addEventListener('resize', updateRoomCarouselMetrics)
-  // Wait until the cards have been laid out before calculating dots.
   requestAnimationFrame(updateRoomCarouselMetrics)
 })
 
@@ -714,7 +709,6 @@ const rooms = [
 </script>
 
 <style>
-/* GALLERY HERO EYEBROW — SAME AS FACILITY HERO */
 .rooms-full-hero .rooms-full-hero__content .rooms-full-hero__eyebrow {
   margin: 0 0 clamp(0.7rem, 1vh, 1rem) !important;
   color: rgba(255, 255, 255, 0.9) !important;
@@ -760,7 +754,6 @@ const rooms = [
   overflow-x: auto;
   overflow-y: hidden;
   padding: 1.5rem 0 2rem;
-  /* Proximity snap keeps the carousel smooth instead of locking/sticking. */
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
@@ -768,7 +761,6 @@ const rooms = [
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
-  /* Native touch/trackpad scrolling remains available. */
   touch-action: pan-x pan-y;
   cursor: grab;
 }
@@ -811,7 +803,6 @@ const rooms = [
 @media (max-width: 900px) {
   .mistara-room-grid { --room-gap: clamp(.9rem, 2vw, 1.2rem); }
   .mistara-room-card {
-    /* Exactly 2 complete cards on tablet. */
     flex-basis: calc((100% - var(--room-gap)) / 2);
   }
 }
@@ -819,7 +810,6 @@ const rooms = [
 @media (max-width: 620px) {
   .mistara-room-grid { --room-gap: 1rem; padding-inline: 0; }
   .mistara-room-card {
-    /* One full card per view on mobile. */
     flex-basis: 100%;
   }
 }
@@ -891,12 +881,10 @@ const rooms = [
   .mistara-room-arrow--next { right: 8px; }
 }
 
-/* Below 900px, hide the circular side arrows entirely — inline dot arrows take over */
 @media (max-width: 900px) {
   .mistara-room-arrow { display: none; }
 }
 
-/* ROOM CAROUSEL DOTS + INLINE ARROWS */
 .mistara-room-dots {
   width: 100%;
   position: relative;
@@ -912,7 +900,6 @@ const rooms = [
 
 .mistara-room-dots__list { display: flex; align-items: center; gap: .5rem; }
 
-/* Inline chevrons are hidden on desktop — the circular side arrows handle that breakpoint */
 .mistara-room-dots__arrow {
   display: none;
   align-items: center;
@@ -1168,10 +1155,6 @@ const rooms = [
   .mistara-rooms-showcase__eyebrow-line { width: 46px; }
 }
 
-/* =========================================================
-   ROOMS HERO — FULL WIDTH
-   Keeps the original Rooms text treatment
-========================================================= */
 .rooms-full-hero { width: 100%; padding: 0; background: #ffffff; font-family: 'Marcellus', serif; }
 
 .rooms-full-hero__image {

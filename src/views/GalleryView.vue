@@ -614,10 +614,73 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 .gallery-booking-card .gallery-booking-button:hover { background: #163f34; color: #ffffff; transform: translateY(-2px); }
 .gallery-booking-card .gallery-booking-button:hover .gallery-booking-button__icon { background: #0f4a38; transform: translateX(2px); }
 
-/* =========================================================
-   GALLERY — ROOM SECTION EYEBROWS + BUTTONS
-   Exact visual treatment copied from the current RoomsView.
-========================================================= */
+.gallery-booking-card .gallery-booking-button.gallery-room-button {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px !important;
+
+  margin-top: clamp(34px, 3vw, 50px);
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  color: #17281f !important;
+  font-size: 14px !important;
+
+  text-decoration: none;
+}
+
+/* BOOK NOW TEXT */
+.gallery-booking-card .gallery-booking-button__text {
+  color: #17281f !important;
+  font-family: var(--serif, 'Marcellus', Georgia, serif);
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* BOOK NOW CIRCLE */
+.gallery-booking-card
+.gallery-booking-button__icon.gallery-room-button-icon {
+  width: 42px !important;
+  height: 42px !important;
+  flex: 0 0 42px !important;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(23, 40, 31, .8) !important;
+  border-radius: 50%;
+
+  background: transparent !important;
+  color: #17281f !important;
+
+  transition: .25s ease;
+}
+
+/* HOVER */
+.gallery-booking-card
+.gallery-booking-button.gallery-room-button:hover {
+  color: #17281f !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+.gallery-booking-card
+.gallery-booking-button.gallery-room-button:hover
+.gallery-booking-button__icon {
+  border-color: #17281f !important;
+  background: #17281f !important;
+  color: #ffffff !important;
+  transform: translateX(2px);
+}
+
 .gallery-room-eyebrow {
   display: flex;
   align-items: center;
@@ -876,10 +939,6 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
   line-height: 1.75;
 }
 
-/* =========================================================
-   CONSISTENT RESPONSIVE SYSTEM
-   Keeps the same visual hierarchy across desktop, tablet and mobile.
-========================================================= */
 .gallery-booking-section,
 .gallery-highlight-section,
 .mistara-gallery-section,
@@ -904,14 +963,12 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 .gallery-room-button { gap: clamp(16px, 1.6vw, 22px); margin-top: clamp(28px, 3vw, 46px); font-size: clamp(17px, 1.4vw, 22px); }
 .gallery-room-button-icon { width: clamp(46px, 3.5vw, 58px); height: clamp(46px, 3.5vw, 58px); }
 
-/* Highlight keeps the desktop composition for laptop/tablet widths. */
 .gallery-highlight { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 84px); }
 .gallery-highlight__visual { min-height: clamp(30rem, 52vw, 46rem); }
 .gallery-highlight__card { left: clamp(14px, 4%, 32px); right: clamp(14px, 4%, 32px); bottom: clamp(14px, 4%, 32px); padding: clamp(1.25rem, 2vw, 2rem); }
 .gallery-highlight__card-title { font-size: clamp(28px, 2vw, 42px); }
 .gallery-highlight__link { margin-top: clamp(2rem, 4vw, 4rem); }
 
-/* Gallery collage uses one consistent desktop/tablet pattern. */
 .mistara-gallery-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: repeat(5, clamp(82px, 8.2vw, 145px)); gap: clamp(7px, .75vw, 14px); }
 .mistara-gallery-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 4; }
 .mistara-gallery-item:nth-child(2) { grid-column: 2 / 4; grid-row: 1 / 3; }
@@ -924,15 +981,10 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 .mistara-gallery-tabs { margin-bottom: clamp(28px, 3vw, 46px); }
 .mistara-gallery-tab { min-width: clamp(106px, 8vw, 140px); min-height: clamp(44px, 3.5vw, 52px); }
 
-/* Timeless section stays as three editorial columns on larger screens. */
 .mistara-timeless__intro { margin-bottom: clamp(48px, 5vw, 84px); }
 .mistara-timeless__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 38px); }
 .mistara-timeless__item--center { transform: translateY(clamp(-26px, -1.8vw, -16px)); }
 
-/* =========================================================
-   GLOBAL SECTION SPACING
-   Same on every screen: 5% top/bottom + 3% left/right
-========================================================= */
 .gallery-booking-section,
 .gallery-highlight-section,
 .mistara-gallery-section,
@@ -943,10 +995,8 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
   padding: 5% 3% !important;
 }
 
-/* Booking section: keep full width without viewport offset tricks */
 .gallery-booking-section { left: auto !important; margin-left: 0 !important; }
 
-/* Inner section containers remain full width */
 .gallery-booking-card,
 .gallery-highlight-shell,
 .mistara-gallery-shell,
@@ -957,9 +1007,6 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
   box-sizing: border-box;
 }
 
-/* =========================================================
-   GALLERY HERO — SAME AS ROOMS
-========================================================= */
 .gallery-full-hero { width: 100%; padding: 0; background: #ffffff; font-family: 'Marcellus', serif; }
 
 .gallery-full-hero__image {
@@ -1004,23 +1051,18 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
   margin: 0 auto;
   color: #ffffff;
   font-family: 'Marcellus', serif;
-  font-size: clamp(36px, 3.35vw, 54px);
+  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -.025em;
 }
 
-/* =========================================================
-   FINAL TYPOGRAPHY
-   Keep section titles and eyebrows unchanged at every breakpoint.
-========================================================= */
 .gallery-story__title,
 .gallery-highlight__title,
 .gallery-highlight__card-title,
 .mistara-gallery-heading h2,
 .gallery-booking-title,
-.mistara-timeless__title,
-.gallery-full-hero__title {
+.mistara-timeless__title {
   font-size: clamp(36px, 3.35vw, 54px);
 }
 
@@ -1043,10 +1085,6 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
   text-transform: uppercase;
 }
 
-/* =========================================================
-   CONSOLIDATED RESPONSIVE SYSTEM
-   Layout changes only — title and eyebrow typography stays fixed.
-========================================================= */
 @media (max-width: 1024px) {
   .gallery-story { grid-template-columns: 1fr .72fr .72fr; gap: 3vw; }
   .gallery-highlight { grid-template-columns: .9fr 1.1fr; gap: 4vw; }
@@ -1154,5 +1192,19 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 
   .gallery-room-button { gap: 12px; margin-top: 20px; }
   .gallery-room-button-icon { width: 42px; height: 42px; }
+}
+
+@media (max-width: 620px) {
+  .gallery-full-hero__image {
+    min-height: 68vh;
+  }
+
+  .gallery-full-hero__content {
+    padding: 2.5rem 3vw;
+  }
+
+  .gallery-full-hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
 }
 </style>
