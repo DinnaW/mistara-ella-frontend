@@ -53,10 +53,6 @@
               Explore Mistara Ella before you arrive and experience the atmosphere that
               makes every stay memorable.
             </p>
-            <a href="#mistara-gallery" class="gallery-highlight__link">
-              <span>View All</span>
-              <ArrowUpRight :size="16" />
-            </a>
           </div>
           <div class="gallery-highlight__visual">
             <img :src="featureImage" alt="Mistara Ella Gallery Feature" class="gallery-highlight__image" />
@@ -72,12 +68,16 @@
                 </p>
               </div>
               <div class="gallery-highlight__card-footer">
-                <a href="#mistara-gallery" class="gallery-highlight__button gallery-room-button">
+                <button
+                  type="button"
+                  class="gallery-highlight__button gallery-room-button"
+                  @click="scrollToGallery"
+                >
                   <span class="gallery-highlight__button-icon gallery-room-button-icon" aria-hidden="true">
                     <ArrowRight :size="12" stroke-width="1.5" />
                   </span>
                   <span class="gallery-highlight__button-text">Start Exploring</span>
-                </a>
+                  </button>
               </div>
             </div>
           </div>
@@ -198,7 +198,16 @@ const timelessImageThree = `${baseUrl}Images/Home/amenities/pool.jpg`
 
 const tabs = ['All', 'Rooms', 'Views', 'Dining', 'Experiences']
 const activeTab = ref('All')
+const scrollToGallery = () => {
+  const gallerySection = document.getElementById('mistara-gallery')
 
+    if (gallerySection) {
+      gallerySection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
 const gallerySets = {
   All: [
     { id: 'all-1', category: 'Rooms', title: 'A Private Escape', image: `${baseUrl}Images/Home/bed2.jpeg`, alt: 'Luxury hotel exterior and pool' },
