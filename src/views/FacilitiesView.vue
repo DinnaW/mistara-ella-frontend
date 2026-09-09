@@ -600,7 +600,14 @@ onMounted(() => {
 }
 
 .facilities-page :deep(.inner-hero) {
+  min-height: clamp(32rem, 72vh, 46rem);
   background-position: center bottom;
+}
+
+@media (max-width: 620px) {
+  .facilities-page :deep(.inner-hero) {
+    min-height: 68vh;
+  }
 }
 
 .facilities-page :deep(.inner-hero-content) {
@@ -3527,7 +3534,6 @@ h3 em {
    ========================================= */
 
 @media (max-width: 650px) {
-
   /* -----------------------------------------
      1. DISCOVER THE COMFORTS
      ----------------------------------------- */
@@ -3535,7 +3541,6 @@ h3 em {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
-
 
   /* -----------------------------------------
      2. PREMIUM AMENITIES
@@ -3545,7 +3550,6 @@ h3 em {
     line-height: 1.05 !important;
   }
 
-
   /* -----------------------------------------
      3. WELLNESS AT MISTARA
      ----------------------------------------- */
@@ -3553,7 +3557,6 @@ h3 em {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
-
 
   /* -----------------------------------------
      4. WELLNESS JOURNAL
@@ -3563,7 +3566,6 @@ h3 em {
     line-height: 1.05 !important;
   }
 
-
   /* -----------------------------------------
      5. FINAL CTA
      ----------------------------------------- */
@@ -3571,7 +3573,6 @@ h3 em {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
-
 
   /* -----------------------------------------
      6. TRAVEL STORY HEADINGS
@@ -3584,7 +3585,6 @@ h3 em {
     line-height: 1.05 !important;
   }
 
-
   /* -----------------------------------------
      7. AMENITY HEADINGS
      Dining
@@ -3595,14 +3595,12 @@ h3 em {
     font-size: 32px !important;
     line-height: 1.05 !important;
   }
-
 }
 /* =========================================
    TABLET HEADING SIZES
    ========================================= */
 
 @media (min-width: 651px) and (max-width: 1024px) {
-
   /* Main section headings */
   .facilities-page .section-heading h2 {
     font-size: 36px !important;
@@ -3644,7 +3642,6 @@ h3 em {
     font-size: 32px !important;
     line-height: 1.05 !important;
   }
-
 }
 /* =====================================================
    TABLET — DISCOVER THE COMFORTS
@@ -3652,7 +3649,6 @@ h3 em {
 ===================================================== */
 
 @media (min-width: 651px) and (max-width: 1024px) {
-
   /* Stack heading and description */
   .facilities-page .facilities-section .section-heading {
     display: flex !important;
@@ -3696,7 +3692,6 @@ h3 em {
     align-items: center !important;
     margin-top: 20px !important;
   }
-
 }
 /* =====================================================
    TABLET — WELLNESS AT MISTARA
@@ -3704,7 +3699,6 @@ h3 em {
 ===================================================== */
 
 @media (min-width: 651px) and (max-width: 1024px) {
-
   .facilities-page .spa-section .section-heading {
     display: flex !important;
     flex-direction: column !important;
@@ -3744,6 +3738,5 @@ h3 em {
     align-self: flex-start !important;
     text-align: left !important;
   }
-
 }
 </style>
