@@ -1065,7 +1065,7 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
     padding-top: clamp(48px, 12vw, 60px) !important;
     
   }
-  .gallery-full-hero__image { min-height: 60svh; }
+  .gallery-full-hero__image { min-height: 68svh; }
   .gallery-full-hero__content { padding: 2rem 3vw; }
 
   .gallery-story { grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -1128,7 +1128,6 @@ const currentGallery = computed(() => gallerySets[activeTab.value])
 }
 
 @media (max-width: 520px) {
-  .gallery-full-hero__image { min-height: 56svh; }
   .gallery-story { grid-template-columns: 1fr; }
   .gallery-story__media--secondary { transform: none; }
   .gallery-story__signature { flex-wrap: wrap; }
