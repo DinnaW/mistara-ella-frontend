@@ -3646,4 +3646,104 @@ h3 em {
   }
 
 }
+/* =====================================================
+   TABLET — DISCOVER THE COMFORTS
+   651px – 1024px
+===================================================== */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+
+  /* Stack heading and description */
+  .facilities-page .facilities-section .section-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 28px !important;
+    margin-bottom: 50px !important;
+    text-align: left !important;
+  }
+
+  /* Main heading */
+  .facilities-page .facilities-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: 620px !important;
+  }
+
+  /* Paragraph + arrows underneath */
+  .facilities-page .facilities-section .heading-right {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Description */
+  .facilities-page .facilities-section .heading-right p {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 0 20px 0 !important;
+    text-align: left !important;
+  }
+
+  /* Arrows */
+  .facilities-page .facilities-section .arrows {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin-top: 20px !important;
+  }
+
+}
+/* =====================================================
+   TABLET — WELLNESS AT MISTARA
+   651px – 1024px
+===================================================== */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+
+  .facilities-page .spa-section .section-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 28px !important;
+    text-align: left !important;
+  }
+
+  /* Wellness heading */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  /* Paragraph + button below heading */
+  .facilities-page .spa-section .heading-right {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Wellness paragraph */
+  .facilities-page .spa-section .heading-right p {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 0 22px 0 !important;
+    text-align: left !important;
+  }
+
+  /* Discover Wellness */
+  .facilities-page .spa-section .view-link {
+    align-self: flex-start !important;
+    text-align: left !important;
+  }
+
+}
 </style>
