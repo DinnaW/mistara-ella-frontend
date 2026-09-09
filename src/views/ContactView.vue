@@ -601,9 +601,7 @@ const form = reactive({
     padding-top: 35px;
   }
 
-  .contact-information h1 {
-    font-size: 62px;
-  }
+  
 
   .contact-form {
     padding: 28px 22px 25px;
@@ -638,6 +636,168 @@ const form = reactive({
 
   .gallery-frame--low {
     margin-top: 38px;
+  }
+}
+
+/* =========================================
+   MOBILE CONTACT HEADING SIZES
+   ========================================= */
+
+@media (max-width: 560px) {
+
+  /* Contact us — 58px to 90px */
+  .contact-page .contact-information h1 {
+    font-size: clamp(58px, 15vw, 90px) !important;
+    line-height: 0.9 !important;
+  }
+
+  /* Send a message — 36px to 37px */
+  .contact-page .contact-form h2 {
+    font-size: clamp(36px, 8vw, 37px) !important;
+    line-height: 1 !important;
+  }
+
+  /* Get the latest from Ella. — 36px to 50px */
+  .contact-page .contact-newsletter h2 {
+    font-size: clamp(36px, 8vw, 50px) !important;
+    line-height: 1.05 !important;
+  }
+
+}
+/* =========================================
+   TABLET CONTACT HEADING SIZES
+   ========================================= */
+
+@media (min-width: 561px) and (max-width: 1024px) {
+
+  /* Contact us — 58px to 90px */
+  .contact-page .contact-information h1 {
+    font-size: clamp(58px, 8vw, 90px) !important;
+    line-height: 0.9 !important;
+  }
+
+  /* Send a message — 36px to 37px */
+  .contact-page .contact-form h2 {
+    font-size: clamp(36px, 4vw, 37px) !important;
+    line-height: 1 !important;
+  }
+
+  /* Get the latest from Ella. — 36px to 50px */
+  .contact-page .contact-newsletter h2 {
+    font-size: clamp(36px, 5vw, 50px) !important;
+    line-height: 1.05 !important;
+  }
+
+}
+@media (max-width: 560px) {
+
+  /* =========================================
+     MOBILE GALLERY — SLIDESHOW
+     ========================================= */
+
+  .contact-gallery {
+    padding: 42px 0 55px;
+    overflow: hidden;
+  }
+
+  .contact-gallery-track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    gap: 14px;
+
+    margin: 0;
+    padding: 0 14vw;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contact-gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-frame {
+    flex: 0 0 72vw;
+    width: 72vw;
+    min-width: 72vw;
+    margin: 0;
+    scroll-snap-align: center;
+  }
+
+  .gallery-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+  }
+
+  /* Keep desktop-style staggered positions */
+  .gallery-frame--short {
+    margin-top: 28px;
+  }
+
+  .gallery-frame--low {
+    margin-top: 62px;
+  }
+
+}
+@media (max-width: 560px) {
+
+  .contact-gallery {
+    padding: 42px 0 55px;
+    overflow: hidden;
+  }
+
+  .contact-gallery-track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 14px;
+    margin: 0;
+    padding: 0 22vw;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contact-gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-frame {
+    flex: 0 0 48vw;
+    width: 48vw;
+    min-width: 48vw;
+    margin: 0;
+    scroll-snap-align: center;
+  }
+
+  .gallery-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+  }
+
+  /* Keep the staggered desktop positioning */
+  .gallery-frame--short {
+    margin-top: 20px;
+  }
+
+  .gallery-frame--low {
+    margin-top: 42px;
   }
 }
 </style>

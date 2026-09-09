@@ -3522,4 +3522,128 @@ h3 em {
     height: 250px;
   }
 }
+/* =========================================
+   MOBILE HEADING SIZES & LINE HEIGHT
+   ========================================= */
+
+@media (max-width: 650px) {
+
+  /* -----------------------------------------
+     1. DISCOVER THE COMFORTS
+     ----------------------------------------- */
+  .facilities-page .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     2. PREMIUM AMENITIES
+     ----------------------------------------- */
+  .facilities-page .amenities-intro h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     3. WELLNESS AT MISTARA
+     ----------------------------------------- */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     4. WELLNESS JOURNAL
+     ----------------------------------------- */
+  .facilities-page .stories-title h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     5. FINAL CTA
+     ----------------------------------------- */
+  .facilities-page .booking-content h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     6. TRAVEL STORY HEADINGS
+     Let the Day Move Slowly
+     A Quiet Moment for Yourself
+     The Comfort of Doing Less
+     ----------------------------------------- */
+  .facilities-page .story-slide-content h3 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* -----------------------------------------
+     7. AMENITY HEADINGS
+     Dining
+     Room Comfort
+     Wellness & Views
+     ----------------------------------------- */
+  .facilities-page .amenity-title h3 {
+    font-size: 32px !important;
+    line-height: 1.05 !important;
+  }
+
+}
+/* =========================================
+   TABLET HEADING SIZES
+   ========================================= */
+
+@media (min-width: 651px) and (max-width: 1024px) {
+
+  /* Main section headings */
+  .facilities-page .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Premium amenities heading */
+  .facilities-page .amenities-intro h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Wellness heading */
+  .facilities-page .spa-section .section-heading h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Wellness journal heading */
+  .facilities-page .stories-title h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Final CTA heading */
+  .facilities-page .booking-content h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Travel story card headings */
+  .facilities-page .story-slide-content h3 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Amenity card headings */
+  .facilities-page .amenity-title h3 {
+    font-size: 32px !important;
+    line-height: 1.05 !important;
+  }
+
+}
 </style>
