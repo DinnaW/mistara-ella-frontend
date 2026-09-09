@@ -1,19 +1,13 @@
 <template>
   <MainLayout>
     <div class="facilities-page">
-      <!-- =====================================================
-           HERO
-      ====================================================== -->
-
       <InnerPageHero
         eyebrow="Designed for comfort"
         title="Explore Our Facilities"
         image="./Images/Facility/wellness5.jpeg"
       />
 
-      <!-- =====================================================
-           FACILITIES
-      ====================================================== -->
+      <!-- FACILITIES-->
 
       <section id="facilities" class="facilities-section">
         <div class="container">
@@ -80,10 +74,7 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           PREMIUM AMENITIES
-           EDITORIAL STYLE
-      ====================================================== -->
+      <!-- PREMIUM AMENITIES EDITORIAL STYLE -->
 
       <section id="amenities" class="amenities-section">
         <div class="container">
@@ -132,9 +123,7 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           WELLNESS AT MISTARA ELLA
-      ====================================================== -->
+      <!-- WELLNESS AT MISTARA ELLA -->
 
       <section class="things-section spa-section">
         <div class="container">
@@ -186,9 +175,7 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           WELLNESS JOURNAL
-      ====================================================== -->
+      <!-- WELLNESS JOURNAL -->
 
       <section class="stories-section">
         <div class="container">
@@ -284,9 +271,7 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           FINAL CTA
-      ====================================================== -->
+      <!-- FINAL CTA -->
 
       <section class="booking-section">
         <img :src="ellaMountainImage" alt="Ella mountains" />
@@ -328,9 +313,7 @@ import InnerPageHero from "../components/layout/InnerPageHero.vue";
 const baseUrl = import.meta.env.BASE_URL;
 const ellaMountainImage = `${baseUrl}Images/Home/amenities/lounge.jpeg`;
 
-/* =====================================================
-   FACILITIES
-===================================================== */
+/* FACILITIES */
 
 const facilities = [
   {
@@ -430,9 +413,7 @@ const scrollFacilities = (direction) => {
   });
 };
 
-/* =====================================================
-   PREMIUM AMENITIES
-===================================================== */
+/* PREMIUM AMENITIES */
 
 const amenities = [
   {
@@ -454,9 +435,7 @@ const amenities = [
   },
 ];
 
-/* =====================================================
-   THINGS TO DO
-===================================================== */
+/* THINGS TO DO */
 
 const thingsToDo = [
   {
@@ -484,9 +463,7 @@ const thingsToDo = [
   },
 ];
 
-/* =====================================================
-   STORIES
-===================================================== */
+/* STORIES */
 
 const stories = [
   {
@@ -517,9 +494,7 @@ const stories = [
   },
 ];
 
-/* =====================================================
-   STORIES SLIDESHOW
-===================================================== */
+/* STORIES SLIDESHOW */
 
 const activeStory = ref(0);
 
@@ -531,9 +506,7 @@ const previousStory = () => {
   activeStory.value = (activeStory.value - 1 + stories.length) % stories.length;
 };
 
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
+/* SCROLL REVEAL */
 
 onMounted(() => {
   const elements = document.querySelectorAll(".reveal");
@@ -560,15 +533,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* =====================================================
-   FONTS
-===================================================== */
+/* FONTS */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Marcellus&display=swap");
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+/* VARIABLES */
 
 .facilities-page {
   --white: #ffffff;
@@ -635,9 +604,7 @@ onMounted(() => {
   line-height: 1.7;
 }
 
-/* =====================================================
-   RESET
-===================================================== */
+/* RESET */
 
 .facilities-page *,
 .facilities-page *::before,
@@ -661,9 +628,7 @@ button {
   font-family: inherit;
 }
 
-/* =====================================================
-   CONTAINER
-===================================================== */
+/* CONTAINER */
 
 .container {
   width: min(1380px, calc(100% - 10vw));
@@ -671,9 +636,7 @@ button {
   margin: 0 auto;
 }
 
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
+/* TYPOGRAPHY */
 
 h1,
 h2,
@@ -698,9 +661,7 @@ h3 em {
   font-style: italic;
 }
 
-/* =====================================================
-   REVEAL
-===================================================== */
+/* REVEAL */
 
 .reveal {
   opacity: 0;
@@ -718,9 +679,7 @@ h3 em {
   transform: translateY(0);
 }
 
-/* =====================================================
-   INTRO
-===================================================== */
+/* INTRO */
 
 .intro-section {
   padding: 110px 0 95px;
@@ -838,9 +797,7 @@ h3 em {
   color: #746c63;
 }
 
-/* =====================================================
-   POPULAR
-===================================================== */
+/* POPULAR */
 
 .popular-section {
   padding: 0 0 100px;
@@ -936,9 +893,7 @@ h3 em {
   color: #45413d;
 }
 
-/* =====================================================
-   FACILITIES
-===================================================== */
+/* FACILITIES */
 
 .facilities-section {
   padding: 35px 0 120px;
@@ -1188,9 +1143,7 @@ h3 em {
   color: var(--brown);
 }
 
-/* =====================================================
-   EXPERIENCE MOSAIC
-===================================================== */
+/*EXPERIENCE MOSAIC */
 
 .experience-mosaic {
   padding: 0 4vw 125px;
@@ -1387,9 +1340,7 @@ h3 em {
   transform: scale(1.05);
 }
 
-/* =====================================================
-   EXPERIENCE MOSAIC SLIDESHOW
-===================================================== */
+/* EXPERIENCE MOSAIC SLIDESHOW */
 
 .mosaic-large-image {
   background: #302a26;
@@ -1538,10 +1489,8 @@ h3 em {
   color: white;
 }
 
-/* =====================================================
-   PREMIUM AMENITIES
-   NEW EDITORIAL DESIGN
-===================================================== */
+/* PREMIUM AMENITIES
+   NEW EDITORIAL DESIGN */
 
 .amenities-section {
   padding: 125px 0 135px;
@@ -1550,10 +1499,6 @@ h3 em {
 
   color: var(--black);
 }
-
-/* -----------------------------------------------------
-   CENTERED INTRO
------------------------------------------------------ */
 
 .amenities-intro {
   max-width: 760px;
@@ -1605,10 +1550,6 @@ h3 em {
   color: var(--gray);
 }
 
-/* -----------------------------------------------------
-   GALLERY
------------------------------------------------------ */
-
 .amenities-gallery {
   display: grid;
 
@@ -1618,10 +1559,6 @@ h3 em {
 
   width: 100%;
 }
-
-/* -----------------------------------------------------
-   IMAGE CARD
------------------------------------------------------ */
 
 .amenity-card {
   position: relative;
@@ -1634,10 +1571,6 @@ h3 em {
 
   cursor: pointer;
 }
-
-/* -----------------------------------------------------
-   IMAGE
------------------------------------------------------ */
 
 .amenity-card img {
   position: absolute;
@@ -1657,9 +1590,6 @@ h3 em {
   transform: scale(1.07);
 }
 
-/* -----------------------------------------------------
-   OVERLAY
------------------------------------------------------ */
 
 .amenity-shade {
   position: absolute;
@@ -1687,9 +1617,7 @@ h3 em {
   );
 }
 
-/* -----------------------------------------------------
-   CONTENT
------------------------------------------------------ */
+
 
 .amenity-content {
   position: absolute;
@@ -1711,9 +1639,7 @@ h3 em {
   text-align: center;
 }
 
-/* -----------------------------------------------------
-   NUMBER
------------------------------------------------------ */
+
 
 .amenity-number {
   position: absolute;
@@ -1735,9 +1661,6 @@ h3 em {
   color: rgba(255, 255, 255, 0.82);
 }
 
-/* -----------------------------------------------------
-   TITLE
------------------------------------------------------ */
 
 .amenity-title {
   max-width: 290px;
@@ -1775,9 +1698,6 @@ h3 em {
   color: #ffffff;
 }
 
-/* -----------------------------------------------------
-   DECORATIVE LINE
------------------------------------------------------ */
 
 .amenity-title::after {
   content: "";
@@ -1799,9 +1719,6 @@ h3 em {
   width: 65px;
 }
 
-/* =====================================================
-   ELLA
-===================================================== */
 
 .ella-section {
   padding: 120px 0;
@@ -1933,9 +1850,7 @@ h3 em {
   grid-column: 2 / span 2;
 }
 
-/* =====================================================
-   THINGS TO DO
-===================================================== */
+/* THINGS TO DO */
 
 .things-section {
   padding: 120px 0;
@@ -2005,14 +1920,8 @@ h3 em {
   color: var(--gray);
 }
 
-/* =====================================================
-   STORIES
-===================================================== */
+/* STORIES */
 
-/* =====================================================
-   TRAVEL STORIES
-   EDITORIAL SLIDESHOW
-===================================================== */
 
 .stories-section {
   padding: 125px 0 140px;
@@ -2500,9 +2409,7 @@ h3 em {
   transform: translateX(5px);
 }
 
-/* =====================================================
-   BOOKING
-===================================================== */
+/* BOOKING */
 
 .booking-section {
   position: relative;
@@ -2659,9 +2566,7 @@ h3 em {
   transform: translateX(5px);
 }
 
-/* =====================================================
-   TABLET
-===================================================== */
+/* TABLET */
 
 @media (max-width: 1050px) {
   .popular-list {
@@ -2789,9 +2694,7 @@ h3 em {
   }
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media (max-width: 650px) {
   .container {
@@ -2924,9 +2827,6 @@ h3 em {
     font-size: 12px;
   }
 
-  /* ===================================================
-     PREMIUM AMENITIES MOBILE
-  =================================================== */
 
   .amenities-section {
     padding: 85px 0;
@@ -3104,10 +3004,7 @@ h3 em {
   }
 }
 
-/* =====================================================
-   FACILITIES TYPOGRAPHY
-   Matches the main site's reference sizing and colors
-===================================================== */
+
 
 .facilities-page h1,
 .facilities-page h2,
@@ -3182,10 +3079,7 @@ h3 em {
 .facilities-page .mosaic-panel.light a {
   color: #000000;
 }
-/* =====================================================
-   FACILITIES EDITORIAL GRID
-   Alternating image and soft-color panels inspired by the reference
-===================================================== */
+
 
 .facilities-page .facility-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3529,127 +3423,94 @@ h3 em {
     height: 250px;
   }
 }
-/* =========================================
-   MOBILE HEADING SIZES & LINE HEIGHT
-   ========================================= */
+
 
 @media (max-width: 650px) {
-  /* -----------------------------------------
-     1. DISCOVER THE COMFORTS
-     ----------------------------------------- */
+  
   .facilities-page .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     2. PREMIUM AMENITIES
-     ----------------------------------------- */
+ 
   .facilities-page .amenities-intro h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     3. WELLNESS AT MISTARA
-     ----------------------------------------- */
+ 
   .facilities-page .spa-section .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     4. WELLNESS JOURNAL
-     ----------------------------------------- */
+  
   .facilities-page .stories-title h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     5. FINAL CTA
-     ----------------------------------------- */
+  
   .facilities-page .booking-content h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     6. TRAVEL STORY HEADINGS
-     Let the Day Move Slowly
-     A Quiet Moment for Yourself
-     The Comfort of Doing Less
-     ----------------------------------------- */
+ 
   .facilities-page .story-slide-content h3 {
     font-size: 28px !important;
     line-height: 1.05 !important;
   }
 
-  /* -----------------------------------------
-     7. AMENITY HEADINGS
-     Dining
-     Room Comfort
-     Wellness & Views
-     ----------------------------------------- */
+  
   .facilities-page .amenity-title h3 {
     font-size: 32px !important;
     line-height: 1.05 !important;
   }
 }
-/* =========================================
-   TABLET HEADING SIZES
-   ========================================= */
+
 
 @media (min-width: 651px) and (max-width: 1024px) {
-  /* Main section headings */
+  
   .facilities-page .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* Premium amenities heading */
   .facilities-page .amenities-intro h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* Wellness heading */
   .facilities-page .spa-section .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* Wellness journal heading */
   .facilities-page .stories-title h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* Final CTA heading */
   .facilities-page .booking-content h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
   }
 
-  /* Travel story card headings */
   .facilities-page .story-slide-content h3 {
     font-size: 28px !important;
     line-height: 1.05 !important;
   }
 
-  /* Amenity card headings */
   .facilities-page .amenity-title h3 {
     font-size: 32px !important;
     line-height: 1.05 !important;
   }
 }
-/* =====================================================
-   TABLET — DISCOVER THE COMFORTS
-   651px – 1024px
-===================================================== */
+
 
 @media (min-width: 651px) and (max-width: 1024px) {
-  /* Stack heading and description */
+  
   .facilities-page .facilities-section .section-heading {
     display: flex !important;
     flex-direction: column !important;
@@ -3660,7 +3521,6 @@ h3 em {
     text-align: left !important;
   }
 
-  /* Main heading */
   .facilities-page .facilities-section .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
@@ -3669,15 +3529,13 @@ h3 em {
     max-width: 620px !important;
   }
 
-  /* Paragraph + arrows underneath */
   .facilities-page .facilities-section .heading-right {
     width: 100% !important;
     max-width: 620px !important;
     margin: 0 !important;
     text-align: left !important;
   }
-
-  /* Description */
+  
   .facilities-page .facilities-section .heading-right p {
     width: 100% !important;
     max-width: 560px !important;
@@ -3685,7 +3543,6 @@ h3 em {
     text-align: left !important;
   }
 
-  /* Arrows */
   .facilities-page .facilities-section .arrows {
     display: flex !important;
     justify-content: flex-start !important;
@@ -3693,10 +3550,7 @@ h3 em {
     margin-top: 20px !important;
   }
 }
-/* =====================================================
-   TABLET — WELLNESS AT MISTARA
-   651px – 1024px
-===================================================== */
+
 
 @media (min-width: 651px) and (max-width: 1024px) {
   .facilities-page .spa-section .section-heading {
@@ -3707,7 +3561,7 @@ h3 em {
     text-align: left !important;
   }
 
-  /* Wellness heading */
+
   .facilities-page .spa-section .section-heading h2 {
     font-size: 36px !important;
     line-height: 1.05 !important;
@@ -3715,7 +3569,7 @@ h3 em {
     margin: 0 !important;
   }
 
-  /* Paragraph + button below heading */
+ 
   .facilities-page .spa-section .heading-right {
     width: 100% !important;
     max-width: 620px !important;
@@ -3725,7 +3579,7 @@ h3 em {
     align-items: flex-start !important;
   }
 
-  /* Wellness paragraph */
+  
   .facilities-page .spa-section .heading-right p {
     width: 100% !important;
     max-width: 560px !important;
@@ -3733,24 +3587,20 @@ h3 em {
     text-align: left !important;
   }
 
-  /* Discover Wellness */
+  
   .facilities-page .spa-section .view-link {
     align-self: flex-start !important;
     text-align: left !important;
   }
 }
-/* =========================================
-   FACILITIES — MOBILE SECTION SPACING
-   ========================================= */
+
 @media (max-width: 650px) {
 
-
-  /* Keep the first/hero section from getting too much top space */
   .facilities-page .facilities-section {
     padding-top: 45px !important;
   }
 
-  /* Extra breathing room between heading and content */
+  
   .facilities-page .section-heading {
     margin-bottom: 40px !important;
   }
